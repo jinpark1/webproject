@@ -1,0 +1,82 @@
+import React, { Component } from 'react';
+import './Nav.css';
+
+class Nav extends Component {
+   
+
+
+    componentDidMount() {
+        window.onscroll = () => {
+            const nav = document.querySelector('#navbar');
+            // if(this.scrollY <= 10) nav.className = 'scroll'; else nav.className = 'scrolll';
+            if(this.scrollY >= 10) nav.className = 'scroll';
+            // if(this.scrollY !== 0) nav.className = 'scroll';
+          };
+      }
+
+    //   componentDidMount() {
+    //     window.onscroll = () => {
+    //         const nav = document.querySelector('#navbar');
+    //         if(this.scrollY == 0) nav.className = 'scrolll';
+    //       };
+    //   }
+
+ 
+    
+    componentWillUnmount() {
+        window.onscroll = () => {
+            const nav = document.querySelector('#navbar');
+            // if(this.scrollY <= 10) nav.className = 'scroll'; else nav.className = 'scrolll';
+            if(this.scrollY !== 0) nav.className = 'scrolll';
+            // if(this.scrollY !== 0) nav.className = 'scroll';
+          };
+    }
+    
+
+      
+
+
+    render() {
+        
+  
+        return (
+            <div>
+{/* <nav id="navbar">
+      <span>Hello, It's me</span>
+      <button>Pickles!</button>
+    </nav>
+    <header>
+      <h1>Ode to a Large Tuna in the Market</h1>
+      <h2>By Pablo Neruda</h2>
+    </header> */}
+            <DynamicHeader hasEffect={true} effectDuration={600} useHeadersDifference={true}>
+              <div style={{height: "100px", backgroundColor: "#666", width: "100%", position: "relative", top: 0, zIndex: 1039, textAlign: "center",}}>
+                <div style={{paddingTop: "65px",}}>Header Component 1 - Bigger Component</div>
+              </div>
+              <div style={{height: "50px", backgroundColor: "#ccc", width: "100%", position: "fixed", top: 0, zIndex: 1039, textAlign: "center", }}>
+                <div style={{paddingTop: "15px",}}>Header Component 2 - Sticky Component</div>
+              </div>
+            </DynamicHeader>
+
+
+
+
+    </div>
+            // <div id="nav-container">
+            //    <ul>
+            //        <div className="nav-logo">LOGO</div>
+            //        <li><a href="#">Home</a></li>
+            //        <li><a href="#">Forum</a></li>
+            //        <li><a href="#">Contact</a></li>
+            //        <li><a href="#">Contact</a></li>
+            //     </ul>
+            //     <div className="nav-signin">SIGN IN
+            //     </div>
+            // </div>
+        );
+    }
+}
+
+export default Nav;
+
+
