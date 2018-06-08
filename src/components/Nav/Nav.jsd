@@ -49,18 +49,11 @@ class Nav extends Component {
       <h1>Ode to a Large Tuna in the Market</h1>
       <h2>By Pablo Neruda</h2>
     </header> */}
-            <DynamicHeader hasEffect={true} effectDuration={600} useHeadersDifference={true}>
-              <div style={{height: "100px", backgroundColor: "#666", width: "100%", position: "relative", top: 0, zIndex: 1039, textAlign: "center",}}>
-                <div style={{paddingTop: "65px",}}>Header Component 1 - Bigger Component</div>
-              </div>
-              <div style={{height: "50px", backgroundColor: "#ccc", width: "100%", position: "fixed", top: 0, zIndex: 1039, textAlign: "center", }}>
-                <div style={{paddingTop: "15px",}}>Header Component 2 - Sticky Component</div>
-              </div>
-            </DynamicHeader>
 
 
 
 
+    
     </div>
             // <div id="nav-container">
             //    <ul>
