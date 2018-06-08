@@ -21,7 +21,7 @@ class Nav extends Component {
         console.log('window.scrollY', window.scrollY)
         const nav = document.querySelector('#navbar');
         const navul = document.querySelector('#navul');
-        const nava = document.querySelector('a');
+        const nava = document.querySelectorAll('#nava');
         if(window.scrollY <= 10){
             nav.className = ''
             navul.className = ''
@@ -29,7 +29,9 @@ class Nav extends Component {
         } else {
             nav.className = 'scroll'
             navul.className = 'scroll'
-            nava.className = 'scroll'
+            nava[0].className = 'scrollfont'
+            nava[1].className = 'scrollfont'
+            nava[2].className = 'scrollfont'
         }
     }
 
@@ -42,9 +44,9 @@ class Nav extends Component {
                         <img src={starImg} ref='LOGO' />
                         <li><a id="nava" href="/">HOME</a></li>
                         <li><a id="nava" href="/forum">FORUM</a></li>
-                        <li><a id="nava" href="#">HELP</a></li>
+                        <li><a id="nava" href="/store">STORE</a></li>
                     </ul>
-                    <button>SIGN IN!</button>
+                    <a href="auth"><button>SIGN IN!</button></a>
                 </nav>
             
         )

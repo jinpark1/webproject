@@ -1,5 +1,5 @@
 .home-container {
-    border: 1px solid blue;
+    border: 3px solid blue;
 }
 
 .home-section1 {
@@ -10,4 +10,32 @@
     justify-content: center;
     color: white;
     font-size: 100px;
+    /* text-overflow: ellipsis; */
+    /* Required for text-overflow to do anything */
+    overflow: hidden;
 }
+
+.home-section5 {
+    display: flex;
+}
+
+
+.home-section5 content {
+    margin: 0px auto;
+    border: 2px solid purple;
+    
+    height: 350px;
+}
+
+.home-section5 div {
+    display: inline;
+    margin: 20px;
+}
+
+.home-section5 img {
+    width: 300px;
+    height: 300px;
+}
+
+
+

@@ -1,3 +1,23 @@
 .footer-container {
-    border: 1px solid green;
+    /* border: 1px solid green; */
+    background-color: #252525;
+    display: flex;
+    align-items: center;
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    text-align: center;
 }
+
+.footer-content {
+    margin: 0 auto;
+    display: flex;
+}
+
+.footer-container img {
+    width: 25px;
+    height: 25px;
+    
+}
+

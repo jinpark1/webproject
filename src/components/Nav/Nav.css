@@ -62,11 +62,11 @@ nav.scroll {
     left: 0;
     height: 3em;
     width: 100%;
-    background-color: white;
+    background-color: transparent;
     box-sizing: border-box;
     padding: 12px 18px;
     box-shadow: 0px 4px 7px #777;
-    transition: background-color 0.4s ease-out;
+    transition: background-color 0.5s ease-out;
   }
 
   nav img {
@@ -91,7 +91,7 @@ nav.scroll {
   }
   
   nav.scroll {
-    background-color: black;
+    background-color: #252525;
   }
 
 nav ul {
@@ -135,6 +135,6 @@ a.scroll {
     color: white;
 }
 
-#nava.scroll {
+#nava.scrollfont {
     color: white;
 }
