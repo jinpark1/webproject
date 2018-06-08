@@ -38,29 +38,15 @@ class Nav extends Component {
         return (
            
                 <nav id="navbar">
-                    
-                    {/* <span>HOME</span>
-                    <span>FORUM</span> */}
                     <ul id="navul">
                         <img src={starImg} ref='LOGO' />
-                        <li><a id="nava" href="#">FORUM</a></li>
-                        <li><a id="nava" href="#">HOME</a></li>
+                        <li><a id="nava" href="/">HOME</a></li>
+                        <li><a id="nava" href="/forum">FORUM</a></li>
                         <li><a id="nava" href="#">HELP</a></li>
                     </ul>
                     <button>SIGN IN!</button>
                 </nav>
             
-            // <div id="nav-container">
-            //    <ul>
-            //        <div className="nav-logo">LOGO</div>
-            //        <li><a href="#">Home</a></li>
-            //        <li><a href="#">Forum</a></li>
-            //        <li><a href="#">Contact</a></li>
-            //        <li><a href="#">Contact</a></li>
-            //     </ul>
-            //     <div className="nav-signin">SIGN IN
-            //     </div>
-            // </div>
         )
     }
 }
