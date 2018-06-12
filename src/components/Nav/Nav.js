@@ -41,7 +41,7 @@ class Nav extends Component {
            
                 <nav id="navbar">
                     <ul id="navul">
-                        <img src={starImg} ref='LOGO' />
+                        <img src={starImg} alt="star" />
                         <li><a id="nava" href="/">HOME</a></li>
                         <li><a id="nava" href="/forum">FORUM</a></li>
                         <li><a id="nava" href="/trollbox">TROLLBOX</a></li>

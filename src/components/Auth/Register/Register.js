@@ -9,14 +9,14 @@ class Register extends Component {
             <div className="register-container">
                
                 <div className="register">
-                    <div><img src={starImg} /></div>
+                    <div><img src={starImg} alt="star" /></div>
                     <div className="or">Create Account</div>
                     <div><input placeholder="Email" /></div>
                     <div><input placeholder="Password"/></div>
                     <div><input placeholder="Re-enter Password"/></div>
                     <div>
-                        <div><button><Link className="link-button" to='/auth'>Back</Link></button></div>
-                        <div><button><Link className="link-button" to='/register2'>Next</Link></button></div>
+                        <div><Link className="link-button" to='/auth'>Back</Link></div>
+                        <div><Link className="link-button" to='/register2'>Next</Link></div>
                     </div>
                 </div>
                 

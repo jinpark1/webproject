@@ -7,13 +7,14 @@ import Trollbox from './components/Trollbox/Trollbox';
 import Register from './components/Auth/Register/Register';
 import Register2 from './components/Auth/Register/Register2';
 
+
 export default(
     <Switch>
         <Route exact path='/' component={ Home } />
         <Route path='/forum' component={ Forum } />
         <Route path='/auth' component={ Auth } />
         <Route path='/trollbox' component={ Trollbox } />
-        <Route path='/register' component={ Register} />
-        <Route path='/register2' component={ Register2} />
+        <Route path='/register' component={ Register } />
+        <Route path='/register2' component={ Register2 } />
     </Switch>
 )

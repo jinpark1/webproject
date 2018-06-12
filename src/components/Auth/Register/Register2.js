@@ -7,16 +7,15 @@ class Register extends Component {
     render() {
         return (
             <div className="register-container">
-               
                 <div className="register">
-                    <div><img src={starImg} /></div>
+                    <div><img src={starImg} alt="star" /></div>
                     <div className="or">Create Account</div>
-                    <div><input placeholder="Email" /></div>
-                    <div><input placeholder="Password"/></div>
-                    <div><input placeholder="Re-enter Password"/></div>
-                    <div>hellohello
-                        <div><button><Link className="link-button" to='/auth'>Back</Link></button></div>
-                        <div><button><Link className="link-button" to='/register'>Next</Link></button></div>
+                    <div><input placeholder="Online ID" /></div>
+                    <div><input placeholder="First Name"/></div>
+                    <div><input placeholder="Last Name"/></div>
+                    <div>
+                        <div><Link className="link-button" to='/register'>Back</Link></div>
+                        <div><Link className="link-button" to='/register3'>Create Account</Link></div>
                     </div>
                 </div>
                 

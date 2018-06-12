@@ -35,15 +35,6 @@
     /* margin-bottom: 10px; */
 }
 
-.register button {
-    width: 100px;
-    background-color: #252525;
-    border: none;
-    color: white;
-    margin-top: 50px;
-    margin-bottom: 20px;
-}
-
 .or {
     font-size: 10px;
 }
@@ -52,5 +43,12 @@
     font-family: 'Times New Roman', Times, serif;
     text-decoration: none;
     color: white;
+    text-align: center;
+    width: 100px;
+    background-color: #252525;
+    border: none;
+    color: white;
+    margin-top: 50px;
+    margin-bottom: 20px;
+    font-size: 15px;
 }
-

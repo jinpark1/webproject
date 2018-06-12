@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import './Home.css';
 import backgroundImg from '../../images/starimg1.jpg';
-import chair from '../../images/chair.jpeg';
 
 class Home extends Component {
     render() {
@@ -26,9 +25,9 @@ class Home extends Component {
                 
                 <section className="home-section5">
                     <content>
-                        <div><img src={backgroundImg} /></div>
-                        <div><img src={backgroundImg} /></div>
-                        <div><img src={backgroundImg} /></div>
+                        <div><img src={backgroundImg} alt="starimg1"/></div>
+                        <div><img src={backgroundImg} alt="starimg1"/></div>
+                        <div><img src={backgroundImg} alt="starimg1"/></div>
                     </content>
                 </section>
                

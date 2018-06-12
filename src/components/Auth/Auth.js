@@ -9,7 +9,7 @@ class Auth extends Component {
             <div className="auth-container">
                
                 <div className="auth-signin">
-                    <div><img src={starImg} /></div>
+                    <div><img src={starImg} alt="star" /></div>
                     <div><input placeholder="Email" /></div>
                     <div><input placeholder="Password"/></div>
                     <div><button>Log in</button></div>
