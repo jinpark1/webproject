@@ -13,17 +13,16 @@ class Register3 extends Component {
             onlineID: this.props.onlineID,
             password: this.props.password,
             firstName: this.props.firstName,
-            lastName: this.props.lastName
+            lastName: this.props.lastName,
+            created: 'NOW()',
+            admin: false
         };
 
         axios.post('/register', newUser)
-        console.log('Register3----------')
     }
 
 
     render() {
-        // const { updateOnlineID, updateFirstName, updateLastName } = this.props;
-        console.log('Register3', this.props)
         return (
             <div className="register-container">
                 <div className="register">

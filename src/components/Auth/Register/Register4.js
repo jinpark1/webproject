@@ -5,7 +5,6 @@ import { Link } from 'react-router-dom';
 
 class Register4 extends Component {
     render() {
-        const { updateOnlineID, updateFirstName, updateLastName } = this.props;
         return (
             <div className="register-container">
                 <div className="register">

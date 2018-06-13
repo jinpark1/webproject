@@ -23,8 +23,7 @@ app.use(express.static(`${__dirname}/../build`));
 
 app.post('/register', (req, res) => {
     const db = app.get('db');
-    const { email, onlineID, password, firstName, lastName } = req.body;
-    const data = req.body;
+    const { email, onlineID, password, firstName, lastName, created, admin } = req.body;
     bcrypt.hash(password, saltRounds).then(hashedPassword => {
         db.create_user({
             email: email,
@@ -32,8 +31,8 @@ app.post('/register', (req, res) => {
             password: hashedPassword,
             first_name: firstName,
             last_name: lastName,
-            created: '1999-01-08 04:05:06',
-            admin: 't'
+            created: created,
+            admin: admin
         }).then(() => {
             req.session.user = { onlineID };
             res.json({ user: req.session.user })
