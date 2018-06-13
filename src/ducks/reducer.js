@@ -55,7 +55,7 @@ export function updatePasswordRe( passwordRe ){
     }
 }
 
-export function updateonlineID( onlineID ){
+export function updateOnlineID( onlineID ){
     return {
         type: UPDATE_ONLINEID,
         payload: onlineID

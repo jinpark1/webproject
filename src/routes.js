@@ -6,6 +6,8 @@ import Auth from './components/Auth/Auth';
 import Trollbox from './components/Trollbox/Trollbox';
 import Register from './components/Auth/Register/Register';
 import Register2 from './components/Auth/Register/Register2';
+import Register3 from './components/Auth/Register/Register3';
+import Register4 from './components/Auth/Register/Register4';
 
 
 export default(
@@ -16,5 +18,7 @@ export default(
         <Route path='/trollbox' component={ Trollbox } />
         <Route path='/register' component={ Register } />
         <Route path='/register2' component={ Register2 } />
+        <Route path='/register3' component={ Register3 } />
+        <Route path='/register4' component={ Register4 } />
     </Switch>
 )
