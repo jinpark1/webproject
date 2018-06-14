@@ -8,7 +8,7 @@ class Trollbox extends Component {
             <div className="trollbox-container">
                 <div className="trollbox-top">
                     <div>TROLLBOX</div>
-                    <img src={backGroundGrey} />
+                    <img src={backGroundGrey} alt="backGroundGrey" />
                 </div>
                <div className="trollbox-main"> 
                     <div className="trollbox-box"> Coming soon</div>

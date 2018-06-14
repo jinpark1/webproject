@@ -8,11 +8,24 @@ class Forum extends Component {
             <div className="forum-container">
                 <div className="forum-top">
                     <div>FORUMS</div>
-                    <img src={backGroundGrey} />
+                    <img src={backGroundGrey} alt="backGroundGrey" />
                 </div>
                 <div className="forum-main">
                     <div className="forum-category">
-                      nting and typesetting industry. Lorem Ipsum has been t
+                        <div>All Topics</div>
+                        <div>General</div>
+                        <div>Games</div>
+                        <div>Sports</div>
+                        <div></div>
+                        <div>Food</div>
+                        <div>Music</div>
+                        <div>Sports</div>
+                        <div></div>
+                        <div>Feedback</div>
+                        <div>Help</div>
+                        <div>Random</div>
+                        <div>OffTopic</div>
+                        <div>OffTopic</div>
                     </div>
                     <div className="forum-post">
                        nting and typesetting industry. Lorem Ipsum has been t

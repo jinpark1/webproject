@@ -2,12 +2,12 @@ import React, { Component } from 'react';
 import './Auth.css';
 import starImg from '../../images/star.png';
 import { Link } from 'react-router-dom';
+import backGroundGrey from '../../images/backgroundgrey3.jpg';
 
 class Auth extends Component {
     render() {
         return (
             <div className="auth-container">
-               
                 <div className="auth-signin">
                     <div><img src={starImg} alt="star" /></div>
                     <div><input placeholder="Email" /></div>

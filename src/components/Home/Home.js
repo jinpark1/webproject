@@ -9,7 +9,7 @@ class Home extends Component {
             <div className="home-container">
                 <div className="home-top">
                     <div>HOME</div>
-                    <img src={backGroundGrey} />
+                    <img src={backGroundGrey} alt="backGroundGrey" />
                 </div>
                 <section className="home-section1">
                     s simply dummy text of t

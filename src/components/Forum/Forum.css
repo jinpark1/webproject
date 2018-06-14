@@ -23,13 +23,19 @@
 
 .forum-category {
     margin: 0 10px;
+    margin-top: 10px;
     width: 20%;
     height: 250px;
     border: 1px solid purple;
 }
 
+.forum-category div {
+    border: 1px solid yellow;
+}
+
 .forum-post {
     margin: 0 10px;
+    margin-top: 10px;
     width: 75%;
     height: 1000px;
     border: 1px solid orange;
