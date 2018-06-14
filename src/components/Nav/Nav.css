@@ -1,62 +1,7 @@
-/* @import url('https://fonts.googleapis.com/css?family=Roboto:700');
-
-nav {
-    border: 1px solid black;
-    background: green;
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 3em;
-    box-sizing: border-box;
-    transition: .5;
-    display: flex;
-    justify-content: space-between;
-    padding: 10px;
-}
-
-.nav-logo {
-    padding: 0px 25px;
-}
-
-.nav-logo img {
-
-}
-
-.nav-signin {
-    padding: 0px 25px;
-}
-
-nav ul {
-    margin: 0;
-    display: flex;
-}
-
-nav ul li {
-    list-style: none;
-    margin: 0px 5px;
-}
-
-nav ul li a {
-    list-style: 80px;
-    color: red;
-    text-decoration: none;
-    text-transform: uppercase;
-    transition: .5s;
-    font-family: 'Roboto', sans-serif;
-}
-
-nav ul li a:hover {
-    color: black;
-    background: blue;
-}
-
-nav.scroll {
-    background-color: purple;
-} */
 @import url('https://fonts.googleapis.com/css?family=Roboto:700');
 
   nav {
+    z-index: 3;
     position: fixed;
     top: 0;
     left: 0;
@@ -83,7 +28,6 @@ nav.scroll {
     min-height: 1.5em;
     min-width: 80px;
     background-color: white;
-    /* color: black; */
     border: 0px;
     border-radius: 2px;
     margin-right: 20px;
@@ -100,22 +44,12 @@ nav ul {
 }
 
 nav ul li {
-    /* color: white; */
     list-style: none;
     margin: 0px 20px;
 }
 
-/* nav ul li a {
-    color: black;
-    list-style: 80px;
-    text-decoration: none;
-    text-transform: uppercase;
-    transition: .5s;
-    font-family: 'Roboto', sans-serif;
-} */
-
 #nava {
-    color: blue;
+    color: white;
     list-style: 80px;
     text-decoration: none;
     text-transform: uppercase;
@@ -126,10 +60,6 @@ nav ul li {
 nav ul li a:hover {
     text-shadow: 5px 5px 10px black;
 }
-
-/* ul.scroll {
-    color: white;
-  } */
 
 a.scroll {
     color: white;

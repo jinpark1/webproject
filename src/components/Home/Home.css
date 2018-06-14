@@ -1,3 +1,20 @@
+.home-top img {
+    position: relative;
+    width: 100%;
+    z-index: -1;
+    display: block;
+}
+
+.home-top div {
+    position: absolute;
+    top: 80px;
+    margin: 0px 60px;
+    z-index: 1;
+    font-size: 30px;
+    color: white;
+    font-weight: 600;
+}
+
 .home-container {
     border: 3px solid blue;
 }
@@ -10,8 +27,6 @@
     justify-content: center;
     color: white;
     font-size: 100px;
-    /* text-overflow: ellipsis; */
-    /* Required for text-overflow to do anything */
     overflow: hidden;
 }
 

@@ -20,7 +20,6 @@ app.use(session({
 
 app.use(express.static(`${__dirname}/../build`));
 
-
 app.post('/register', (req, res) => {
     const db = app.get('db');
     const { email, onlineID, password, firstName, lastName, created, admin } = req.body;
@@ -41,9 +40,6 @@ app.post('/register', (req, res) => {
         });
     });
 });
-
-// insert into users ( email, online_id, password, first_name, last_name, created, admin )
-// values ( ${email}, ${online_id}, ${password}, ${first_name}, ${last_name}, ${created}, ${admin} ); 
 
 const port = 4001;
 app.listen(port, () => { console.log(`Server listening on Port ${port}`)} );

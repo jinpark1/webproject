@@ -1,0 +1,36 @@
+.forum-top img {
+    position: relative;
+    width: 100%;
+    z-index: -1;
+    display: block;
+}
+
+.forum-top div {
+    position: absolute;
+    top: 80px;
+    margin: 0px 60px;
+    z-index: 1;
+    font-size: 30px;
+    color: white;
+    font-weight: 600;
+}
+
+.forum-main {
+    border: 1px solid red;
+    display: flex;
+    justify-content: center;
+}
+
+.forum-category {
+    margin: 0 10px;
+    width: 20%;
+    height: 250px;
+    border: 1px solid purple;
+}
+
+.forum-post {
+    margin: 0 10px;
+    width: 75%;
+    height: 1000px;
+    border: 1px solid orange;
+}

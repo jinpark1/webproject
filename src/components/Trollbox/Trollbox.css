@@ -1,18 +1,31 @@
 
-.trollbox-container {
-    background-color: white;
-    min-height: 100%;
-    width: 100%;
-    height: auto;
-    position: fixed;
-    z-index: -1;
-    top:0;
-    left:0;
-    display: flex;
-    align-items: center;
+.trollbox-top {
+    border: 1px solid purple;
 }
 
-.trollbox-child {
+.trollbox-top img {
+    position: relative;
+    width: 100%;
+    z-index: -1;
+    display: block;
+
+}
+
+.trollbox-top div {
+    position: absolute;
+    top: 80px;
+    margin: 0px 60px;
+    z-index: 1;
+    font-size: 30px;
+    color: white;
+    font-weight: 600;
+}
+
+.trollbox-main {
+    border: 1px solid black;
+}
+
+.trollbox-box {
     border: 0px solid black;
     box-shadow: 1px 0px 5px silver;
     height: 250px;
@@ -20,3 +33,19 @@
     background-color: white;
     margin: 0 auto;
 }
+
+.trollbox-main2 {
+    border: 1px solid black;
+}
+
+.trollbox-box2 {
+    border: 0px solid black;
+    box-shadow: 1px 0px 5px silver;
+    height: 250px;
+    width: 250px;
+    background-color: white;
+    margin: 0 auto;
+}
+
+
+

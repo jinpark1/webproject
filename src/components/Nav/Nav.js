@@ -43,7 +43,7 @@ class Nav extends Component {
                     <ul id="navul">
                         <img src={starImg} alt="star" />
                         <li><a id="nava" href="/">HOME</a></li>
-                        <li><a id="nava" href="/forum">FORUM</a></li>
+                        <li><a id="nava" href="/forum">FORUMS</a></li>
                         <li><a id="nava" href="/trollbox">TROLLBOX</a></li>
                     </ul>
                     <a href="auth"><button>SIGN IN!</button></a>

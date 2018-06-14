@@ -17,7 +17,7 @@ class Register3 extends Component {
             created: 'NOW()',
             admin: false
         };
-
+        console.log(this.props);
         axios.post('/register', newUser)
     }
 

@@ -1,11 +1,16 @@
 import React, { Component } from 'react';
 import './Home.css';
 import backgroundImg from '../../images/starimg1.jpg';
+import backGroundGrey from '../../images/backgroundgrey3.jpg';
 
 class Home extends Component {
     render() {
         return (
             <div className="home-container">
+                <div className="home-top">
+                    <div>HOME</div>
+                    <img src={backGroundGrey} />
+                </div>
                 <section className="home-section1">
                     s simply dummy text of t
                     he priWhat is Lorem What is Lorem Ipsum?snged. It 
