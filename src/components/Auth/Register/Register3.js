@@ -21,7 +21,6 @@ class Register3 extends Component {
         axios.post('/register', newUser)
     }
 
-
     render() {
         return (
             <div className="register-container">

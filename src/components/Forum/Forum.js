@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import './Forum.css';
 import backGroundGrey from '../../images/backgroundgrey3.jpg';
+import Topic from './Topic/Topic';
 
 class Forum extends Component {
     render() {
@@ -14,21 +15,28 @@ class Forum extends Component {
                     <div className="forum-category">
                         <div>All Topics</div>
                         <div>General</div>
-                        <div>Games</div>
-                        <div>Sports</div>
-                        <div></div>
-                        <div>Food</div>
-                        <div>Music</div>
-                        <div>Sports</div>
-                        <div></div>
-                        <div>Feedback</div>
-                        <div>Help</div>
+                        <div>Hardware</div>
+                        <div>Mobile</div>
+                        <div>Operating Systems</div>
+                        <div>Programming</div>
                         <div>Random</div>
-                        <div>OffTopic</div>
-                        <div>OffTopic</div>
+                        <div>Security</div>
+                        <div>Social</div>
+                        <div>Software</div>
+                        <div>Feedback</div>
+                        <div>Support</div>
                     </div>
                     <div className="forum-post">
-                       nting and typesetting industry. Lorem Ipsum has been t
+                        <div className="forum-post-top">
+                            <div>New</div>
+                            <div><button>Create Topic</button></div>
+                        </div>
+                        <div className="forum-post-topic">
+                        <Topic />
+                        </div>
+                        <div className="forum-post-thread"> 
+                            nting and typesetting industry. Lorem Ipsum has been t
+                        </div>
                     </div>
                 </div>    
             </div>

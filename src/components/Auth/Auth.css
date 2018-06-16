@@ -1,6 +1,6 @@
-
 .auth-container {
     background-color: black;
+    /* background-color: white; */
     min-height: 100%;
     width: 100%;
     height: auto;
@@ -55,3 +55,16 @@
     color: white;
 }
 
+.message-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.message {
+    background-color: red;
+    font-size: 15px;
+    margin-left: 30px;
+    color: black;
+    margin: 0 auto;
+}

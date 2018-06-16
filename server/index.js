@@ -41,5 +41,25 @@ app.post('/register', (req, res) => {
     });
 });
 
+app.post('/login', (req, res) => {
+    const db = app.get('db')
+    const { email, password } = req.body;
+    db.login_user({email: email}).then(users => {
+        if(users.length) {
+            bcrypt.compare(password, users[0].password).then(doPasswordsMatch => {
+                if (doPasswordsMatch) {
+                    req.session.user = { username: users[0].username };
+                    res.json({ user: req.session.user });
+                    console.log("I'm IN")
+                } else {
+                    res.status(403).json({ message: 'Wrong Password' });
+                }
+            });
+        } else {
+            res.status(403).json({ message: "That user is not registered" });
+        }
+    });
+});
+
 const port = 4001;
 app.listen(port, () => { console.log(`Server listening on Port ${port}`)} );
