@@ -4,7 +4,23 @@ import backGroundGrey from '../../images/backgroundgrey3.jpg';
 import Topic from './Topic/Topic';
 
 class Forum extends Component {
+    constructor(){
+        super();
+
+        this.state = {
+            showing: false
+        }
+        
+    }
+
+    createTopic = () => {
+        this.setState({
+            showing: !this.state.showing
+        })
+    }
+
     render() {
+        const { showing } = this.state;
         return (
             <div className="forum-container">
                 <div className="forum-top">
@@ -29,10 +45,10 @@ class Forum extends Component {
                     <div className="forum-post">
                         <div className="forum-post-top">
                             <div>New</div>
-                            <div><button>Create Topic</button></div>
+                            <div><button onClick={ () => this.createTopic() }>Create Topic</button></div>
                         </div>
                         <div className="forum-post-topic">
-                        <Topic />
+                            <div style={{ display: (showing ? 'flex' : 'none')}}><Topic /></div>
                         </div>
                         <div className="forum-post-thread"> 
                             nting and typesetting industry. Lorem Ipsum has been t

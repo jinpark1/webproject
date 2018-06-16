@@ -1,0 +1,25 @@
+.topic {
+    background-color: purple;
+    border: 1px solid blue;
+    width: 100%;
+}
+
+.topic input {
+    width: 75%;
+    border: none;
+    margin: 5px 20px;
+}
+
+.topic-body-text {
+    text-align: center;
+    height: 150px;
+}
+
+.topic-button {
+    border: none;
+    margin-left: 10px;
+}
+
+.topic-button button {
+    margin: 10px;
+}
