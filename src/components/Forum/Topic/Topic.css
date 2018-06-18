@@ -11,7 +11,7 @@
 }
 
 .topic-body-text {
-    text-align: center;
+    text-align: justify;
     height: 150px;
 }
 
@@ -22,4 +22,8 @@
 
 .topic-button button {
     margin: 10px;
+}
+
+.topic-category {
+    margin: 5px 20px;
 }

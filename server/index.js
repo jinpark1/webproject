@@ -61,5 +61,11 @@ app.post('/login', (req, res) => {
     });
 });
 
+//for hosting zeit
+const path = require('path')
+app.get('*', (req, res)=>{
+  res.sendFile(path.join(__dirname, '../build/index.html'));
+})
+
 const port = 4001;
 app.listen(port, () => { console.log(`Server listening on Port ${port}`)} );

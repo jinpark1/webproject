@@ -3,11 +3,34 @@ import './Topic.css';
 
 class Topic extends Component {
 
+  handleChange = (value) => {
+    console.log(`selected ${value}`);
+  }
+
   render() {
     return (
       <div className="topic">
-        <div><input placeHolder="Title"></input></div>
-        <div><input className="topic-body-text" placeHolder="Enter body text"></input></div>
+        <div><input placeholder="Title"></input></div>
+        <div><input className="topic-body-text" placeholder="Enter body text"></input></div>
+        <div><select className="topic-category" defaultValue="general" style={{ width: 120 }} onChange={ e => this.handleChange(e.target.value) } >
+                  <option value="general">General</option>
+                  <option value="hardware">Hardware</option>
+                  <option value="mobile">Mobile</option>
+                  <option value="operatingSystems">Operating Systems</option>
+                  <option value="programming">Programming</option>
+                  <option value="random">Random</option>
+                  <option value="security">Security</option>
+                  <option value="social">Social</option>
+                  <option value="software">Software</option>
+                  <option value="feedback">Feedback</option>
+                  <option value="support">Support</option>
+              </select>
+              <select defaultValue="lucy" style={{ width: 120 }} onChange={ e => this.handleChange(e.target.value) }>
+                <option value="jack">Jack</option>
+                <option value="lucy">Lucy</option>
+                <option value="Yiminghe">yiminghe</option>
+              </select>
+        </div>
         <div className="topic-button">
             <button>Post</button>
             <button>Cancel</button>

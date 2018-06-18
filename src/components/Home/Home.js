@@ -12,18 +12,12 @@ class Home extends Component {
                     <img src={backGroundGrey} alt="backGroundGrey" />
                 </div>
                 <section className="home-section1">
-                    s simply dummy text of t
-                    he priWhat is Lorem What is Lorem Ipsum?snged. It 
-                    was popularised in the 1Ipsum?snged. It was popularised in
-                    the 1ntWhat is Lorem Ipsum?snged. It was
-                    popularised in t
+                    Welcome to the forum, feel free to discuss anything.
                 </section>
                 <section className="home-section2">
-                    What is Lorem Ipsum?snged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
                 </section>
                   
                 <section className="home-section3">
-                <content>Hello</content>
                 </section>
                
                 <section className="home-section4"></section>

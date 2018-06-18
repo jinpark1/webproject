@@ -53,6 +53,9 @@ class Forum extends Component {
                         <div className="forum-post-thread"> 
                             nting and typesetting industry. Lorem Ipsum has been t
                         </div>
+                        {/* <div className="forum-post-pagination">
+                            <pagination defaultCurrent={1} total={50} />
+                        </div> */}
                     </div>
                 </div>    
             </div>

@@ -1,6 +1,7 @@
 .home-top img {
     position: relative;
     width: 100%;
+    height: 200px;
     z-index: -1;
     display: block;
 }
@@ -38,7 +39,6 @@
 .home-section5 content {
     margin: 0px auto;
     border: 2px solid purple;
-    
     height: 350px;
 }
 
