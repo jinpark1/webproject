@@ -12,7 +12,8 @@ class Topic extends Component {
       <div className="topic">
         <div><input placeholder="Title"></input></div>
         <div><input className="topic-body-text" placeholder="Enter body text"></input></div>
-        <div><select className="topic-category" defaultValue="general" style={{ width: 120 }} onChange={ e => this.handleChange(e.target.value) } >
+        <div><select className="topic-category" defaultValue="forumCategory" style={{ width: 120 }} onChange={ e => this.handleChange(e.target.value) } >
+                  <option value="forumCategory" disabled>Forum Category</option>
                   <option value="general">General</option>
                   <option value="hardware">Hardware</option>
                   <option value="mobile">Mobile</option>
@@ -26,9 +27,9 @@ class Topic extends Component {
                   <option value="support">Support</option>
               </select>
               <select defaultValue="lucy" style={{ width: 120 }} onChange={ e => this.handleChange(e.target.value) }>
-                <option value="jack">Jack</option>
-                <option value="lucy">Lucy</option>
-                <option value="Yiminghe">yiminghe</option>
+                <option value="categories" disabled>categories</option>
+                <option value="hello">hello</option>
+                <option value="there">there</option>
               </select>
         </div>
         <div className="topic-button">

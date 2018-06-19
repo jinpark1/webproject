@@ -5,7 +5,7 @@ import backGroundGrey from '../../images/backgroundgrey3.jpg';
 class Trollbox extends Component {
     render() {
         return (
-            <div className="trollbox-container">
+            <div className="trollbox">
                 <div className="trollbox-top">
                     <div>TROLLBOX</div>
                     <img src={backGroundGrey} alt="backGroundGrey" />

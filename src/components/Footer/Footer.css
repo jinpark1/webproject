@@ -1,4 +1,4 @@
-.footer-container {
+.footer {
     background-color: #252525;
     display: flex;
     align-items: center;
@@ -14,7 +14,7 @@
     display: flex;
 }
 
-.footer-container img {
+.footer img {
     width: 25px;
     height: 25px;
     

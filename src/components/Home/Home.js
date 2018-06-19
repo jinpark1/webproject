@@ -6,7 +6,7 @@ import backGroundGrey from '../../images/backgroundgrey3.jpg';
 class Home extends Component {
     render() {
         return (
-            <div className="home-container">
+            <div className="home">
                 <div className="home-top">
                     <div>HOME</div>
                     <img src={backGroundGrey} alt="backGroundGrey" />

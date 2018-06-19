@@ -18,7 +18,7 @@ class Register3 extends Component {
             admin: false
         };
         console.log(this.props);
-        axios.post('/register', newUser)
+        axios.post('/api/register', newUser)
     }
 
     render() {

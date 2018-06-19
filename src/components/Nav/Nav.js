@@ -27,7 +27,6 @@ class Nav extends Component {
     render() {
 
         return (
-           
                 <nav id="navbar">
                     <ul>
                         <img src={starImg} alt="star" />
@@ -37,7 +36,6 @@ class Nav extends Component {
                     </ul>
                     <a href="auth"><button>SIGN IN!</button></a>
                 </nav>
-            
         )
     }
 }

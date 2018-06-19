@@ -16,11 +16,15 @@ app.use(session({
     secret: process.env.SESSION_SECRET,
     saveUninitialized: false,
     resave: false,
+    cookie: {
+        //one week
+        maxAge: 60 * 60 * 24 * 7 * 1000
+    }
 }));
 
 app.use(express.static(`${__dirname}/../build`));
 
-app.post('/register', (req, res) => {
+app.post('/api/register', (req, res) => {
     const db = app.get('db');
     const { email, onlineID, password, firstName, lastName, created, admin } = req.body;
     bcrypt.hash(password, saltRounds).then(hashedPassword => {
@@ -41,7 +45,7 @@ app.post('/register', (req, res) => {
     });
 });
 
-app.post('/login', (req, res) => {
+app.post('/api/login', (req, res) => {
     const db = app.get('db')
     const { email, password } = req.body;
     db.login_user({email: email}).then(users => {
@@ -60,6 +64,13 @@ app.post('/login', (req, res) => {
         }
     });
 });
+
+app.get('/api/threads', (req, res) => {
+    const db = app.get('db')
+    db.read_threads()
+    .then( threads => res.status(200).send(threads) )
+    .catch( () => res.status(500).send() );
+})
 
 //for hosting zeit
 const path = require('path')

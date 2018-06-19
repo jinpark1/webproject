@@ -26,7 +26,7 @@ class Auth extends Component {
             email: this.refs.email.value,
             password: this.refs.password.value
         };
-        axios.post('/login', loginUser).then(response => {
+        axios.post('/api/login', loginUser).then(response => {
             console.log(response.data)
             console.log(this.props)
             this.props.history.push('/forum')
@@ -37,7 +37,8 @@ class Auth extends Component {
 
     render() {
         return (
-            <div className="message-container"> <div className="message">{this.state.message}</div>
+            <div className="message-container"> 
+                <div className="message">{this.state.message}</div>
             <div className="auth-container">
                 <div className="auth-signin">
                     <div><img src={starImg} alt="star" /></div>

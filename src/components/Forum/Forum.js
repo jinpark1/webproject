@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import './Forum.css';
 import backGroundGrey from '../../images/backgroundgrey3.jpg';
 import Topic from './Topic/Topic';
+import Thread from './Thread/Thread';
 
 class Forum extends Component {
     constructor(){
@@ -22,7 +23,7 @@ class Forum extends Component {
     render() {
         const { showing } = this.state;
         return (
-            <div className="forum-container">
+            <div className="forum">
                 <div className="forum-top">
                     <div>FORUMS</div>
                     <img src={backGroundGrey} alt="backGroundGrey" />
@@ -52,10 +53,8 @@ class Forum extends Component {
                         </div>
                         <div className="forum-post-thread"> 
                             nting and typesetting industry. Lorem Ipsum has been t
+                            <Thread />
                         </div>
-                        {/* <div className="forum-post-pagination">
-                            <pagination defaultCurrent={1} total={50} />
-                        </div> */}
                     </div>
                 </div>    
             </div>

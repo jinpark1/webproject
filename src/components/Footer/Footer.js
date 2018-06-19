@@ -5,7 +5,7 @@ import starImg from '../../images/star.png';
 class Footer extends Component {
     render() {
         return (
-            <div className="footer-container">
+            <div className="footer">
                <div className="footer-content">
                     <div><img src={starImg} alt="star" /></div>
                     <div><img src={starImg} alt="star" /></div>
