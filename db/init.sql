@@ -5,7 +5,7 @@ drop table if exists users;
 create table if not exists users (
   id serial primary key,
   email text unique,
-  online_id text,
+  online_id text unique,
   password text,
   first_name text,
   last_name text,
@@ -35,8 +35,8 @@ create table if not exists post (
   users_id int REFERENCES users (id)
 ); 
 
-insert into users(email, online_id, password, first_name, last_name, created, admin) VALUES('jin@gmail.com', 'jinpark1', 'abcd1234', 'Jin', 'Park', '1999-01-08 04:05:06', false);
-insert into users(email, online_id, password, first_name, last_name, created, admin) VALUES('jin2@gmail.com', 'jinpark1', 'abcd1234', 'Bo', 'Park', NOW(), false);
+insert into users(email, online_id, password, first_name, last_name, created, admin) VALUES('jin@gmail.com', 'jinpark1', 'abcd1234', 'Jin', 'Park', NOW(), false);
+insert into users(email, online_id, password, first_name, last_name, created, admin) VALUES('jin2@gmail.com', 'jinpark2', 'abcd1234', 'Bo', 'Park', NOW(), false);
 insert into thread(subject, content, category, created, users_id) VALUES('subject goes here', 'content goes here', 'general', NOW(), 2);
 insert into post(content, created, thread_id, users_id) VALUES('content goes here', NOW(), 1, 2);
 select * from users;
@@ -49,6 +49,9 @@ join post on thread.id = post.thread_id;
 
 select * from post
 join users on post.users_id = users.id;
+
+select * from thread
+join users on thread.users_id = users.id;
 
 update users
 set admin = true

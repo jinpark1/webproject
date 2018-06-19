@@ -72,6 +72,21 @@ app.get('/api/threads', (req, res) => {
     .catch( () => res.status(500).send() );
 })
 
+app.post('/api/threads', (req, res) => {
+    const data = req.body;
+    const db = app.get('db');
+    db.create_thread({
+        subject: data.subject,
+        content: data.content,
+        category: data.category,
+        created: data.created
+    }).then( res => {
+        res.json(results);
+    }).catch( error => {
+        res.json({ message: 'Error occured while posting.' })
+    })
+})
+
 //for hosting zeit
 const path = require('path')
 app.get('*', (req, res)=>{

@@ -49,10 +49,9 @@ class Forum extends Component {
                             <div><button onClick={ () => this.createTopic() }>Create Topic</button></div>
                         </div>
                         <div className="forum-post-topic">
-                            <div style={{ display: (showing ? 'flex' : 'none')}}><Topic /></div>
+                            <div style={{ display: (showing ? 'flex' : 'none')}}><Topic toggle={this.createTopic} /></div>
                         </div>
                         <div className="forum-post-thread"> 
-                            nting and typesetting industry. Lorem Ipsum has been t
                             <Thread />
                         </div>
                     </div>

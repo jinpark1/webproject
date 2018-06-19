@@ -22,15 +22,23 @@ class Thread extends Component {
 
     render() {
         console.log('------Thread',this.state.threads)
-        const threads = this.state.threads.map( v => {
+        const time = this.state.threads
+
+        const threads = this.state.threads ? this.state.threads.map( (v, i) => {
             return (
-                <div key={v.id}>
-                    <div>{v.subject}</div>
-                    <div>{v.created}</div>
-                    <div></div>
+                <div className="thread-list" key={i}>
+                    <div className="thread-list-left">
+                        <div className="thread-list-subject">{v.subject}</div>
+                        <div className="thread-list-id">{v.online_id}</div>
+                    </div>
+                    <div className="thread-list-right">
+                        <div className="thread-list-category">{v.category}</div>
+                        <div className="thread-list-created">{v.created}</div>
+                    </div>
                 </div>
             )
-        })
+        }) : null;
+
         return (
             <div className="thread">
                 {threads}

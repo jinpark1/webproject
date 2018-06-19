@@ -1,0 +1,27 @@
+.thread-list {
+    border: 1px solid blue;
+    display: flex;
+    justify-content: space-between;
+    background-color: slategray;
+    margin: 5px;
+}
+
+.thread-list-subject {
+    color: orange;
+    font-size: 30px;
+}
+
+.thread-list-id {
+    color: blue;
+}
+
+.thread-list-left {
+    margin: 10px;
+}
+.thread-list-right {
+    margin: 10px;
+    text-align: right;
+}
+.thread-list-category {
+    color: burlywood;
+}
