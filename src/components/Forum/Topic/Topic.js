@@ -64,11 +64,11 @@ class Topic extends Component {
                   <option value="feedback">Feedback</option>
                   <option value="support">Support</option>
               </select>
-              <select defaultValue="lucy" style={{ width: 120 }} onChange={ e => this.handleChange(e.target.value) }>
+              {/* <select defaultValue="lucy" style={{ width: 120 }} onChange={ e => this.handleChange(e.target.value) }>
                 <option value="categories" disabled>categories</option>
                 <option value="hello">hello</option>
                 <option value="there">there</option>
-              </select>
+              </select> */}
         </div>
         <div className="topic-button">
             <button onClick={this.createTopic}>Post</button>

@@ -87,6 +87,17 @@ app.post('/api/threads', (req, res) => {
     })
 })
 
+app.get('/api/post/:id', (req, res) => {
+    const { id } = req.params;
+    const db = app.get('db');
+    db.read_post({
+        thread_id: id
+    })
+    .then( post => res.status(200).send( post ))
+    .catch( () => res.status(500).send() );
+})
+
+
 //for hosting zeit
 const path = require('path')
 app.get('*', (req, res)=>{

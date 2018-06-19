@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import './Nav.css';
 import starImg from '../../images/star.png';
+import { Link } from 'react-router-dom';
 
 class Nav extends Component {
 
@@ -34,7 +35,7 @@ class Nav extends Component {
                         <li><a id="nava" href="/forum">FORUMS</a></li>
                         <li><a id="nava" href="/trollbox">TROLLBOX</a></li>
                     </ul>
-                    <a href="auth"><button>SIGN IN!</button></a>
+                    <a href="/auth"><button>SIGN IN!</button></a>
                 </nav>
         )
     }

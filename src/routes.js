@@ -8,11 +8,10 @@ import Register from './components/Auth/Register/Register';
 import Register2 from './components/Auth/Register/Register2';
 import Register3 from './components/Auth/Register/Register3';
 import Register4 from './components/Auth/Register/Register4';
-import App from './App';
+import Post from './components/Forum/Post/Post';
 
 export default(
     <Switch>
-        <Route path='/app' component={ App } />
         <Route exact path='/' component={ Home } />
         <Route path='/forum' component={ Forum } />
         <Route path='/auth' component={ Auth } />
@@ -21,5 +20,6 @@ export default(
         <Route path='/register2' component={ Register2 } />
         <Route path='/register3' component={ Register3 } />
         <Route path='/register4' component={ Register4 } />
+        <Route path='/forums/:id' component={ Post } />
     </Switch>
 )

@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import './Thread.css';
 import axios from 'axios';
+import { Link } from 'react-router-dom';
 
 class Thread extends Component {
     constructor(){
@@ -26,7 +27,7 @@ class Thread extends Component {
 
         const threads = this.state.threads ? this.state.threads.map( (v, i) => {
             return (
-                <div className="thread-list" key={i}>
+                <Link to={`/forums/${v.thread_id}`} className="thread-list" key={i}>
                     <div className="thread-list-left">
                         <div className="thread-list-subject">{v.subject}</div>
                         <div className="thread-list-id">{v.online_id}</div>
@@ -35,7 +36,7 @@ class Thread extends Component {
                         <div className="thread-list-category">{v.category}</div>
                         <div className="thread-list-created">{v.created}</div>
                     </div>
-                </div>
+                </Link>
             )
         }) : null;
 

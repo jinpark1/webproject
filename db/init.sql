@@ -53,6 +53,9 @@ join users on post.users_id = users.id;
 select * from thread
 join users on thread.users_id = users.id;
 
+select users.*, thread.id as thread_id, thread.subject from thread
+join users on thread.users_id = users.id;
+
 update users
 set admin = true
 WHERE first_name = 'Jin';
