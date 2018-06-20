@@ -8,22 +8,50 @@ class Thread extends Component {
         super();
 
         this.state = {
-            threads: []
+            threads: [],
+            offset: 0,
+            pageNum: 0,
         }
     }
 
     componentDidMount() {
-        axios.get('/api/threads').then( res => {
-            console.log('---Thread---Res', res)
+        // Gets 10 items at a time 
+        const id = this.state.offset * 10
+       axios.get(`/api/threads/${id}`).then( res => {
+           this.setState({
+               threads: res.data,
+               offset: this.state.offset + 1
+           })
+       }) 
+    }
+
+    updateLatest = () => {
+        const id = (this.state.pageNum - 1) * 10
+        console.log(this.state.offset,this.state.pageNum, id)
+        axios.get(`/api/threads/${id}`).then( res => {
             this.setState({
-                threads: res.data
-            })          
-        })
+                pageNum: this.state.pageNum - 1,
+                offset: this.state.offset - 1,
+                threads: res.data,
+            })
+        }) 
+    }
+
+    updatePrevious = (e) => {
+        const id = this.state.offset * 10
+        axios.get(`/api/threads/${id}`).then( res => {
+            this.setState({
+                pageNum: this.state.pageNum + 1,
+                offset: this.state.offset + 1,
+                threads: res.data,
+            })
+        }) 
     }
 
     render() {
         console.log('------Thread',this.state.threads)
-        const time = this.state.threads
+        console.log('------Thread---offset',this.state.offset)
+        console.log('------Thread---page',this.state.pageNum)
 
         const threads = this.state.threads ? this.state.threads.map( (v, i) => {
             return (
@@ -35,14 +63,21 @@ class Thread extends Component {
                     <div className="thread-list-right">
                         <div className="thread-list-category">{v.category}</div>
                         <div className="thread-list-created">{v.created}</div>
+                        <div className="thread-list-created">{v.thread_id}</div>
                     </div>
                 </Link>
             )
-        }) : null;
+        }) : null; 
 
         return (
             <div className="thread">
-                {threads}
+                <div className="thread-show">
+                    {threads}
+                </div>
+                <div className="thread-pagination">
+                    { this.state.pageNum > 0 ? <button onClick={this.updateLatest} >Latest</button> : null }
+                    <button className="thread-button-right" onClick={this.updatePrevious} >Previous</button>
+                </div>
             </div>
         );
     }

@@ -26,3 +26,14 @@
 .thread-list-category {
     color: burlywood;
 }
+
+.thread-pagination {
+    background-color: purple;
+    margin: 5px;
+    display: flex;
+    justify-content: center;
+}
+
+.thread-pagination button {
+    margin: 5px;
+}

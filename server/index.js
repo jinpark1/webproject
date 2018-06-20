@@ -65,9 +65,20 @@ app.post('/api/login', (req, res) => {
     });
 });
 
-app.get('/api/threads', (req, res) => {
-    const db = app.get('db')
-    db.read_threads()
+// app.get('/api/threads', (req, res) => {
+//     const db = app.get('db')
+//     db.read_threads()
+//     .then( threads => res.status(200).send(threads) )
+//     .catch( () => res.status(500).send() );
+// })
+
+// Call below gets 10 items at a time.
+app.get('/api/threads/:id', (req, res) => {
+    const db = req.app.get('db')
+    const { id } = req.params;
+    db.read_threads10({
+        value: id
+    })
     .then( threads => res.status(200).send(threads) )
     .catch( () => res.status(500).send() );
 })

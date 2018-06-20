@@ -1,3 +1,3 @@
-select users.*, thread.id as thread_id, thread.subject, thread.category from thread
-join users on thread.users_id = users.id
+select thread,*, users.id as users_id from users
+join thread on users.id = thread.users_id
 where thread.id = ${thread_id};
