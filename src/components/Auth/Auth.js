@@ -2,8 +2,9 @@ import React, { Component } from 'react';
 import './Auth.css';
 import starImg from '../../images/star.png';
 import { Link } from 'react-router-dom';
-import backGroundGrey from '../../images/backgroundgrey3.jpg';
 import axios from 'axios';
+import { connect } from 'react-redux';
+import { updateUserData } from '../../ducks/reducer';
 
 
 class Auth extends Component {
@@ -27,9 +28,8 @@ class Auth extends Component {
             password: this.refs.password.value
         };
         axios.post('/api/login', loginUser).then(response => {
-            console.log(response.data)
-            console.log(this.props)
             this.props.history.push('/forum')
+            this.props.updateUserData(response.data.user)
         }).catch((error) => {
             this.setState({ message: this.getMessage(error) })
         })
@@ -54,5 +54,9 @@ class Auth extends Component {
     }
 }
 
-export default Auth;
+const mapDispatchToProps = {
+    updateUserData
+}
+
+export default connect(null, mapDispatchToProps)(Auth);
 

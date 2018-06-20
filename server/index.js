@@ -49,10 +49,12 @@ app.post('/api/login', (req, res) => {
     const db = app.get('db')
     const { email, password } = req.body;
     db.login_user({email: email}).then(users => {
+        console.log('users---', users)
         if(users.length) {
             bcrypt.compare(password, users[0].password).then(doPasswordsMatch => {
                 if (doPasswordsMatch) {
-                    req.session.user = { username: users[0].username };
+                    // req.session.user = { username: users[0].username };
+                    req.session.user =  users[0];
                     res.json({ user: req.session.user });
                     console.log("I'm IN")
                 } else {

@@ -1,4 +1,5 @@
 const initialState = {
+    userData: {},
     email: '',
     password: '',
     passwordRe: '',
@@ -14,6 +15,7 @@ const UPDATE_PASSWORDRE = "UPDATE_PASSWORDRE";
 const UPDATE_ONLINEID = "UPDATE_ONLINEID";
 const UPDATE_FIRSTNAME = "UPDATE_FIRSTNAME";
 const UPDATE_LASTNAME = "UPDATE_LASTNAME";
+const UPDATE_USERDATA = "UPDATE_USERDATA";
 
 export default function reducer(state = initialState, action){
     switch (action.type) {
@@ -29,6 +31,8 @@ export default function reducer(state = initialState, action){
         return {...state, firstName: action.payload};
         case UPDATE_LASTNAME:
         return {...state, lastName: action.payload};
+        case UPDATE_USERDATA:
+        return {...state, userData: action.payload};
         default:
             return state;
     }
@@ -75,3 +79,10 @@ export function updateLastName( lastName ){
         payload: lastName
     }
 }
+
+export function updateUserData( userData ){
+    return {
+        type: UPDATE_USERDATA,
+        payload: userData
+    }
+} 

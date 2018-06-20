@@ -3,7 +3,6 @@ import './Forum.css';
 import backGroundGrey from '../../images/backgroundgrey3.jpg';
 import Topic from './Topic/Topic';
 import Thread from './Thread/Thread';
-import Paginate from './Paginate/Paginate';
 
 class Forum extends Component {
     constructor(){
@@ -49,7 +48,8 @@ class Forum extends Component {
                             <div><button onClick={ () => this.createTopic() }>Create Topic</button></div>
                         </div>
                         <div className="forum-post-topic">
-                            <div style={{ display: (this.state.showing ? 'flex' : 'none')}}><Topic toggle={this.createTopic} /></div>
+                            {/* <div style={{ display: (this.state.showing ? 'flex' : 'none')}}><Topic toggle={this.createTopic} /></div> */}
+                            {this.state.showing && <Topic toggle={this.createTopic}/>}
                         </div>
                         <div className="forum-post-thread"> 
                             <Thread />

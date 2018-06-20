@@ -14,7 +14,7 @@ class Post extends Component {
     }
 
     componentDidMount() {
-        let id = this.props.match.params.id
+        // let id = this.props.match.params.id
       
         axios.get(`/api/post/${ this.props.match.params.id }`).then( res => {
             console.log('---post---Res', res)

@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import './Nav.css';
 import starImg from '../../images/star.png';
-import { Link } from 'react-router-dom';
 
 class Nav extends Component {
 

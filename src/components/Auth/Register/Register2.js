@@ -38,7 +38,6 @@ const mapDispatchToProps = {
     updateOnlineID,
     updateFirstName,
     updateLastName
-
 }
 
 export default connect(mapStateToProps, mapDispatchToProps)(Register2);
