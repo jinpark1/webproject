@@ -9,6 +9,7 @@ class Post extends Component {
 
         this.state = {
             posts: [],
+            showing: false,
         }
     }
 
@@ -23,10 +24,16 @@ class Post extends Component {
         })
     }
 
+    createPost = () => {
+        this.setState({
+            showing: !this.state.showing
+        })
+    }
+
     render() {
-        const hi = this.state.posts[0] ? this.state.posts[0] : 'loading..'
-        console.log('post----5', hi)
-        console.log('post----6', hi.category)
+        const post = this.state.posts[0] ? this.state.posts[0] : 'loading..'
+        console.log('post----5', post)
+        console.log('post----6', post.category)
 
         return (
             <div className="post">
@@ -52,17 +59,19 @@ class Post extends Component {
                     </div>
                     <div className="forum-post">
                         <div className="forum-post-top">
-                            <div>Hello There</div>
+                            <div>{post.category}</div>
+                            <div><button onClick={ () => this.createPost() }>Reply</button></div>
                         </div>
                         <div className="forum-post-topic">
-                            {/* <div style={{ display: (showing ? 'flex' : 'none')}}><Topic toggle={this.createTopic} /></div> */}
+                            {/* <div style={{ display: (this.state.showing ? 'flex' : 'none')}}><Topic toggle={this.createPost} /></div> */}
                         </div>
-                        <div className="forum-post-thread"> 
-                            <div>{hi.online_id}</div>
-                            <div>{hi.category}</div>
-                            <div>{hi.subject}</div>
-                            <div>{hi.content}</div>
-                            <div>{hi.created}</div>
+                        <div className="post-thread"> 
+                            <div className="post-thread-top">
+                                <div className="post-id">{post.online_id}</div>
+                                <div className="post-created">{post.created}</div>
+                            </div>
+                            <div className="post-subject">{post.subject}</div>
+                            <div className="post-content">{post.content}</div>
                         </div>
                     </div>
                 </div>    

@@ -22,7 +22,6 @@ class Forum extends Component {
     }
 
     render() {
-        const { showing } = this.state;
         return (
             <div className="forum">
                 <div className="forum-top">
@@ -50,7 +49,7 @@ class Forum extends Component {
                             <div><button onClick={ () => this.createTopic() }>Create Topic</button></div>
                         </div>
                         <div className="forum-post-topic">
-                            <div style={{ display: (showing ? 'flex' : 'none')}}><Topic toggle={this.createTopic} /></div>
+                            <div style={{ display: (this.state.showing ? 'flex' : 'none')}}><Topic toggle={this.createTopic} /></div>
                         </div>
                         <div className="forum-post-thread"> 
                             <Thread />

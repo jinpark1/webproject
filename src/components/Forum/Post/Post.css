@@ -1,4 +1,28 @@
-.post {
-
+.post-thread {
+    background-color: red;
+    background-color: rgba(88, 93, 102, 0.04);
+    background-color: #181c25;
+    background-color: #232936;
 }
 
+.post-thread-top {
+    display: flex;
+    justify-content: space-between;
+}
+
+.post-id {
+    color: white;
+    padding: 10px;
+    font-size: 1em;
+}
+
+.post-subject {
+    color: white;
+    margin: 10px;
+    font-size: 2em;
+}
+
+.post-content {
+    color: white;
+    margin: 10px;
+}

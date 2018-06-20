@@ -35,9 +35,10 @@ class Thread extends Component {
                 threads: res.data,
             })
         }) 
+        window.scrollTo(0, 0)
     }
 
-    updatePrevious = (e) => {
+    updatePrevious = () => {
         const id = this.state.offset * 10
         axios.get(`/api/threads/${id}`).then( res => {
             this.setState({
@@ -45,7 +46,8 @@ class Thread extends Component {
                 offset: this.state.offset + 1,
                 threads: res.data,
             })
-        }) 
+        })
+        window.scrollTo(0, 0)
     }
 
     render() {
@@ -69,6 +71,7 @@ class Thread extends Component {
             )
         }) : null; 
 
+        console.log('------Thread',this.state.threads.length)
         return (
             <div className="thread">
                 <div className="thread-show">
@@ -76,7 +79,7 @@ class Thread extends Component {
                 </div>
                 <div className="thread-pagination">
                     { this.state.pageNum > 0 ? <button onClick={this.updateLatest} >Latest</button> : null }
-                    <button className="thread-button-right" onClick={this.updatePrevious} >Previous</button>
+                    { this.state.threads.length === 10 ? <button className="thread-button-right" onClick={this.updatePrevious} >Previous</button> : null }
                 </div>
             </div>
         );
