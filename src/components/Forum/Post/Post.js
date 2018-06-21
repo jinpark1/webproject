@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import './Post.css';
 import axios from 'axios';
 import backGroundGrey from '../../../images/backgroundgrey3.jpg';
+import Reply from './Reply/Reply';
 
 class Post extends Component {
     constructor(){
@@ -47,11 +48,10 @@ class Post extends Component {
         console.log('reply----6', reply.category)
         const replys = reply.map( (v, i) => {
             return (
-                <div className="reply-container">
-                    <div>{v.content}</div>
-                    <div>{v.created}</div>
+                <div key={i} className="reply-container">
                     <div>{v.online_id}</div>
-                    <div></div>
+                    <div>{v.created}</div>
+                    <div>{v.content}</div>
                 </div>
             )
         })
@@ -106,7 +106,7 @@ class Post extends Component {
                             {/* <div style={{ display: (this.state.showing ? 'flex' : 'none')}}><Topic toggle={this.createPost} /></div> */}
                         </div>
                         <div className="post-thread"> 
-                            <div className="post-id">{post.id}</div>
+                            <div className="post-id">{post.thread_id}</div>
                             <div className="post-thread-top">
                                 <div className="post-online-id">{post.online_id}</div>
                                 <div className="post-created">{post.created}</div>
@@ -116,9 +116,7 @@ class Post extends Component {
                             <div><button>Reply</button></div>
                         </div>
                         <div className="post-reply">
-                            hello
-                            {reply.content}
-                            {replys}
+                            <Reply id={ this.props.match.params.id } />
                         </div>
                     </div>
                 </div>    
