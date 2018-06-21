@@ -4,25 +4,32 @@ import routes from './routes';
 import Nav from './components/Nav/Nav';
 import Footer from './components/Footer/Footer';
 import { connect } from 'react-redux';
+import axios from 'axios';
+import { updateUserData } from './ducks/reducer';
+import { withRouter } from 'react-router';
 
 class App extends Component {
 
   componentDidMount(){
-    console.log('App.js-----', this.props.userData)
-    console.log('App.js-----', this.props.userData.email)
-    if(this.props.userData.email){
+    if(!this.props.userData.email){
       this.checkSession()
-      console.log('app-js---if-statement', this.props.userData)
     }
   }
 
   checkSession = () => {
-    console.log('App.js----user is offline')
-    console.log('App.js----this.props.userData', this.props.userData)
+    const getSession = async () => {
+      const session = await axios.get('/api/checkSession');
+      if(session.data.user){
+        this.props.updateUserData(session.data.user);
+      }
+    }
+    getSession()
   }
 
-
   render() {
+    console.log('render')
+    console.log('apjsssssssrender---', this.props.userData)
+    console.log('apjsssssssrender---', this.props.userData.email)
     return (
       <div className="App">
         <Nav />
@@ -39,4 +46,8 @@ const mapStateToProps = state => {
   }
 }
 
-export default connect(mapStateToProps)(App);
+const mapDispatchToProps = {
+  updateUserData
+}
+
+export default withRouter(connect(mapStateToProps, mapDispatchToProps)(App));

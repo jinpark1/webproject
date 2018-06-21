@@ -24,6 +24,8 @@ app.use(session({
 
 app.use(express.static(`${__dirname}/../build`));
 
+
+// Registering a user
 app.post('/api/register', (req, res) => {
     const db = app.get('db');
     const { email, onlineID, password, firstName, lastName, created, admin } = req.body;
@@ -45,6 +47,7 @@ app.post('/api/register', (req, res) => {
     });
 });
 
+// Logging in user and sending user data back.
 app.post('/api/login', (req, res) => {
     const db = app.get('db')
     const { email, password } = req.body;
@@ -53,10 +56,9 @@ app.post('/api/login', (req, res) => {
         if(users.length) {
             bcrypt.compare(password, users[0].password).then(doPasswordsMatch => {
                 if (doPasswordsMatch) {
-                    // req.session.user = { username: users[0].username };
                     req.session.user =  users[0];
                     res.json({ user: req.session.user });
-                    console.log("I'm IN")
+                    // console.log("I'm IN")
                 } else {
                     res.status(403).json({ message: 'Wrong Password' });
                 }
@@ -74,7 +76,7 @@ app.post('/api/login', (req, res) => {
 //     .catch( () => res.status(500).send() );
 // })
 
-// Call below gets 10 items at a time.
+// Get 10 thread posts 
 app.get('/api/threads/:id', (req, res) => {
     const db = req.app.get('db')
     const { id } = req.params;
@@ -85,6 +87,7 @@ app.get('/api/threads/:id', (req, res) => {
     .catch( () => res.status(500).send() );
 })
 
+// Posting a thread.
 app.post('/api/threads', (req, res) => {
     const data = req.body;
     const db = app.get('db');
@@ -100,6 +103,7 @@ app.post('/api/threads', (req, res) => {
     })
 })
 
+// Get a thread POST depending on ID.
 app.get('/api/post/:id', (req, res) => {
     const { id } = req.params;
     const db = app.get('db');
@@ -109,6 +113,37 @@ app.get('/api/post/:id', (req, res) => {
     .then( post => res.status(200).send( post ))
     .catch( () => res.status(500).send() );
 })
+
+// Get a thread REPLY depending on ID.
+app.get('/api/reply/:id', (req, res) => {
+    const { id } = req.params;
+    const db = app.get('db');
+    db.read_reply({
+        thread_id: id
+    })
+    .then( post => res.status(200).send( post))
+    .catch( () => res.status(500).send() );
+})
+
+function ensureLoggedIn(req, res, next){
+    if(req.session.user){
+        next();
+    } else {
+        res.status(403).json({ message: 'Please login' });
+    }
+}
+
+//Checks session then stores user data to redux state.
+app.get('/api/checkSession', (req, res) => {
+    console.log(req.session)
+    res.status(200).send(req.session)
+})
+
+app.post('/api/logout', (req, res) => {
+    req.session.destroy();
+    res.status(200).send();
+});
+
 
 
 //for hosting zeit

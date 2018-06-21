@@ -1,8 +1,6 @@
 .post-thread {
-    background-color: red;
-    background-color: rgba(88, 93, 102, 0.04);
-    background-color: #181c25;
     background-color: #232936;
+    border: 1px solid purple;
 }
 
 .post-thread-top {
@@ -12,17 +10,41 @@
 
 .post-id {
     color: white;
-    padding: 10px;
+    padding: 5px 35px;
+    font-size: .75em;
+}
+
+.post-created {
+    color: white;
+    font-size: 1em;
+    margin: 0px 20px;
+}
+
+.post-online-id {
+    color: white;
+    padding: 0px 35px;
     font-size: 1em;
 }
 
 .post-subject {
     color: white;
-    margin: 10px;
+    margin: 0px 35px;
     font-size: 2em;
 }
 
 .post-content {
     color: white;
-    margin: 10px;
+    margin: 10px 35px;
+}
+
+.post-thread button {
+    margin: 10px 35px;
+}
+
+.post-container {
+    margin: 0 10px;
+    margin-top: 10px;
+    width: 65%;
+    margin-bottom: 50px;
+    border: 1px solid orange;
 }

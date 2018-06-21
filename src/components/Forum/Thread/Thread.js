@@ -51,10 +51,6 @@ class Thread extends Component {
     }
 
     render() {
-        console.log('------Thread',this.state.threads)
-        console.log('------Thread---offset',this.state.offset)
-        console.log('------Thread---page',this.state.pageNum)
-
         const threads = this.state.threads ? this.state.threads.map( (v, i) => {
             return (
                 <Link to={`/forums/${v.thread_id}`} className="thread-list" key={i}>
@@ -78,8 +74,8 @@ class Thread extends Component {
                     {threads}
                 </div>
                 <div className="thread-pagination">
-                    { this.state.pageNum > 0 ? <button onClick={this.updateLatest} >Latest</button> : null }
-                    { this.state.threads.length === 10 ? <button className="thread-button-right" onClick={this.updatePrevious} >Previous</button> : null }
+                    { this.state.pageNum > 0 ? <button onClick={this.updateLatest} >Left Arrow</button> : <button disabled>Left Arrow</button> }
+                    { this.state.threads.length === 10 ? <button className="thread-button-right" onClick={this.updatePrevious} >Right Arrow</button> : <button disabled>Right Arrow</button> }
                 </div>
             </div>
         );
