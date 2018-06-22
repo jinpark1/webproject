@@ -1,0 +1,35 @@
+.reply-container {
+    border: 1px solid blue;
+    display: flex;
+    justify-content: space-between;
+}
+
+.reply-container-left {
+    margin: 1em;
+}
+
+.reply-container-right {
+    margin: 1em;
+}
+
+.reply-onlineID {
+    color: white;
+    font-size: 1em;
+}
+
+.reply-created {
+    color: white;
+    font-size: .5em;
+}
+
+.reply-content {
+    color: white;
+    font-size: .75em;
+}
+
+/* <div key={i} className="reply-container">
+<div className="reply-onlineID">{v.online_id}</div>
+<div className="reply-created">{v.created}</div>
+<div className="reply-content">{v.content}</div>
+</div>
+ */

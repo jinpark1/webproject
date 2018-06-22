@@ -9,6 +9,8 @@ import Register2 from './components/Auth/Register/Register2';
 import Register3 from './components/Auth/Register/Register3';
 import Register4 from './components/Auth/Register/Register4';
 import Post from './components/Forum/Post/Post';
+import Setting from './components/Setting/Setting';
+import Profile from './components/Profile/Profile';
 
 export default(
     <Switch>
@@ -21,5 +23,7 @@ export default(
         <Route path='/register3' component={ Register3 } />
         <Route path='/register4' component={ Register4 } />
         <Route path='/forums/:id' component={ Post } />
+        <Route path='/settings' component={ Setting } />
+        <Route path='/profile' component={ Profile } />
     </Switch>
 )

@@ -28,16 +28,20 @@ class Reply extends Component {
         const replys = reply.map( (v, i) => {
             return (
                 <div key={i} className="reply-container">
-                    <div>{v.online_id}</div>
-                    <div>{v.created}</div>
-                    <div>{v.content}</div>
+                    <div className="reply-container-left">
+                        <div className="reply-onlineID">{v.online_id}</div>
+                        <div className="reply-content">{v.content}</div>
+                    </div>
+                    <div className="reply-container-right">
+                        <div className="reply-created">{v.created}</div>
+                    </div>
                 </div>
             )
         })
                 
         return (
             <div className="reply">
-                {replys}
+                <div>{replys}</div>
             </div>
         );
     }

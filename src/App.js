@@ -27,9 +27,6 @@ class App extends Component {
   }
 
   render() {
-    console.log('render')
-    console.log('apjsssssssrender---', this.props.userData)
-    console.log('apjsssssssrender---', this.props.userData.email)
     return (
       <div className="App">
         <Nav />

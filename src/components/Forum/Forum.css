@@ -20,6 +20,8 @@
     border: 1px solid red;
     display: flex;
     justify-content: center;
+    background-color: #232936;
+    background-color: #181c25;
 }
 
 .forum-category {
@@ -28,6 +30,8 @@
     width: 20%;
     height: 250px;
     border: 1px solid purple;
+    background-color: #232936;
+    color: white;
 }
 
 .forum-category div {

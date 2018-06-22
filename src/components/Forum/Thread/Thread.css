@@ -2,18 +2,33 @@
     border: 1px solid blue;
     display: flex;
     justify-content: space-between;
-    background-color: slategray;
+    background-color: #181c25;
+    background-color: #232936;
     margin: 5px;
     text-decoration: none;   
 }
 
 .thread-list-subject {
-    color: orange;
-    font-size: 30px;
+    color: white;
+    font-size: 1.25em;
 }
 
 .thread-list-id {
-    color: blue;
+    color: white;
+}
+
+.thread-list-threadID {
+    color: white;
+    font-size: .5em;
+}
+
+.thread-list-created {
+    color: white;
+    font-size: .5em;
+}
+
+.thread-list-leftID {
+    margin: 10px;
 }
 
 .thread-list-left {
@@ -22,9 +37,11 @@
 .thread-list-right {
     margin: 10px;
     text-align: right;
+    flex: 1
 }
 .thread-list-category {
-    color: burlywood;
+    color: white;
+    font-size: .5em;
 }
 
 .thread-pagination {

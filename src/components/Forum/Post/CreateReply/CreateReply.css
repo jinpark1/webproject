@@ -1,0 +1,30 @@
+.createReply {
+    background-color: purple;
+    border: 1px solid blue;
+    width: 100%;
+}
+
+.createReply input {
+    width: 75%;
+    border: none;
+    margin: 5px 20px;
+}
+
+.createReply-body-text {
+    text-align: justify;
+    height: 50px;
+}
+
+.createReply-button {
+    border: none;
+    margin-left: 10px;
+}
+
+.createReply-button button {
+    margin: 10px;
+}
+
+.createReply-category {
+    margin: 5px 20px;
+}
+

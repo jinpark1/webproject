@@ -10,31 +10,31 @@
 
 .post-id {
     color: white;
-    padding: 5px 35px;
+    padding: .5em 1em;
     font-size: .75em;
 }
 
 .post-created {
     color: white;
     font-size: 1em;
-    margin: 0px 20px;
+    margin: 0em 1em;
 }
 
 .post-online-id {
     color: white;
-    padding: 0px 35px;
+    padding: 0em 1em;
     font-size: 1em;
 }
 
 .post-subject {
     color: white;
-    margin: 0px 35px;
+    margin: 0em 1em;
     font-size: 2em;
 }
 
 .post-content {
     color: white;
-    margin: 10px 35px;
+    margin: .5em 2em;
 }
 
 .post-thread button {

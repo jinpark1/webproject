@@ -54,20 +54,23 @@ class Thread extends Component {
         const threads = this.state.threads ? this.state.threads.map( (v, i) => {
             return (
                 <Link to={`/forums/${v.thread_id}`} className="thread-list" key={i}>
+                    <div className="thread-list-leftID">
+                        <div className="thread-list-threadID">{v.thread_id}</div>
+                    </div> 
                     <div className="thread-list-left">
                         <div className="thread-list-subject">{v.subject}</div>
                         <div className="thread-list-id">{v.online_id}</div>
                     </div>
                     <div className="thread-list-right">
-                        <div className="thread-list-category">{v.category}</div>
                         <div className="thread-list-created">{v.created}</div>
-                        <div className="thread-list-created">{v.thread_id}</div>
+                        <div className="thread-list-category">{v.category}</div>
                     </div>
                 </Link>
             )
         }) : null; 
 
         console.log('------Thread',this.state.threads.length)
+        console.log('------thread', this.state.threads)
         return (
             <div className="thread">
                 <div className="thread-show">

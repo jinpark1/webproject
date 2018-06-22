@@ -1,6 +1,6 @@
 @import url('https://fonts.googleapis.com/css?family=Roboto:700');
 
-  nav {
+nav {
     z-index: 3;
     position: fixed;
     top: 0;
@@ -12,15 +12,28 @@
     padding: 12px 18px;
     box-shadow: 0px 4px 7px #777;
     transition: background-color 0.5s ease-out;
-  }
+}
 
-  nav img {
+nav img {
       width: 25px;
       height: 25px;
       margin: -3px;
-  }
+}
   
-  nav button {
+nav button {
+    position: absolute;
+    top: 0;
+    transform: translateY(50%);
+    right: 0;
+    min-height: 1.5em;
+    min-width: 80px;
+    background-color: white;
+    border: 0px;
+    border-radius: 2px;
+    margin-right: 20px;
+}
+
+nav div {
     position: absolute;
     top: 0;
     transform: translateY(50%);
@@ -32,11 +45,11 @@
     border-radius: 2px;
     margin-right: 20px;
     text-transform: uppercase;
-  }
+}
   
-  nav.scroll {
+nav.scroll {
     background-color: #252525;
-  }
+}
 
 nav ul {
     margin: 0 auto;
@@ -63,4 +76,27 @@ nav ul li a:hover {
 
 #nava.scrollfont {
     color: white;
+}
+
+.nav-menu {
+    border: 2px solid transparent;
+    height: 60px;
+    margin: 0px;
+    padding: 0px;
+    margin-right: 20px;
+}
+
+.nav-menu-button1 {
+    margin: -10px 0px;
+    font-size: .75em;
+}
+
+.nav-menu-button2 {
+    margin: 10px 0px;
+    font-size: .75em;
+}
+
+.nav-menu-button3 {
+    margin: 30px 0px;
+    font-size: .75em;
 }
