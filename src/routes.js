@@ -11,7 +11,8 @@ import Register4 from './components/Auth/Register/Register4';
 import Post from './components/Forum/Post/Post';
 import Setting from './components/Setting/Setting';
 import Profile from './components/Profile/Profile';
-import Support from './components/Forum/Thread/Support';
+import Support from './components/Forum/Support';
+import Feedback from './components/Forum/Feedback';
 
 export default(
     <Switch>
@@ -27,5 +28,6 @@ export default(
         <Route path='/settings' component={ Setting } />
         <Route path='/profile' component={ Profile } />
         <Route path='/forum/support' component={ Support } />
+        <Route path='/forum/feedback' component={ Feedback } />
     </Switch>
 )

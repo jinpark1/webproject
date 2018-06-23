@@ -3,7 +3,7 @@ import './Thread.css';
 import axios from 'axios';
 import { Link } from 'react-router-dom';
 
-class Support extends Component {
+class SupportThread extends Component {
     constructor(){
         super();
 
@@ -15,9 +15,9 @@ class Support extends Component {
     }
 
     componentDidMount() {
-        // Gets 10 items at a time 
+        // Gets 20 items at a time 
         const id = this.state.offset * 20
-       axios.get(`/api/threads/${id}`).then( res => {
+       axios.get(`/api/threads/support/${id}`).then( res => {
            this.setState({
                threads: res.data,
                offset: this.state.offset + 1
@@ -28,7 +28,7 @@ class Support extends Component {
     updateLatest = () => {
         const id = (this.state.pageNum - 1) * 20
         console.log(this.state.offset,this.state.pageNum, id)
-        axios.get(`/api/threads/${id}`).then( res => {
+        axios.get(`/api/threads/support/${id}`).then( res => {
             this.setState({
                 pageNum: this.state.pageNum - 1,
                 offset: this.state.offset - 1,
@@ -40,7 +40,7 @@ class Support extends Component {
 
     updatePrevious = () => {
         const id = this.state.offset * 20
-        axios.get(`/api/threads/${id}`).then( res => {
+        axios.get(`/api/threads/support/${id}`).then( res => {
             this.setState({
                 pageNum: this.state.pageNum + 1,
                 offset: this.state.offset + 1,
@@ -50,32 +50,7 @@ class Support extends Component {
         window.scrollTo(0, 0)
     }
 
-    updateCategory = () => {
-        const id = 0
-        axios.get(`/api/threads/${id}`).then(res => {
-            console.log('threadsss---',res)
-            
-            let arrayStuff = []
-            
-            res.data.map( (v, i) => {
-                // console.log('hellothreaddd3', v.category)
-                if(v.category === 'support'){
-                    arrayStuff.push(v)
-                    // console.log('this.state.threads----', this.state.threads)
-                    // console.log(v)
-                }
-            })
-            console.log('this.state.threads----', arrayStuff)
-
-            this.setState({
-                threads: arrayStuff
-            })
-        })
-    }
-
-
-
-    render() {
+     render() {
         const threads = this.state.threads ? this.state.threads.map( (v, i) => {
             return (
                 <Link to={`/forums/${v.thread_id}`} className="thread-list" key={i}>
@@ -94,14 +69,12 @@ class Support extends Component {
             )
         }) : null; 
 
-        // console.log('------Thread',this.state.threads.length)
         console.log('------thread', this.state.threads)
         console.log('------thread', this.state.threads)
         console.log('-----offset', this.state.offset)
         console.log('-----pageNum', this.state.pageNum)
         return (
             <div className="thread">    
-                hello<button onClick={this.updateCategory}>HELLO THERE</button>
                 <div className="thread-show">
                     {threads}
                 </div>
@@ -114,6 +87,6 @@ class Support extends Component {
     }
 }
 
-export default Support;
+export default SupportThread;
 
 

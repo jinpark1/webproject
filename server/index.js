@@ -70,6 +70,7 @@ app.post('/api/login', (req, res) => {
     });
 });
 
+// get all threads back
 // app.get('/api/threads', (req, res) => {
 //     const db = app.get('db')
 //     db.read_threads()
@@ -88,21 +89,17 @@ app.get('/api/threads/:id', (req, res) => {
     .catch( () => res.status(500).send() );
 })
 
-// Posting a thread.
-app.post('/api/threads', (req, res) => {
+// Posting a thread and getting back a response with newly made post data.
+app.post('/api/threads', (req,res) => {
+    const db = req.app.get('db')
     const data = req.body;
-    const db = app.get('db');
     db.create_thread({
         subject: data.subject,
         content: data.content,
         category: data.category,
         created: data.created,
-        users_id: data.usersID,
-    }).then( res => {
-        res.json(results);
-    }).catch( error => {
-        res.json({ message: 'Error occured while posting.' })
-    })
+        users_id: data.usersID
+    }).then( (post) => res.status(200).send( post ) ).catch( () => res.status(500).send() );
 })
 
 // Get a thread POST depending on ID.
@@ -127,6 +124,37 @@ app.get('/api/reply/:id', (req, res) => {
     .catch( () => res.status(500).send() );
 })
 
+// post reply depnding on thread id.
+app.post('/api/reply', (req, res) => {
+    const data = req.body;
+    const db = req.app.get('db');
+    db.create_reply({
+        content: data.content,
+        created: data.created,
+        thread_id: data.threadID,
+        users_id: data.userID,
+    }).then( post => {
+        res.status(200).send( post );
+        res.json(results);
+    }).catch( error => {
+        res.status(500).send();
+        res.json({ message: 'Error occured while posting.' })
+    })
+})
+
+// Get 20 threads at a time from thread table, category: Support.
+app.get('/api/threads/support/:id', (req, res) => {
+    const db = req.app.get('db')
+    const { id } = req.params;
+    db.read_threads_support({
+        value: id
+    })
+    .then( threads => res.status(200).send(threads) )
+    .catch( () => res.status(500).send() );
+})
+
+
+// Haven't found a good use of this yet
 function ensureLoggedIn(req, res, next){
     if(req.session.user){
         next();
@@ -145,7 +173,6 @@ app.post('/api/logout', (req, res) => {
     req.session.destroy();
     res.status(200).send();
 });
-
 
 
 //for hosting zeit

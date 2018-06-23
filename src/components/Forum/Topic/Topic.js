@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import './Topic.css';
 import axios from 'axios';
 import { connect } from 'react-redux';
+import { withRouter } from 'react-router-dom'
 
 class Topic extends Component {
   constructor(){
@@ -41,9 +42,13 @@ class Topic extends Component {
       created: 'NOW()',
       usersID: this.props.userData.id
     };
-
+    
     axios.post('/api/threads', newTopic).then( res => {
       console.log('Topic-----res', res)
+      console.log('Topic---props', this.props)
+      console.log('this-props-number-topic', res.data[0].id)
+      //requires withRouter to be wrapped on export default.
+      this.props.history.push(`/forums/${res.data[0].id}`)
     })
   }
 
@@ -55,16 +60,16 @@ class Topic extends Component {
         <div><select className="topic-category" defaultValue="forumCategory" style={{ width: 120 }} onChange={ e => this.handleChange(e.target.value) } >
                   <option value="forumCategory" disabled>Forum Category</option>
                   <option value="General">General</option>
-                  <option value="hardware">Hardware</option>
-                  <option value="mobile">Mobile</option>
-                  <option value="operatingSystems">Operating Systems</option>
-                  <option value="programming">Programming</option>
-                  <option value="random">Random</option>
-                  <option value="security">Security</option>
-                  <option value="social">Social</option>
-                  <option value="software">Software</option>
-                  <option value="feedback">Feedback</option>
-                  <option value="support">Support</option>
+                  <option value="Hardware">Hardware</option>
+                  <option value="Mobile">Mobile</option>
+                  <option value="OS">OS</option>
+                  <option value="Code">Code</option>
+                  <option value="Random">Random</option>
+                  <option value="Security">Security</option>
+                  <option value="Social">Social</option>
+                  <option value="Software">Software</option>
+                  <option value="Feedback">Feedback</option>
+                  <option value="Support">Support</option>
               </select>
               {/* <select defaultValue="lucy" style={{ width: 120 }} onChange={ e => this.handleChange(e.target.value) }>
                 <option value="categories" disabled>categories</option>
@@ -87,4 +92,4 @@ const mapStateToProps = state => {
   }
 }
 
-export default connect(mapStateToProps)(Topic);
+export default withRouter(connect(mapStateToProps)(Topic));

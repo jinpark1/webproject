@@ -12,6 +12,7 @@ class Post extends Component {
         this.state = {
             posts: [],
             showing: false,
+            replys: []
         }
     }
 
@@ -24,6 +25,7 @@ class Post extends Component {
                 posts: res.data
             })          
         })
+        console.log('Post--------compdidmount')
     }
 
     createReply = () => {
@@ -32,12 +34,19 @@ class Post extends Component {
         })
     }
 
+    updateReplyPosts = (val) => {
+        console.log('post---------update', val)
+        this.setState({
+            replys: val
+        })
+    }
+
     render() {
         const post = this.state.posts[0] ? this.state.posts[0] : 'loading..'
   
-        console.log('post----5', post)
-        console.log('post----6', post.category)
-  
+        // console.log('post----5', post)
+        // console.log('post----6', post.category)
+        console.log('replys from post comp', this.state.replys)
 
         
         
@@ -81,10 +90,10 @@ class Post extends Component {
                             <div><button onClick={ () => this.createReply() }>Reply</button></div>
                         </div>
                         <div >
-                            {this.state.showing && <CreateReply toggle={ this.createReply } />}
+                            {this.state.showing && <CreateReply getReply={ this.updateReplyPosts } id={ this.props.match.params.id} toggle={ this.createReply } />}
                         </div>
                         <div className="post-reply">
-                            <Reply id={ this.props.match.params.id } />
+                            <Reply newReply={ this.state.replys } id={ this.props.match.params.id } />
                         </div>
                     </div>
                 </div>    
