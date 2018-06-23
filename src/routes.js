@@ -13,6 +13,15 @@ import Setting from './components/Setting/Setting';
 import Profile from './components/Profile/Profile';
 import Support from './components/Forum/Support';
 import Feedback from './components/Forum/Feedback';
+import Software from './components/Forum/Software';
+import Social from './components/Forum/Social';
+import Security from './components/Forum/Security';
+import Random from './components/Forum/Random';
+import OS from './components/Forum/OS';
+import Mobile from './components/Forum/Mobile';
+import Hardware from './components/Forum/Hardware';
+import General from './components/Forum/General';
+import Code from './components/Forum/Code';
 
 export default(
     <Switch>
@@ -29,5 +38,14 @@ export default(
         <Route path='/profile' component={ Profile } />
         <Route path='/forum/support' component={ Support } />
         <Route path='/forum/feedback' component={ Feedback } />
+        <Route path='/forum/software' component={ Software } />
+        <Route path='/forum/social' component={ Social } />
+        <Route path='/forum/security' component={ Security } />
+        <Route path='/forum/random' component={ Random } />
+        <Route path='/forum/os' component={ OS } />
+        <Route path='/forum/mobile' component={ Mobile } />
+        <Route path='/forum/hardware' component={ Hardware } />
+        <Route path='/forum/general' component={ General } />
+        <Route path='/forum/programming' component={ Code } />
     </Switch>
 )

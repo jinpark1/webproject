@@ -6,7 +6,7 @@ import OSThread from './Thread/OSThread';
 import { Link } from 'react-router-dom';
 import { connect } from 'react-redux';
 
-class Random extends Component {
+class OS extends Component {
     constructor(){
         super();
 

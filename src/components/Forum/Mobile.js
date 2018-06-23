@@ -6,7 +6,7 @@ import MobileThread from './Thread/MobileThread';
 import { Link } from 'react-router-dom';
 import { connect } from 'react-redux';
 
-class Random extends Component {
+class Mobile extends Component {
     constructor(){
         super();
 

@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import './Forum.css';
 import backGroundGrey from '../../images/backgroundgrey3.jpg';
 import Topic from './Topic/Topic';
-import Social from './Thread/Social';
+import SocialThread from './Thread/SocialThread';
 import { Link } from 'react-router-dom';
 import { connect } from 'react-redux';
 

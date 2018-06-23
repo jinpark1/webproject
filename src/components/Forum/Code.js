@@ -6,7 +6,7 @@ import CodeThread  from './Thread/CodeThread';
 import { Link } from 'react-router-dom';
 import { connect } from 'react-redux';
 
-class General extends Component {
+class Code extends Component {
     constructor(){
         super();
 

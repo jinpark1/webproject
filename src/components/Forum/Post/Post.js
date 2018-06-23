@@ -81,8 +81,10 @@ class Post extends Component {
                         <div className="post-thread"> 
                             <div className="post-thread-top">
                                 <div className="post-id">{post.thread_id}</div>
-                                <div className="post-created">{post.created}</div>
-                                {/* <div className="post-created">{post.category}</div> */}
+                                <div className="post-created-category">
+                                    <div className="post-created">{post.created}</div>
+                                    <div className="post-created">{post.category}</div>
+                                </div>
                             </div>
                             <div className="post-online-id">{post.online_id}</div>
                             <div className="post-subject">{post.subject}</div>

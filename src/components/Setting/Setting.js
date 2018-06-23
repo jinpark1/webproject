@@ -8,13 +8,22 @@ class Setting extends Component {
 
         return (
             <div className="setting">
-                <div className="setting-box">
+                <div className="setting-top">
                 hello there
                 </div>
-                <div className="setting-box2">
-            
-                    <div>hi</div>
-                    <div>hi2</div>
+                <div className="setting-bottom">
+                    <div className="setting-bottom-left">hi
+                        <div>Online ID</div>
+                        <input></input>
+                        <div>First Name</div>
+                        <input></input>
+                        <div>Last Name</div>
+                        <input></input>
+                        <div>Email</div>
+                        <input></input>
+                    </div>
+
+                    <div className="setting-bottom-right">hi2</div>
                 </div>
             </div>
         )

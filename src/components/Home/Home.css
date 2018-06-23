@@ -32,13 +32,14 @@
 }
 
 .home-section5 {
+    background-color: black;
     display: flex;
 }
 
 
 .home-section5 content {
     margin: 0px auto;
-    border: 2px solid purple;
+    /* border: 2px solid purple; */
     height: 350px;
 }
 
