@@ -6,9 +6,11 @@
 .post-thread-top {
     display: flex;
     justify-content: space-between;
+    /* border: 1px solid darkblue; */
 }
 
 .post-id {
+    /* border: 1px solid orange; */
     color: white;
     padding: .5em 1em;
     font-size: .75em;
@@ -17,12 +19,14 @@
 .post-created {
     color: white;
     font-size: 1em;
-    margin: 0em 1em;
+    margin: .5em 1em;
+    font-size: .75em;
 }
 
 .post-online-id {
+    /* border: 1px solid purple; */
     color: white;
-    padding: 0em 1em;
+    padding: 0em 1.5em;
     font-size: 1em;
 }
 
@@ -35,6 +39,7 @@
 .post-content {
     color: white;
     margin: .5em 2em;
+    border: 1px solid orange;
 }
 
 .post-thread button {
@@ -44,7 +49,7 @@
 .post-container {
     margin: 0 10px;
     margin-top: 10px;
-    width: 65%;
+    width: 73%;
     margin-bottom: 50px;
     border: 1px solid orange;
 }

@@ -3,7 +3,7 @@ import './Thread.css';
 import axios from 'axios';
 import { Link } from 'react-router-dom';
 
-class Thread extends Component {
+class Support extends Component {
     constructor(){
         super();
 
@@ -114,6 +114,6 @@ class Thread extends Component {
     }
 }
 
-export default Thread;
+export default Support;
 
 

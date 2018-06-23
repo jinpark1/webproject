@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import './Topic.css';
 import axios from 'axios';
+import { connect } from 'react-redux';
 
 class Topic extends Component {
   constructor(){
@@ -37,7 +38,8 @@ class Topic extends Component {
       subject: this.state.title,
       content: this.state.content,
       category: this.state.category,
-      created: 'NOW()'
+      created: 'NOW()',
+      usersID: this.props.userData.id
     };
 
     axios.post('/api/threads', newTopic).then( res => {
@@ -52,7 +54,7 @@ class Topic extends Component {
         <div><input className="topic-body-text" placeholder="Enter body text" onChange={ e => this.contentUpdate(e.target.value) }></input></div>
         <div><select className="topic-category" defaultValue="forumCategory" style={{ width: 120 }} onChange={ e => this.handleChange(e.target.value) } >
                   <option value="forumCategory" disabled>Forum Category</option>
-                  <option value="general">General</option>
+                  <option value="General">General</option>
                   <option value="hardware">Hardware</option>
                   <option value="mobile">Mobile</option>
                   <option value="operatingSystems">Operating Systems</option>
@@ -79,4 +81,10 @@ class Topic extends Component {
   }
 }
 
-export default Topic;
+const mapStateToProps = state => {
+  return {
+    userData: state.userData
+  }
+}
+
+export default connect(mapStateToProps)(Topic);

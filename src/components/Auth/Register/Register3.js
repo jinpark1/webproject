@@ -4,8 +4,22 @@ import starImg from '../../../images/star.png';
 import { Link } from 'react-router-dom';
 import { connect } from 'react-redux';
 import axios from 'axios';
+import { updateUserData } from '../../../ducks/reducer';
 
 class Register3 extends Component {
+    constructor(){
+        super();
+        
+        this.state = {
+            message: null,
+        }
+    }
+
+    getMessage = error => error.response
+    ? error.response.data
+      ? error.response.data.message
+      : JSON.stringify(error.response.data, null, 2)
+    : error.message;
 
     registerUser = () => {
         let newUser = {
@@ -17,19 +31,29 @@ class Register3 extends Component {
             created: 'NOW()',
             admin: false
         };
-        console.log(this.props);
-        axios.post('/api/register', newUser)
+        axios.post('/api/register', newUser).then(response => {
+            // console.log(response)
+            console.log('register3-----', this.props)
+            this.props.updateUserData(response.data.user)
+            this.props.history.push('/register4')
+        }).catch((error) => {
+            this.setState({ message: this.getMessage(error) })
+        })
     }
 
     render() {
         return (
+            <div className="message-container">
+                <div className="message">{this.state.message}</div>
             <div className="register-container">
                 <div className="register">
                     <div><img src={starImg} alt="star" /></div>
                     <div className="or">Create Account</div>
-                        <div><Link onClick={ this.registerUser } className="link-button" to='/register4'>Create Account</Link></div>
+                        <div><button onClick={ this.registerUser } className="account-create-button">Create Account</button></div>
+                        {/* <div><Link onClick={ this.registerUser } className="link-button" to='/register4'>Create Account</Link></div> */}
                         <div><Link className="link-button" to='/register2'>Back</Link></div>
                 </div>
+            </div>
             </div>
         );
     }
@@ -45,5 +69,9 @@ const mapStateToProps = state => {
     }
 }
 
-export default connect(mapStateToProps)(Register3);
+const mapDispatchToProps = {
+    updateUserData    
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(Register3);
 

@@ -13,11 +13,24 @@ class Nav extends Component {
             showing: false,
             loggedIn: false,
         }
+
+        console.log("mount")
+     
+
     }
+    
+    // componentwillmount(){
+    //     console.log('mountWill-------')
+    //     if(this.props.userData.email){
+    //         this.setState({
+    //             loggedIn: true,
+    //         })
+    //     }
+    // }
 
     componentDidMount() {
         console.log('hit')
-        // window.addEventListener('scroll', this.handleScroll);
+        window.addEventListener('scroll', this.handleScroll);
 
         if(this.props.userData.email){
             this.setState({
@@ -26,19 +39,16 @@ class Nav extends Component {
         }
 
         console.log('componentdidmount', this.props.userData.email)
-        this.forceUpdate();
+     
     }
 
-    forceUpdate(){
-        if(this.props.userData.email){
+    componentWillReceiveProps(nextProps){
+        console.log('hi-----------', nextProps)
+        if(nextProps.userData.email){
             this.setState({
                 loggedIn: true,
             })
         }
-
-        console.log('componentdidmount2', this.props.userData.email)
-
-
     }
 
     handleScroll = () => {
@@ -65,12 +75,18 @@ class Nav extends Component {
 
     logoutUser = () => {
         axios.post(`/api/logout`).then( res => {
-            this.props.updateUserData(res.data.user)
+            this.setState({
+                loggedIn: false,
+                showing: false
+            })
+            this.props.updateUserData({})
         })
+
     }
 
     render() {
         // console.log('Nav', this.props.userData)
+        
         console.log('1', this.props.userData.online_id)
         const hello = this.props.userData.email ? this.props.userData.email : 'waiting...';
         console.log('2',this.props.userData.email)
@@ -83,10 +99,9 @@ class Nav extends Component {
                         <img src={starImg} alt="star" />
                         <li><a id="nava" href="/">HOME</a></li>
                         <li><a id="nava" href="/forum">FORUMS</a></li>
-                        <li><a id="nava" href="/trollbox">TROLLBOX{this.props.userData.email}</a></li>
+                        <li><a id="nava" href="/trollbox">TROLLBOX</a></li>
                     </ul>
-                    { hello ? <a href="/auth"><button>SIGN IN!</button></a> : <button onClick={ () => this.showMenu() }>Welcome {this.props.userData.online_id}}</button>} 
-                    {/* {!this.state.loggedIn && <button onClick={ () => this.showMenu() }>Welcome Whoever</button>} */}
+                    { !this.state.loggedIn ? <a href="/auth"><button>SIGN IN!</button></a> : <button onClick={ () => this.showMenu() }>Welcome {this.props.userData.online_id}</button>} 
                     {this.state.showing && <div className="nav-menu">
                         <a href="/profile"><button className="nav-menu-button1">Profile</button></a>
                         <a href="/settings"><button className="nav-menu-button2">Settings</button></a>

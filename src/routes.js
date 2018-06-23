@@ -11,11 +11,12 @@ import Register4 from './components/Auth/Register/Register4';
 import Post from './components/Forum/Post/Post';
 import Setting from './components/Setting/Setting';
 import Profile from './components/Profile/Profile';
+import Support from './components/Forum/Thread/Support';
 
 export default(
     <Switch>
         <Route exact path='/' component={ Home } />
-        <Route path='/forum' component={ Forum } />
+        <Route exact path='/forum' component={ Forum } />
         <Route path='/auth' component={ Auth } />
         <Route path='/trollbox' component={ Trollbox } />
         <Route path='/register' component={ Register } />
@@ -25,5 +26,6 @@ export default(
         <Route path='/forums/:id' component={ Post } />
         <Route path='/settings' component={ Setting } />
         <Route path='/profile' component={ Profile } />
+        <Route path='/forum/support' component={ Support } />
     </Switch>
 )

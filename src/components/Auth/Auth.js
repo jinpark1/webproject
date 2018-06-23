@@ -12,7 +12,7 @@ class Auth extends Component {
         super()
 
         this.state = {
-            message: null
+            message: null,
         }
     }
 
@@ -28,8 +28,9 @@ class Auth extends Component {
             password: this.refs.password.value
         };
         axios.post('/api/login', loginUser).then(response => {
-            this.props.history.push('/forum')
+            console.log(response)
             this.props.updateUserData(response.data.user)
+            this.props.history.push('/forum')
         }).catch((error) => {
             this.setState({ message: this.getMessage(error) })
         })

@@ -1,0 +1,38 @@
+.setting {
+    background-color: black;
+    border: 2px solid black;
+    border: 2px solid transparent;
+    /* position: fixed; */
+    /* height: 100%; */
+    /* padding-bottom: 100%; */
+    /* width: 100%; */
+}
+
+.setting-box {
+    height: 200px;
+    width: 50%;
+    border: 1px solid green;
+    background-color: purple;
+    margin-top: 100px;
+    margin: 100px 50px 50px 50px;
+    display: flex;
+}
+
+.setting-box2 {
+    height: 400px;
+    width: 80%;
+    border: 1px solid green;
+    background-color: purple;
+    margin: 50px 50px 50px 50px;
+    display: flex;
+    /* justify-content: space-between; */
+}
+
+.setting-box2 div {
+    height: 350px;
+    width: 350px;
+    background-color: brown;
+    margin: 10px;
+}
+
+

@@ -38,11 +38,12 @@ app.post('/api/register', (req, res) => {
             last_name: lastName,
             created: created,
             admin: admin
-        }).then(() => {
-            req.session.user = { onlineID };
+        }).then((users) => {
+            console.log('index.js---register---', users)
+            req.session.user = users[0];
             res.json({ user: req.session.user })
         }).catch(error => {
-            res.status(500).json({ message: 'Error has occured!' })
+            res.status(500).json({ message: 'The email or online ID is already in use.' })
         });
     });
 });
@@ -76,11 +77,11 @@ app.post('/api/login', (req, res) => {
 //     .catch( () => res.status(500).send() );
 // })
 
-// Get 10 thread posts 
+// Get 20 thread posts 
 app.get('/api/threads/:id', (req, res) => {
     const db = req.app.get('db')
     const { id } = req.params;
-    db.read_threads10({
+    db.read_threads20({
         value: id
     })
     .then( threads => res.status(200).send(threads) )
@@ -95,7 +96,8 @@ app.post('/api/threads', (req, res) => {
         subject: data.subject,
         content: data.content,
         category: data.category,
-        created: data.created
+        created: data.created,
+        users_id: data.usersID,
     }).then( res => {
         res.json(results);
     }).catch( error => {

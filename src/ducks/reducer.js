@@ -81,6 +81,7 @@ export function updateLastName( lastName ){
 }
 
 export function updateUserData( userData ){
+    console.log('reducer', userData)
     return {
         type: UPDATE_USERDATA,
         payload: userData
