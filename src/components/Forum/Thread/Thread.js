@@ -101,7 +101,6 @@ class Thread extends Component {
         console.log('-----pageNum', this.state.pageNum)
         return (
             <div className="thread">    
-                hello<button onClick={this.updateCategory}>HELLO THERE</button>
                 <div className="thread-show">
                     {threads}
                 </div>

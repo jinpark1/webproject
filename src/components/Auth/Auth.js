@@ -29,8 +29,8 @@ class Auth extends Component {
         };
         axios.post('/api/login', loginUser).then(response => {
             console.log(response)
-            this.props.updateUserData(response.data.user)
             this.props.history.push('/forum')
+            this.props.updateUserData(response.data.user)
         }).catch((error) => {
             this.setState({ message: this.getMessage(error) })
         })

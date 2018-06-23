@@ -6,17 +6,18 @@
 .post-thread-top {
     display: flex;
     justify-content: space-between;
-    /* border: 1px solid darkblue; */
+    border: 1px solid darkblue;
 }
 
 .post-id {
-    /* border: 1px solid orange; */
+    border: 1px solid orange;
     color: white;
     padding: .5em 1em;
     font-size: .75em;
 }
 
 .post-created {
+    border: 1px solid blue;
     color: white;
     font-size: 1em;
     margin: .5em 1em;
@@ -24,22 +25,25 @@
 }
 
 .post-online-id {
-    /* border: 1px solid purple; */
+    border: 1px solid purple;
     color: white;
-    padding: 0em 1.5em;
-    font-size: 1em;
+    font-size: 1.5em;
+    margin: 0px 30px 15px 30px;
 }
 
 .post-subject {
+    border: 1px solid red;
     color: white;
-    margin: 0em 1em;
+    margin: 0px 30px 15px 30px;
     font-size: 2em;
 }
 
 .post-content {
     color: white;
-    margin: .5em 2em;
     border: 1px solid orange;
+    margin: 0px 100px 15px 30px;
+    font-size: 15px;
+
 }
 
 .post-thread button {

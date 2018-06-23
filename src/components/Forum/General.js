@@ -2,11 +2,11 @@ import React, { Component } from 'react';
 import './Forum.css';
 import backGroundGrey from '../../images/backgroundgrey3.jpg';
 import Topic from './Topic/Topic';
-import FeedbackThread from './Thread/FeedbackThread';
+import GeneralThread from './Thread/GeneralThread';
 import { Link } from 'react-router-dom';
 import { connect } from 'react-redux';
 
-class Feedback extends Component {
+class General extends Component {
     constructor(){
         super();
 
@@ -40,7 +40,7 @@ class Feedback extends Component {
         return (
             <div className="forum">
                 <div className="forum-top">
-                    <div>FORUMS Feedback</div>
+                    <div>FORUMS General</div>
                     <img src={backGroundGrey} alt="backGroundGrey" />
                 </div>
                 <div className="forum-main">
@@ -67,7 +67,7 @@ class Feedback extends Component {
                             {this.state.showing && <Topic toggle={this.createTopic}/>}
                         </div>
                         <div className="forum-post-thread"> 
-                            <FeedbackThread />
+                            <GeneralThread />
                         </div>
                     </div>
                 </div>    
@@ -82,6 +82,6 @@ const mapStateToProps = state => {
     }
 }
 
-export default connect(mapStateToProps)(Feedback);
+export default connect(mapStateToProps)(General);
 
 

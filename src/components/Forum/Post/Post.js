@@ -59,18 +59,18 @@ class Post extends Component {
                 </div>
                 <div className="forum-main">
                     <div className="forum-category">
-                        <div>All Topics</div>
-                        <div>General</div>
-                        <div>Hardware</div>
-                        <div>Mobile</div>
-                        <div>OS</div>
-                        <div>Code</div>
-                        <div>Random</div>
-                        <div>Security</div>
-                        <div>Social</div>
-                        <div>Software</div>
-                        <div>Feedback</div>
-                        <div>Support</div>
+                        <a href="/forum"><div>All Topics</div></a>
+                        <a href="/forum/general"><div>General</div></a>
+                        <a href="/forum/hardware"><div>Hardware</div></a>
+                        <a href="/forum/mobile"><div>Mobile</div></a>
+                        <a href="/forum/os"><div>OS</div></a>
+                        <a href="/forum/programming"><div>Code</div></a>
+                        <a href="/forum/random"><div>Random</div></a>
+                        <a href="/forum/security"><div>Security</div></a>
+                        <a href="/forum/social"><div>Social</div></a>
+                        <a href="/forum/software"><div>Software</div></a>
+                        <a href="/forum/feedback"><div>Feedback</div></a>
+                        <a href="/forum/support"><div>Support</div></a>
                     </div>
                     <div className="post-container">
                         {/* <div className="forum-post-top">
