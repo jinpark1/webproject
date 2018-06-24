@@ -70,6 +70,41 @@ app.post('/api/login', (req, res) => {
     });
 });
 
+// Edit user information
+app.put('/api/user/:id', (req,res) => {
+    const db = req.app.get('db')
+    const { onlineID, firstName, lastName, email} = req.body;
+    const { id } = req.params;
+    db.edit_user({
+        online_id: onlineID,
+        first_name: firstName,
+        last_name: lastName,
+        email: email,
+        id: id,
+    }).then((users) => {
+        console.log('index.js----edit', users)
+        req.session.user = users[0];
+        res.json({ user: req.session.user })
+    }).catch(error => {
+        res.status(500).json({ message: 'Error occurerd while editing user.'})
+    })
+})
+
+// }).then((users) => {
+//     console.log('index.js---register---', users)
+//     req.session.user = users[0];
+//     res.json({ user: req.session.user })
+// }).catch(error => {
+//     res.status(500).json({ message: 'The email or online ID is already in use.' })
+// });
+// });
+// });
+
+// onlineID: null,
+// firstName: null,
+// lastName: null,
+// email: null
+
 // get all threads back
 // app.get('/api/threads', (req, res) => {
 //     const db = app.get('db')

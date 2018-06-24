@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import './Setting.css';
 import { connect } from 'react-redux';
+import axios from 'axios';
 
 class Setting extends Component {
     constructor(){
@@ -10,9 +11,36 @@ class Setting extends Component {
             onlineID: null,
             firstName: null,
             lastName: null,
-            email: null
-
+            email: null,
+            message: null,
+            updatedOnlineID: null,
         }
+    }
+    
+    getMessage = error => error.response
+    ? error.response.data
+      ? error.response.data.message
+      : JSON.stringify(error.response.data, null, 2)
+    : error.message;
+
+    editUser = () => {
+        let editUser = {
+            onlineID: this.state.onlineID || this.props.userData.online_id,
+            firstName: this.state.firstName || this.props.userData.first_name,
+            lastName: this.state.lastName || this.props.userData.last_name,
+            email: this.state.email || this.props.userData.email,
+        }
+        console.log('edituser---', editUser)
+
+        axios.put(`/api/user/${this.props.userData.id}`, editUser).then( res => {
+            console.log('axios put', res)
+            console.log('axios put', res.data.user.online_id)
+            this.setState({
+                updatedOnlineID: res.data.user.online_id
+            })            
+        }).catch((error) => {
+            this.setState({ message: this.getMessage(error) })
+        })
     }
 
     handleChange = (e) => {
@@ -39,13 +67,14 @@ class Setting extends Component {
     }
 
     render() {
-        console.log(this.props.userData)
-
+        console.log('redux props', this.props.userData)
+        let displayID = this.state.updatedOnlineID ? this.state.updatedOnlineID : this.props.userData.online_id
+        console.log('state', this.state.updatedOnlineID)
         return (
             <div className="setting">
                 <div className="setting-top">
                     <div className="display-settings">SETTINGS</div>
-                    <div className="display-id">{this.props.userData.online_id}</div>
+                    <div className="display-id">{displayID}</div>
                 </div>
                 <div className="setting-bottom">
                     <div className="setting-bottom-left">
@@ -57,7 +86,7 @@ class Setting extends Component {
                         <input placeholder={this.props.userData.last_name} onChange={this.handleChange} name="lastName"></input>
                         <div>Email</div>
                         <input placeholder={this.props.userData.email} onChange={this.handleChange} name="email"></input>
-                        <button>Save</button>
+                        <button onClick={this.editUser}>Save</button>
                         <div>Hi</div>
                     </div>
                     <div className="setting-bottom-right">hi2</div>

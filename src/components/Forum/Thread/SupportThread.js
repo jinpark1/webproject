@@ -69,10 +69,6 @@ class SupportThread extends Component {
             )
         }) : null; 
 
-        console.log('------thread', this.state.threads)
-        console.log('------thread', this.state.threads)
-        console.log('-----offset', this.state.offset)
-        console.log('-----pageNum', this.state.pageNum)
         return (
             <div className="thread">    
                 <div className="thread-show">
