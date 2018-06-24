@@ -4,6 +4,7 @@ import starImg from '../../images/star.png';
 import { connect } from 'react-redux';
 import axios from 'axios';
 import { updateUserData } from '../../ducks/reducer';
+import { withRouter } from 'react-router-dom';
 
 class Nav extends Component {
     constructor(){
@@ -80,6 +81,7 @@ class Nav extends Component {
                 showing: false
             })
             this.props.updateUserData({})
+            this.props.history.push('/forum')
         })
 
     }
@@ -122,6 +124,6 @@ const mapDispatchToProps = {
     updateUserData
 }
 
-export default connect(mapStateToProps, mapDispatchToProps)(Nav);
+export default withRouter(connect(mapStateToProps, mapDispatchToProps)(Nav));
 
 
