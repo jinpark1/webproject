@@ -50,8 +50,8 @@ class CreateReply extends Component {
             <input className="createReply-body-text" placeholder="Enter text" onChange={ e => this.contentUpdate(e.target.value) }></input>
         </div>
         <div className="createReply-button">
-            <button onClick={ () => {this.createTopic(); this.props.toggle()} }>Post</button>
-            <button onClick={this.props.toggle}>Cancel</button>
+            <button className="createReply-button-post" onClick={ () => {this.createTopic(); this.props.toggle()} }>Post</button>
+            <button className="createReply-button-cancel" onClick={this.props.toggle}>Cancel</button>
         </div>
       </div>
     );

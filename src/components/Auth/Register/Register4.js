@@ -10,7 +10,8 @@ class Register4 extends Component {
                 <div className="register">
                     <div><img src={starImg} alt="star" /></div>
                     <div className="or">Create Account</div>
-                        <div><Link className="link-button" to='/forum'>Go to Forum</Link></div>
+                        {/* <div><Link className="link-button" to='/forum'>Go to Forum</Link></div> */}
+                        <a href="/forum" className="link-button-forum"><button className="link-button">Go to Forum</button></a>
                     <div className="or">Account has been created!</div>
                 </div>
             </div>

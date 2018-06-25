@@ -1,23 +1,26 @@
 .post-thread {
     background-color: #232936;
-    border: 1px solid purple;
+    background-color: #181c25;
+    background-color: purple;
+    background-color: #181c25;
+    /* border: 1px solid purple; */
 }
 
 .post-thread-top {
     display: flex;
     justify-content: space-between;
-    border: 1px solid darkblue;
+    /* border: 1px solid darkblue; */
 }
 
 .post-id {
-    border: 1px solid orange;
+    /* border: 1px solid orange; */
     color: white;
     padding: .5em 1em;
     font-size: .75em;
 }
 
 .post-created {
-    border: 1px solid blue;
+    /* border: 1px solid blue; */
     color: white;
     font-size: 1em;
     margin: .5em 1em;
@@ -26,14 +29,15 @@
 }
 
 .post-online-id {
-    border: 1px solid purple;
+    /* border: 1px solid purple; */
     color: white;
     font-size: 1.5em;
     margin: 0px 30px 15px 30px;
 }
 
 .post-subject {
-    border: 1px solid red;
+    /* border: 1px solid red; */
+    /* border-bottom: 2px solid black; */
     color: white;
     margin: 0px 30px 15px 30px;
     font-size: 2em;
@@ -41,7 +45,8 @@
 
 .post-content {
     color: white;
-    border: 1px solid orange;
+    /* border: 1px solid orange; */
+    /* border-bottom: 1px solid orange; */
     margin: 0px 100px 15px 30px;
     font-size: 15px;
 
@@ -49,6 +54,11 @@
 
 .post-thread button {
     margin: 10px 35px;
+    padding: 5px;
+    padding-right: 15px;
+    padding-left: 15px;
+    border: none;
+    background-color: rgba(255,206,31,0.8);    
 }
 
 .post-container {

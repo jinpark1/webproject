@@ -1,7 +1,11 @@
 .createReply {
     background-color: purple;
-    background-color: #232936;
-    border: 1px solid blue;
+    /* border: 1px solid blue; */
+    background-color: #181c25;
+    background-color: #181c25;
+    background-color: #181c25;
+    background-color: purple;
+    background-color: #181c25;
     width: 100%;
 }
 
@@ -12,7 +16,7 @@
 }
 
 .createReply-body-text-container {
-    /* margin-top: 100px; */
+    margin-top: 10px;
 }
 
 .createReply-body-text {
@@ -33,3 +37,19 @@
     margin: 5px 20px;
 }
 
+.createReply-button-post {
+    padding: 5px;
+    padding-right: 15px;
+    padding-left: 15px;
+    border: none;
+    background-color: rgba(255,206,31,0.8);    
+}
+
+.createReply-button-cancel {
+    border: none;
+    padding: 5px;
+    padding-right: 15px;
+    padding-left: 15px;
+    background-color: #232936;;
+    color: grey;
+}
