@@ -60,7 +60,7 @@ class Software extends Component {
                     </div>
                     <div className="forum-post">
                         <div className="forum-post-top">
-                            <div>Stuff</div>
+                            <div></div>
                             { !this.state.loggedIn ? <div></div> : <div><button onClick={ () => this.createTopic() }>Create Topic</button></div> }
                         </div>
                         <div className="forum-post-topic">

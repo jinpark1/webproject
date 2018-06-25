@@ -4,6 +4,7 @@ import axios from 'axios';
 import backGroundGrey from '../../../images/backgroundgrey3.jpg';
 import Reply from './Reply/Reply';
 import CreateReply from './CreateReply/CreateReply';
+import { connect } from 'react-redux';
 
 class Post extends Component {
     constructor(){
@@ -11,14 +12,14 @@ class Post extends Component {
 
         this.state = {
             posts: [],
-            showing: false,
-            replys: []
+            showing: false, 
+            replys: [],
+            loggedIn: false, 
         }
     }
 
     componentDidMount() {
         // let id = this.props.match.params.id
-      
         axios.get(`/api/post/${ this.props.match.params.id }`).then( res => {
             console.log('---post---Res', res)
             this.setState({
@@ -26,7 +27,31 @@ class Post extends Component {
             })          
         })
         console.log('Post--------compdidmount')
+        if(this.props.userData.email){
+            this.setState({
+                loggedIn: true,
+            })
+        }
+        if(!this.props.userData.email){
+            this.setState({
+                loggedIn: false,
+            })
+        }
     }
+
+    // componentWillReceiveProps(nextProps){
+    //     console.log('nextProps-------', nextProps)
+    //     if(nextProps.userData.email){
+    //         this.setState({
+    //             loggedIn: true,
+    //         })
+    //     }
+    //     if(!nextProps.userData.email){
+    //         this.setState({
+    //             loggedIn: false,
+    //         })
+    //     }
+    // }
 
     createReply = () => {
         this.setState({
@@ -42,6 +67,7 @@ class Post extends Component {
     }
 
     render() {
+        console.log('Post-----props', this.props)
         const post = this.state.posts[0] ? this.state.posts[0] : 'loading..'
   
         // console.log('post----5', post)
@@ -88,8 +114,10 @@ class Post extends Component {
                             </div>
                             <div className="post-online-id">{post.online_id}</div>
                             <div className="post-subject">{post.subject}</div>
-                            <div className="post-content">{post.content}</div>
-                            <div><button onClick={ () => this.createReply() }>Reply</button></div>
+                            <div className="post-content"><div dangerouslySetInnerHTML={{__html: post.content}}></div></div>
+                            <div>
+                                { this.state.loggedIn ? <button onClick={ () => this.createReply() }>Reply</button> : null}
+                            </div>
                         </div>
                         <div >
                             {this.state.showing && <CreateReply getReply={ this.updateReplyPosts } id={ this.props.match.params.id} toggle={ this.createReply } />}
@@ -105,6 +133,12 @@ class Post extends Component {
     }
 }
 
-export default Post;
+const mapStateToProps = state => {
+    return {
+        userData: state.userData
+    }
+}
+
+export default connect(mapStateToProps)(Post);
 
 

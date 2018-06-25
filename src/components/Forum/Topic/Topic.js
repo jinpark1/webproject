@@ -3,6 +3,8 @@ import './Topic.css';
 import axios from 'axios';
 import { connect } from 'react-redux';
 import { withRouter } from 'react-router-dom'
+import ReactQuill from 'react-quill';
+import 'react-quill/dist/quill.snow.css'; 
 
 class Topic extends Component {
   constructor(){
@@ -21,9 +23,9 @@ class Topic extends Component {
     })
   }
 
-  contentUpdate = (v) => {
+  contentUpdate = (value) => {
     this.setState({
-      content: v
+      content: value
     })
   }
 
@@ -55,8 +57,8 @@ class Topic extends Component {
   render() {
     return (
       <div className="topic">
-        <div><input placeholder="Title" onChange={ e => this.titleUpdate(e.target.value) }></input></div>
-        <div><input className="topic-body-text" placeholder="Enter body text" onChange={ e => this.contentUpdate(e.target.value) }></input></div>
+        <div><input className="topic-input-title" placeholder=" Title" onChange={ e => this.titleUpdate(e.target.value) }></input></div>
+        <ReactQuill className="topic-body-text-quill" theme="snow" value={this.state.content} onChange={this.contentUpdate} />
         <div><select className="topic-category" defaultValue="forumCategory" onChange={ e => this.handleChange(e.target.value) } >
                   <option value="forumCategory" disabled>Forum Category</option>
                   <option value="General">General</option>

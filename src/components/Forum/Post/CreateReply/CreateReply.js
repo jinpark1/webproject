@@ -46,7 +46,9 @@ class CreateReply extends Component {
     console.log('createReply---redux', this.props.userData.id)
     return (
       <div className="createReply">
-        <div><input className="createReply-body-text" placeholder="Enter body text" onChange={ e => this.contentUpdate(e.target.value) }></input></div>
+        <div className="createReply-body-text-container">
+            <input className="createReply-body-text" placeholder="Enter text" onChange={ e => this.contentUpdate(e.target.value) }></input>
+        </div>
         <div className="createReply-button">
             <button onClick={ () => {this.createTopic(); this.props.toggle()} }>Post</button>
             <button onClick={this.props.toggle}>Cancel</button>

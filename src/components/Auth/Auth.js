@@ -44,7 +44,7 @@ class Auth extends Component {
                 <div className="auth-signin">
                     <div><img src={starImg} alt="star" /></div>
                     <div><input placeholder="Email" ref="email" /></div>
-                    <div><input placeholder="Password" ref="password" /></div>
+                    <div><input type="password" placeholder="Password" ref="password" /></div>
                     <div><button onClick={ this.login }>Log in</button></div>
                     <div className="or">OR</div>
                     <div><button><Link className="auth-register-button" to='/register'>Create New Account</Link></button></div>

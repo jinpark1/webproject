@@ -1,5 +1,6 @@
 .createReply {
     background-color: purple;
+    background-color: #232936;
     border: 1px solid blue;
     width: 100%;
 }
@@ -8,6 +9,10 @@
     width: 75%;
     border: none;
     margin: 5px 20px;
+}
+
+.createReply-body-text-container {
+    /* margin-top: 100px; */
 }
 
 .createReply-body-text {

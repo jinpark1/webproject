@@ -22,6 +22,9 @@
     background-color: white;
     background-color: black;
     background-color: #252525;
+    background-color: #232936;
+    background-color: #181c25;
+    background-color: #14191e;
 }
 
 .forum-main {
@@ -80,7 +83,7 @@
     padding: 10px;
 }
 
-.forum-post-top-button {
+.forum-post-top button {
     border: none;
     background-color: rgba(255,206,31,0.8);
     padding: 15px;
