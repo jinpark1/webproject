@@ -1,7 +1,13 @@
 import React, { Component } from 'react';
 import './Home.css';
 import backgroundImg from '../../images/starimg1.jpg';
-import backGroundGrey from '../../images/backgroundgrey3.jpg';
+import backGroundGrey from '../../images/backgroundgrey.jpg';
+import nodeLogo from '../../images/nodejs5.png';
+import postgresLogo from '../../images/postgresql.png';
+import reactLogo from '../../images/reactlogo.png';
+import javaScript2 from '../../images/logo-javascript.svg';
+import heroku from '../../images/heroku.png';
+import glow from '../../images/blackimageglow.jpg';
 
 class Home extends Component {
     render() {
@@ -9,29 +15,22 @@ class Home extends Component {
             <div className="home">
                 <div className="home-top">
                     <div>HOME</div>
-                    <img src={backGroundGrey} alt="backGroundGrey" />
+                    <img src={glow} alt="backGroundGrey" />
                 </div>
-                <section className="home-section1">
-                    Welcome to the forum, feel free to discuss anything.
-                </section>
-                <section className="home-section2">
-                </section>
-                  
-                <section className="home-section3">
-                </section>
-               
-                <section className="home-section4"></section>
-                
-                <section className="home-section5">
-                    <content>
-                        <div><img src={backgroundImg} alt="starimg1"/></div>
-                        <div><img src={backgroundImg} alt="starimg1"/></div>
-                        <div><img src={backgroundImg} alt="starimg1"/></div>
-                    </content>
-                </section>
-               
-               
-             
+
+                <div className="home-description">
+                    <div className="home-description-text">Welcome to the tech forum, feel free to discuss anything.</div>
+                </div>
+                <div className="home-skill-title">Built with...</div>
+                <div className="home-skill-container">
+                    <div className="home-skill">
+                        <img src={reactLogo} alt="starimg1"/>
+                        <img src={javaScript2} alt="starimg1"/>
+                        <img src={nodeLogo} alt="starimg1"/>
+                        <img src={heroku} alt="starimg1"/>
+                        <img src={postgresLogo} alt="starimg1"/>
+                    </div>
+                </div>             
             </div>
         );
     }

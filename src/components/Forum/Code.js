@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import './Forum.css';
 import backGroundGrey from '../../images/backgroundgrey3.jpg';
+import codeImg from '../../images/code.jpg';
 import Topic from './Topic/Topic';
 import CodeThread  from './Thread/CodeThread';
 import { Link } from 'react-router-dom';
@@ -40,8 +41,8 @@ class Code extends Component {
         return (
             <div className="forum">
                 <div className="forum-top">
-                    <div>FORUMS Programming</div>
-                    <img src={backGroundGrey} alt="backGroundGrey" />
+                    <div>FORUMS Code</div>
+                    <img src={codeImg} alt="backGroundGrey" />
                 </div>
                 <div className="forum-main">
                     <div className="forum-category">
@@ -61,7 +62,7 @@ class Code extends Component {
                     <div className="forum-post">
                         <div className="forum-post-top">
                             <div>Stuff</div>
-                            { !this.state.loggedIn ? <div>Login and button appears</div> : <div><button onClick={ () => this.createTopic() }>Create Topic</button></div> }
+                            { !this.state.loggedIn ? <div></div> : <div><button onClick={ () => this.createTopic() }>Create Topic</button></div> }
                         </div>
                         <div className="forum-post-topic">
                             {this.state.showing && <Topic toggle={this.createTopic}/>}

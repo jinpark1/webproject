@@ -5,6 +5,8 @@ import Topic from './Topic/Topic';
 import Thread from './Thread/Thread';
 import { Link } from 'react-router-dom';
 import { connect } from 'react-redux';
+import glow from '../../images/blackimageglow.jpg';
+
 
 class Forum extends Component {
     constructor(){
@@ -40,7 +42,7 @@ class Forum extends Component {
             <div className="forum">
                 <div className="forum-top">
                     <div>FORUMS</div>
-                    <img src={backGroundGrey} alt="backGroundGrey" />
+                    <img src={glow} alt="backGroundGrey" />
                 </div>
                 <div className="forum-main">
                     <div className="forum-category">
@@ -60,7 +62,7 @@ class Forum extends Component {
                     <div className="forum-post">
                         <div className="forum-post-top">
                             <div></div>
-                            { !this.state.loggedIn ? <div>Login and button appears</div> : <div><button onClick={ () => this.createTopic() }>Create Topic</button></div> }
+                            { !this.state.loggedIn ? <div></div> : <div><button className="forum-post-top-button" onClick={ () => this.createTopic() }>Create Topic</button></div> }
                         </div>
                         <div className="forum-post-topic">
                             {/* <div style={{ display: (this.state.showing ? 'flex' : 'none')}}><Topic toggle={this.createTopic} /></div> */}

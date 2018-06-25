@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import './Forum.css';
 import backGroundGrey from '../../images/backgroundgrey3.jpg';
+import osPhoto from '../../images/osphoto.jpg';
 import Topic from './Topic/Topic';
 import OSThread from './Thread/OSThread';
 import { Link } from 'react-router-dom';
@@ -41,7 +42,7 @@ class OS extends Component {
             <div className="forum">
                 <div className="forum-top">
                     <div>FORUMS Operating Systems</div>
-                    <img src={backGroundGrey} alt="backGroundGrey" />
+                    <img src={osPhoto} alt="backGroundGrey" />
                 </div>
                 <div className="forum-main">
                     <div className="forum-category">
@@ -61,7 +62,7 @@ class OS extends Component {
                     <div className="forum-post">
                         <div className="forum-post-top">
                             <div>Stuff</div>
-                            { !this.state.loggedIn ? <div>Login and button appears</div> : <div><button onClick={ () => this.createTopic() }>Create Topic</button></div> }
+                            { !this.state.loggedIn ? <div></div> : <div><button onClick={ () => this.createTopic() }>Create Topic</button></div> }
                         </div>
                         <div className="forum-post-topic">
                             {this.state.showing && <Topic toggle={this.createTopic}/>}

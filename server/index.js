@@ -90,28 +90,27 @@ app.put('/api/user/:id', (req,res) => {
     })
 })
 
-// }).then((users) => {
-//     console.log('index.js---register---', users)
-//     req.session.user = users[0];
-//     res.json({ user: req.session.user })
-// }).catch(error => {
-//     res.status(500).json({ message: 'The email or online ID is already in use.' })
-// });
-// });
+// Delete user and all threads and replys made by the user.
+app.delete(`/api/deleteuser/:id`, (req, res) => {
+    const db = req.app.get('db')
+    const { id } = req.params;
+    console.log('params', id)
+    db.delete_user({
+        id: id
+    }).then( results => {
+        console.log('results')
+        req.session.destroy();
+        res.json(results);
+    }).catch( error => {
+        res.status(500).json({ message: 'Error occured while deleting user.' })
+    })
+})
+
+// app.post('/api/logout', (req, res) => {
+//     req.session.destroy();
+//     res.status(200).send();
 // });
 
-// onlineID: null,
-// firstName: null,
-// lastName: null,
-// email: null
-
-// get all threads back
-// app.get('/api/threads', (req, res) => {
-//     const db = app.get('db')
-//     db.read_threads()
-//     .then( threads => res.status(200).send(threads) )
-//     .catch( () => res.status(500).send() );
-// })
 
 // Get 20 thread posts 
 app.get('/api/threads/:id', (req, res) => {

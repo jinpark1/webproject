@@ -37,12 +37,13 @@
     background-color: orange;
     display: flex;
     justify-content: space-between;
-    margin-bottom: 300px;
+    /* margin-bottom: 300px; */
 }
 
 .setting-bottom-left {
     width: 49%;
     height: 400px;
+    /* height: 600px; */
     /* height: 60%; */
     background-color: #181d25;
     border: 2px solid burlywood;
@@ -54,7 +55,7 @@
 .setting-bottom-left div {
     border: 1px solid blue;
     width: 90%;
-    margin-top: 20px;
+    margin-top: 30px;
     font-size: 1.25em;
     color: white;
     font-weight: 700;
@@ -70,7 +71,7 @@
 }
 
 .setting-bottom-left button {
-    width: 10%;
+    min-width: 10%;
     height: 10%;
     margin-top: 25px;
     background-color: #232936;
@@ -88,4 +89,15 @@
     border: 2px solid blue
 }
 
+.setting-bottom-delete-container {
+    background-color: blue;
+    margin-bottom: 300px;
+    width: 95%;
+    display: flex;
+    justify-content: center;
+}
 
+.setting-bottom-delete {
+    background-color: blueviolet;
+    padding: 10px;
+}

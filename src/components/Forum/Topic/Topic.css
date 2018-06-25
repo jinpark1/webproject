@@ -1,6 +1,7 @@
 .topic {
-    background-color: purple;
-    border: 1px solid blue;
+    /* background-color: purple; */
+    background-color: #181c25;
+    /* border: 1px solid blue; */
     width: 100%;
 }
 
@@ -8,6 +9,7 @@
     width: 75%;
     border: none;
     margin: 5px 20px;
+    margin-top: 15px;
 }
 
 .topic-body-text {
@@ -22,9 +24,33 @@
 
 .topic-button button {
     margin: 10px;
+    /* background-color: rgba(255,206,31,0.8); */
+}
+
+.topic-button-post {
+    padding: 5px;
+    padding-right: 15px;
+    padding-left: 15px;
+    border: none;
+    background-color: rgba(255,206,31,0.8);    
+}
+
+.topic-button-cancel {
+    border: none;
+    padding: 5px;
+    padding-right: 15px;
+    padding-left: 15px;
+    background-color: #232936;;
+    color: grey;
 }
 
 .topic-category {
     margin: 5px 20px;
+    border: none;
+    background-color: #232936;
+    color: white;
+    padding: 10px;
+    /* font-size: 20px; */
 }
+
 

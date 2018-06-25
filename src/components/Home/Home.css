@@ -4,6 +4,8 @@
     height: 200px;
     z-index: -1;
     display: block;
+    /* border: 1px solid pink; */
+    background-attachment: fixed;
 }
 
 .home-top div {
@@ -14,44 +16,104 @@
     font-size: 30px;
     color: white;
     font-weight: 600;
+    /* border: 1px solid orangered; */
 }
+
+/* .home-top {
+    height: 200px;
+    background-color: pink;
+    background-color: white;
+    background-color: black;
+    background-color: #252525;
+} */
 
 .home {
-    border: 3px solid blue;
+    /* border: 3px solid blue; */
 }
 
-.home-section1 {
+.home-description {
     width: 100%;
     height: 100vh;
     background-color: black;
+    /* border: 1px solid orange; */
+    /* background-color: #252525; */
     background-size: cover;
     justify-content: center;
     color: white;
     font-size: 100px;
     overflow: hidden;
-}
-
-.home-section5 {
-    background-color: black;
     display: flex;
+    justify-content: center;
+    /* border-top: 1px solid white; */
 }
 
+.home-description-text {
+    width: 95%;
+    /* border: 1px solid orange; */
+    /* color: black; */
+    /* background-color: white; */
 
-.home-section5 content {
-    margin: 0px auto;
-    /* border: 2px solid purple; */
-    height: 350px;
 }
 
-.home-section5 div {
-    display: inline;
-    margin: 20px;
+.home-skill-container {
+    background-color: darkcyan;
+    background-color: black;
+    /* background-color: #252525; */
+    display: flex;
+    justify-content: center;
 }
 
-.home-section5 img {
-    width: 300px;
-    height: 300px;
+.home-skill {
+    width: 95%;
+    display: grid;
+    /* grid-template-columns: 15em 15em 15em 15em; */
+    grid-template-columns: 21% 21% 21% 21% 20%;
+    /* grid-template-rows: 21% 20% 20% 20% 20%; */
+    /* grid-auto-rows: 100px; */
+    /* grid-gap: 10px; */
+    background-color: #fff;
+    /* background-color: darkblue; */
+    background-color: black;
+    /* background-color: #252525; */
+    /* width: 95%; */
+    color: #444;
+    /* justify-content: center; */
+    /* border: 3px solid purple; */
+    margin-bottom: 100px;
+    /* display: flex; */
 }
 
+/* grid-template-columns: 12px 12px 12px;
+grid-template-rows: 12px 12px 12px;
+
+grid-column-start: 1;
+grid-column-end: 3;
+
+align-self: start; */
+
+.home-skill img {
+    /* border: 3px solid salmon; */
+    height: 15rem;
+    /* width: 15rem; */
+    width: 80%;
+    object-fit: contain;
+    /* grid-column-start: 1; */
+    /* grid-column-end: 3; */
+    /* background-color: red; */
+    /* background-color: #444; */
+    /* color: #fff; */
+    /* border-radius: 5px; */
+    /* padding: 20px; */
+    /* font-size: 150%; */
+}
+
+.home-skill-title {
+    color: red;
+    font-size: 5em;
+    /* text-align: center; */
+    padding-left: 50px;
+    background-color: black;
+    color: white;
+}
 
 

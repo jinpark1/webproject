@@ -2,6 +2,8 @@ import React, { Component } from 'react';
 import './Setting.css';
 import { connect } from 'react-redux';
 import axios from 'axios';
+import { withRouter } from 'react-router-dom';
+import { updateUserData } from '../../ducks/reducer';
 
 class Setting extends Component {
     constructor(){
@@ -66,6 +68,17 @@ class Setting extends Component {
         }
     }
 
+    deleteUser = () => {
+        axios.delete(`/api/deleteuser/${this.props.userData.id}`).then( res => {
+            console.log('deletedUser')
+            this.props.updateUserData({})
+            this.props.history.push('/')
+        }).catch((error) => {
+            this.setState({ message: this.getMessage(error) })
+        })
+        window.scrollTo(0, 0)
+    }
+
     render() {
         console.log('redux props', this.props.userData)
         let displayID = this.state.updatedOnlineID ? this.state.updatedOnlineID : this.props.userData.online_id
@@ -87,10 +100,15 @@ class Setting extends Component {
                         <div>Email</div>
                         <input placeholder={this.props.userData.email} onChange={this.handleChange} name="email"></input>
                         <button onClick={this.editUser}>Save</button>
-                        <div>Hi</div>
                     </div>
                     <div className="setting-bottom-right">hi2</div>
                 </div>
+                <div className="setting-bottom-delete-container">
+                    <div className="setting-bottom-delete">
+                        <div>Delete user and all threads and replys made by the user.</div>
+                        <button onClick={this.deleteUser}>Click</button>
+                    </div>
+                </div> 
             </div>
         )
     }
@@ -102,6 +120,10 @@ const mapStateToProps = state => {
     }
 } 
 
-export default connect(mapStateToProps)(Setting);
+const mapDispatchToProps = {
+    updateUserData
+}
+
+export default withRouter(connect(mapStateToProps, mapDispatchToProps)(Setting));
 
 

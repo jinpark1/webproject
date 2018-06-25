@@ -57,7 +57,7 @@ class Topic extends Component {
       <div className="topic">
         <div><input placeholder="Title" onChange={ e => this.titleUpdate(e.target.value) }></input></div>
         <div><input className="topic-body-text" placeholder="Enter body text" onChange={ e => this.contentUpdate(e.target.value) }></input></div>
-        <div><select className="topic-category" defaultValue="forumCategory" style={{ width: 120 }} onChange={ e => this.handleChange(e.target.value) } >
+        <div><select className="topic-category" defaultValue="forumCategory" onChange={ e => this.handleChange(e.target.value) } >
                   <option value="forumCategory" disabled>Forum Category</option>
                   <option value="General">General</option>
                   <option value="Hardware">Hardware</option>
@@ -78,8 +78,8 @@ class Topic extends Component {
               </select> */}
         </div>
         <div className="topic-button">
-            <button onClick={this.createTopic}>Post</button>
-            <button onClick={this.props.toggle}>Cancel</button>
+            <button className="topic-button-post" onClick={this.createTopic}>Post</button>
+            <button className="topic-button-cancel" onClick={this.props.toggle}>Cancel</button>
         </div>
       </div>
     );

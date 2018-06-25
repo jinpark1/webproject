@@ -14,6 +14,7 @@
     "nodemailer": "^4.6.7",
     "react": "^16.4.0",
     "react-burger-menu": "^2.5.2",
+    "react-devicon": "^0.1.9",
     "react-dom": "^16.4.0",
     "react-paginate": "^5.2.3",
     "react-paginating": "^1.0.1",

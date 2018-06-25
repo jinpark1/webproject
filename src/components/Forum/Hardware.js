@@ -61,7 +61,7 @@ class Hardware extends Component {
                     <div className="forum-post">
                         <div className="forum-post-top">
                             <div>Stuff</div>
-                            { !this.state.loggedIn ? <div>Login and button appears</div> : <div><button onClick={ () => this.createTopic() }>Create Topic</button></div> }
+                            { !this.state.loggedIn ? <div></div> : <div><button onClick={ () => this.createTopic() }>Create Topic</button></div> }
                         </div>
                         <div className="forum-post-topic">
                             {this.state.showing && <Topic toggle={this.createTopic}/>}
