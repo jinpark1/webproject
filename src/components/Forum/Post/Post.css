@@ -49,7 +49,7 @@
     /* border-bottom: 1px solid orange; */
     margin: 0px 100px 15px 30px;
     font-size: 15px;
-
+    padding-bottom: 15px;
 }
 
 .post-thread button {
@@ -66,5 +66,5 @@
     margin-top: 10px;
     width: 73%;
     margin-bottom: 50px;
-    border: 1px solid orange;
+    /* border: 1px solid orange; */
 }

@@ -39,20 +39,6 @@ class Post extends Component {
         }
     }
 
-    // componentWillReceiveProps(nextProps){
-    //     console.log('nextProps-------', nextProps)
-    //     if(nextProps.userData.email){
-    //         this.setState({
-    //             loggedIn: true,
-    //         })
-    //     }
-    //     if(!nextProps.userData.email){
-    //         this.setState({
-    //             loggedIn: false,
-    //         })
-    //     }
-    // }
-
     createReply = () => {
         this.setState({
             showing: !this.state.showing
@@ -69,13 +55,8 @@ class Post extends Component {
     render() {
         console.log('Post-----props', this.props)
         const post = this.state.posts[0] ? this.state.posts[0] : 'loading..'
-  
-        // console.log('post----5', post)
-        // console.log('post----6', post.category)
         console.log('replys from post comp', this.state.replys)
 
-        
-        
         return (
             <div className="post">
                 <div className="forum">
@@ -116,7 +97,7 @@ class Post extends Component {
                             <div className="post-subject">{post.subject}</div>
                             <div className="post-content"><div dangerouslySetInnerHTML={{__html: post.content}}></div></div>
                             <div>
-                                { this.state.loggedIn ? <button onClick={ () => this.createReply() }>Reply</button> : null}
+                                { this.state.loggedIn ? <button onClick={ () => this.createReply() }>Reply</button> : null }
                             </div>
                         </div>
                         <div >

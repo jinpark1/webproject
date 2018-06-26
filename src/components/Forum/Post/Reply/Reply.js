@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import './Reply.css';
 import axios from 'axios';
+import ReplyChild from './ReplyChild';
 
 class Reply extends Component {
     constructor(){
@@ -35,24 +36,25 @@ class Reply extends Component {
         const reply = this.state.reply ? this.state.reply : 'loading..'
         // console.log('reply----5', reply)
         // console.log('reply----6', reply.category)
-        const replys = reply.map( (v, i) => {
-            return (
-                <div key={i} className="reply-container">
-                    <div className="reply-container-right">
-                        <div className="reply-created">{v.created}</div>
-                        <div className="reply-created">{v.category}</div>
-                    </div>
-                    <div className="reply-container-left">
-                        <div className="reply-onlineID">{v.online_id}</div>
-                        <div className="reply-content">{v.post_content}</div>
-                    </div>
-                </div>
-            )
-        })
+        // const replys = reply.map( (v, i) => {
+        //     return (
+        //         <div key={i} className="reply-container">
+        //             <div className="reply-container-right">
+        //                 <div className="reply-created">{v.created}</div>
+        //                 <div className="reply-created">{v.category}</div>
+        //             </div>
+        //             <div className="reply-container-left">
+        //                 <div className="reply-onlineID">{v.online_id}</div>
+        //                 <div className="reply-content">{v.post_content}</div>
+        //             </div>
+        //         </div>
+        //     )
+        // })
                 
         return (
             <div className="reply">
-                <div>{replys}</div>
+                {/* <div>{replys}</div> */}
+                <ReplyChild replys={reply} />
             </div>
         );
     }
