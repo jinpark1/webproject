@@ -22,6 +22,7 @@ import Mobile from './components/Forum/Mobile';
 import Hardware from './components/Forum/Hardware';
 import General from './components/Forum/General';
 import Code from './components/Forum/Code';
+import Contact from './components/Contact/Contact';
 
 export default(
     <Switch>
@@ -47,5 +48,6 @@ export default(
         <Route path='/forum/hardware' component={ Hardware } />
         <Route path='/forum/general' component={ General } />
         <Route path='/forum/programming' component={ Code } />
+        <Route path='/contact' component={ Contact } />
     </Switch>
 )

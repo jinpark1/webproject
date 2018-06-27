@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import './Forum.css';
-import backGroundGrey from '../../images/backgroundgrey3.jpg';
+import backGroundGrey from '../../images/hardware3.jpg';
 import Topic from './Topic/Topic';
 import HardwareThread from './Thread/HardwareThread';
 import { Link } from 'react-router-dom';
@@ -40,7 +40,7 @@ class Hardware extends Component {
         return (
             <div className="forum">
                 <div className="forum-top">
-                    <div>FORUMS Mobile</div>
+                    <div>FORUMS Hardware</div>
                     <img src={backGroundGrey} alt="backGroundGrey" />
                 </div>
                 <div className="forum-main">

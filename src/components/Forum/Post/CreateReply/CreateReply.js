@@ -27,23 +27,14 @@ class CreateReply extends Component {
       userID: this.props.userData.id
     };
 
-    console.log('createTopic-', this.props.userData.id)
-
     axios.post('/api/reply', newReply).then( res => {
-      console.log('CreateReply-----res', res)
-
         axios.get(`/api/reply/${ this.props.id }`).then( response => {
-          console.log('--post--reply5-----', response.data)
           this.props.getReply(response.data)
         })   
     })
   }
 
   render() {
-    // this.props.match.params.id
-    console.log('createReply---', this.props.id)
-    console.log('createReply---redux', this.props)
-    console.log('createReply---redux', this.props.userData.id)
     return (
       <div className="createReply">
         <div className="createReply-body-text-container">

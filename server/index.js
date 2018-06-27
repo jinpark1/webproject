@@ -324,5 +324,9 @@ app.get('*', (req, res)=>{
   res.sendFile(path.join(__dirname, '../build/index.html'));
 })
 
+//for nodeMailer
+const nodeMailer_controller = require( './controllers/nodeMailer_controller');
+app.post('/api/sendmail', nodeMailer_controller.sendMail);
+
 const port = 4001;
 app.listen(port, () => { console.log(`Server listening on Port ${port}`)} );

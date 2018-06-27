@@ -6,7 +6,19 @@
     display: block;
 }
 
+
+
+
+@font-face {
+    font-family: 'Open Sans';
+    font-style: normal;
+    font-weight: 700;
+    src: local('Open Sans Bold'), local('OpenSans-Bold'), url(https://fonts.gstatic.com/s/opensans/v15/mem5YaGs126MiZpBA-UN7rgOX-hpOqc.woff2) format('woff2');
+    unicode-range: U+0460-052F, U+1C80-1C88, U+20B4, U+2DE0-2DFF, U+A640-A69F, U+FE2E-FE2F;
+  }
+
 .forum-top div {
+    font-family: 'Open Sans', sans-serif;
     position: absolute;
     top: 80px;
     margin: 0px 60px;
@@ -16,7 +28,7 @@
     font-weight: 600;
 }
 
-.forum-top {
+/* .forum-top {
     height: 200px;
     background-color: pink;
     background-color: white;
@@ -25,7 +37,7 @@
     background-color: #232936;
     background-color: #181c25;
     background-color: #14191e;
-}
+} */
 
 .forum-main {
     /* border: 1px solid red; */
