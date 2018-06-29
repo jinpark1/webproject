@@ -7,7 +7,6 @@ import { connect } from 'react-redux';
 import axios from 'axios';
 import { updateUserData } from './ducks/reducer';
 import { withRouter } from 'react-router';
-<link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Ubuntu" />
 
 class App extends Component {
 

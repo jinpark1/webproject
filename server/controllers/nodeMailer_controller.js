@@ -6,25 +6,27 @@ module.exports ={
 
     sendMail: (req, res) => {
         const { name, email, text } = req.body;
-
+        console.log(req.body)
         let transporter = nodemailer.createTransport({
-            service: "gmail",
+            host: 'smtp.gmail.com',
             port: 465,
             secure: true, // true for 465, false for other ports
             auth: {
-                user: process.env.email.EMAIL, // generated ethereal user
-                pass: process.env.email.PASSWORD // generated ethereal password
+                user: process.env.ADMIN_EMAIL, // generated ethereal user
+                // user: process.env.emailNode_EMAIL, // generated ethereal user
+                pass: process.env.ADMIN_PASSWORD // generated ethereal password
+                // pass: process.env.emailNode_PASSWORD // generated ethereal password
             }
         });
 
         // setup email data with unicode symbols
         let mailOptions = {
-            from: process.env.emailNode.EMAIL, // sender address
-            to: process.env.email.EMAIL, // list of recei'vers
+            from: process.env.ADMIN_EMAIL, // sender address
+            to: process.env.ADMIN_EMAIL, // list of recei'vers
             subject: 'From Forums Website', // Subject line
             text: 'Message', //in text body
             html: `<div>
-                        ${message}
+                        ${text}
                     </div>` // html body
         }
 

@@ -1,51 +1,128 @@
+ .trollbox{
+     background-color: red;
+     background-image: url("../../images/4kwall.jpg");
+     /* Center and scale the image nicely */
+     background-position: center;
+     background-repeat: no-repeat;
+     background-size: cover;
+ }
 
-.trollbox-top {
-    border: 1px solid purple;
-}
+ .trollbox-container-flex {
+     background-color: red;
+     border: 1px solid orange;
+     display: flex;
+     flex-direction: column;
+     background-color: transparent;
+ }
 
-.trollbox-top img {
-    position: relative;
-    width: 100%;
+ .trollbox-top-container {
+    border: 1px solid red;
     height: 200px;
-    z-index: -1;
-    display: block;
+    display: flex;
+    justify-content: center;
 }
 
-.trollbox-top div {
-    position: absolute;
-    top: 80px;
-    margin: 0px 60px;
-    z-index: 1;
-    font-size: 30px;
-    color: white;
-    font-weight: 600;
+.trollbox-top-child {
+    border: 1px solid red;
+    height: 200px;
+    background-color: transparent;
+    width: 90%;
 }
 
-.trollbox-main {
-    border: 1px solid black;
+.trollbox-one-container {
+    border: 1px solid red;
+    height: 200px;
+    display: flex;
+    justify-content: center;
 }
 
-.trollbox-box {
-    border: 0px solid black;
-    box-shadow: 1px 0px 5px silver;
-    height: 250px;
-    width: 250px;
-    background-color: white;
-    margin: 0 auto;
+.trollbox-one-child {
+    border: 1px solid red;
+    height: 200px;
+    background-color: blue;
+    width: 90%;
 }
 
-.trollbox-main2 {
-    border: 1px solid black;
+.trollbox-two-container {
+    height: 200px;
+    background-color: darkblue;
+    display: flex;
+    justify-content: center;
 }
 
-.trollbox-box2 {
-    border: 0px solid black;
-    box-shadow: 1px 0px 5px silver;
-    height: 250px;
-    width: 250px;
-    background-color: white;
-    margin: 0 auto;
+.trollbox-two-child {
+    border: 1px solid red;
+    height: 200px;
+    background-color: blue;
+    width: 90%;
 }
 
+.trollbox-three-container {
+    height: 200px;
+    background-color: burlywood;
+    display: flex;
+    justify-content: center;
+}
 
+.trollbox-three-child {
+    border: 1px solid red;
+    height: 200px;
+    background-color: blue;
+    width: 90%;
+}
 
+.trollbox-four-container {
+    height: 200px;
+    background-color: darkgoldenrod;
+    display: flex;
+    justify-content: center;
+}
+
+.trollbox-four-child {
+    border: 1px solid red;
+    height: 200px;
+    background-color: blue;
+    width: 90%;
+}
+
+.trollbox-five-container {
+    height: 200px;
+    background-color: darkgoldenrod;
+    display: flex;
+    justify-content: center;
+}
+
+.trollbox-five-child {
+    border: 1px solid red;
+    height: 200px;
+    background-color: blue;
+    width: 90%;
+}
+
+.trollbox-six-container {
+    height: 200px;
+    background-color: darkgoldenrod;
+    display: flex;
+    justify-content: center;
+}
+
+.trollbox-six-child {
+    border: 1px solid red;
+    height: 200px;
+    background-color: blue;
+    width: 90%;
+}
+
+.trollbox-bottom-container {
+    height: 200px;
+    background-color: transparent;
+    display: flex;
+    justify-content: center;
+}
+
+.trollbox-bottom-child {
+    border: 1px solid red;
+    height: 200px;
+    background-color: transparent;
+    width: 90%;
+}

@@ -17,12 +17,6 @@ class Contact extends Component {
             updatedOnlineID: null,
         }
     }
-    
-    getMessage = error => error.response
-    ? error.response.data
-      ? error.response.data.message
-      : JSON.stringify(error.response.data, null, 2)
-    : error.message;
 
     editUser = () => {
         let editUser = {
@@ -67,15 +61,16 @@ class Contact extends Component {
         }
     }
 
-    deleteUser = () => {
-        axios.delete(`/api/deleteuser/${this.props.userData.id}`).then( res => {
-            console.log('deletedUser')
-            this.props.updateUserData({})
-            this.props.history.push('/')
-        }).catch((error) => {
-            this.setState({ message: this.getMessage(error) })
+    handleSubmit = (e) => {
+        e.preventDefault();
+        const { firstName, lastName, email, text } = this.state
+        axios.post('/api/sendmail', {
+            firstName,
+            email,
+            text: lastName,
+        }).then( res => {
+            console.log( 'mail', JSON.stringify( res.data ) )
         })
-        window.scrollTo(0, 0)
     }
 
     render() {
@@ -92,14 +87,14 @@ class Contact extends Component {
                 <div className="setting-bottom">
                     <div className="setting-bottom-left">
                         <div>Online ID</div>
-                        <input placeholder={this.props.userData.online_id} onChange={this.handleChange} name="onlineID"></input>
+                        <input placeholder={this.props.userData.online_id} onChange={this.handleChange} name="onlineID" disabled></input>
                         <div>First Name</div>
                         <input placeholder={this.props.userData.first_name} onChange={this.handleChange} name="firstName"></input>
                         <div>Last Name</div>
                         <input placeholder={this.props.userData.last_name} onChange={this.handleChange} name="lastName"></input>
-                        <div>Email</div>
-                        <input placeholder={this.props.userData.email} onChange={this.handleChange} name="email"></input>
-                        <button onClick={this.editUser}>Save</button>
+                        <div>Send Message</div>
+                        <input placeholder="Enter Message" onChange={this.handleChange} name="email"></input>
+                        <button onClick={this.handleSubmit}>Send</button>
                     </div>
                 </div>
             </div>

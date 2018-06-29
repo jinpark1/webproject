@@ -1,0 +1,128 @@
+.trollbox{
+    background-color: red;
+    background-image: url("../../images/4kwall.jpg");
+    /* Center and scale the image nicely */
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.trollbox-container-flex {
+    background-color: red;
+    border: 1px solid orange;
+    display: flex;
+    flex-direction: column;
+    background-color: transparent;
+}
+
+.trollbox-top-container {
+   border: 1px solid red;
+   height: 200px;
+   display: flex;
+   justify-content: center;
+}
+
+.trollbox-top-child {
+   border: 1px solid red;
+   height: 200px;
+   background-color: transparent;
+   width: 90%;
+}
+
+.trollbox-one-container {
+   border: 1px solid red;
+   height: 200px;
+   display: flex;
+   justify-content: center;
+}
+
+.trollbox-one-child {
+   border: 1px solid red;
+   height: 200px;
+   background-color: blue;
+   width: 90%;
+}
+
+.trollbox-two-container {
+   height: 200px;
+   background-color: darkblue;
+   display: flex;
+   justify-content: center;
+}
+
+.trollbox-two-child {
+   border: 1px solid red;
+   height: 200px;
+   background-color: blue;
+   width: 90%;
+}
+
+.trollbox-three-container {
+   height: 200px;
+   background-color: burlywood;
+   display: flex;
+   justify-content: center;
+}
+
+.trollbox-three-child {
+   border: 1px solid red;
+   height: 200px;
+   background-color: blue;
+   width: 90%;
+}
+
+.trollbox-four-container {
+   height: 200px;
+   background-color: darkgoldenrod;
+   display: flex;
+   justify-content: center;
+}
+
+.trollbox-four-child {
+   border: 1px solid red;
+   height: 200px;
+   background-color: blue;
+   width: 90%;
+}
+
+.trollbox-five-container {
+   height: 200px;
+   background-color: darkgoldenrod;
+   display: flex;
+   justify-content: center;
+}
+
+.trollbox-five-child {
+   border: 1px solid red;
+   height: 200px;
+   background-color: blue;
+   width: 90%;
+}
+
+.trollbox-six-container {
+   height: 200px;
+   background-color: darkgoldenrod;
+   display: flex;
+   justify-content: center;
+}
+
+.trollbox-six-child {
+   border: 1px solid red;
+   height: 200px;
+   background-color: blue;
+   width: 90%;
+}
+
+.trollbox-bottom-container {
+   height: 200px;
+   background-color: transparent;
+   display: flex;
+   justify-content: center;
+}
+
+.trollbox-bottom-child {
+   border: 1px solid red;
+   height: 200px;
+   background-color: transparent;
+   width: 90%;
+}

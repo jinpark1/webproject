@@ -22,7 +22,7 @@ app.use(session({
     }
 }));
 
-app.use(express.static(`${__dirname}/../build`));
+// app.use(express.static(`${__dirname}/../build`));
 
 
 // Registering a user
@@ -73,7 +73,7 @@ app.post('/api/login', (req, res) => {
 // Edit user information
 app.put('/api/user/:id', (req,res) => {
     const db = req.app.get('db')
-    const { onlineID, firstName, lastName, email} = req.body;
+    const { onlineID, firstName, lastName, email, profilePhoto } = req.body;
     const { id } = req.params;
     db.edit_user({
         online_id: onlineID,
@@ -81,6 +81,7 @@ app.put('/api/user/:id', (req,res) => {
         last_name: lastName,
         email: email,
         id: id,
+        profile_photo: profilePhoto
     }).then((users) => {
         console.log('index.js----edit', users)
         req.session.user = users[0];
@@ -318,15 +319,61 @@ app.post('/api/logout', (req, res) => {
 });
 
 
-//for hosting zeit
-const path = require('path')
-app.get('*', (req, res)=>{
-  res.sendFile(path.join(__dirname, '../build/index.html'));
-})
 
 //for nodeMailer
 const nodeMailer_controller = require( './controllers/nodeMailer_controller');
 app.post('/api/sendmail', nodeMailer_controller.sendMail);
 
+//for Cloudinary image upload
+const cloudinary_controller = require('./controllers/cloudinary_controller');
+app.get('/api/cloud', cloudinary_controller.upload);
+
+
+// for hosting zeit
+// const path = require('path')
+// app.get('*', (req, res)=>{
+//   res.sendFile(path.join(__dirname, '../build/index.html'));
+// })
+
 const port = 4001;
-app.listen(port, () => { console.log(`Server listening on Port ${port}`)} );
+const server = app.listen(port, () => { console.log(`Server listening on Port ${port}`)} );
+
+// socket io
+
+var socket = require('socket.io');
+var messages = [];
+
+
+const io = socket(server);
+
+
+//sending and receiving messages
+io.on('connection', (socket) => {
+    console.log(socket.id);
+    console.log("user connected")
+    socket.on('SEND_MESSAGE', function(data){
+        console.log(data)
+        messages.push(data)
+        io.emit('RECEIVE_MESSAGE', messages);
+    })
+});
+
+io.on('connection', (socket) => {
+    console.log("second socket connected")
+    socket.on('SEND_MESSAGE', function(data){
+        console.log(data)
+        messages.push(data)
+        io.emit('RECEIVE_MESSAGE', messages);
+    })
+});
+
+io.on('connection', (socket) => {
+    console.log("third socket connected")
+    socket.on('SEND_MESSAGE', function(data){
+        console.log(data)
+        messages.push(data)
+        io.emit('RECEIVE_MESSAGE', messages);
+    })
+});
+
+// io.on()

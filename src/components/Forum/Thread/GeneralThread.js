@@ -51,6 +51,7 @@ class GeneralThread extends Component {
     }
 
      render() {
+         console.log('------display threads', this.state.threads ? this.state.threads : 0)
         const threads = this.state.threads ? this.state.threads.map( (v, i) => {
             return (
                 <Link to={`/forums/${v.thread_id}`} className="thread-list" key={i}>
