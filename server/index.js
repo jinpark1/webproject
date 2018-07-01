@@ -342,10 +342,20 @@ const server = app.listen(port, () => { console.log(`Server listening on Port ${
 
 var socket = require('socket.io');
 var messages = [];
-
+var usersSignedIn = [];
 
 const io = socket(server);
 
+
+//displaying users signed in to chat.
+io.on('connection', (socket) => {
+    console.log('Users List')
+    socket.on('SEND_USER', function(data){
+        console.log('Users-data', data)
+        usersSignedIn.push(data)
+        io.emit('RECEIVE_USER', usersSignedIn);
+    })
+});
 
 //sending and receiving messages
 io.on('connection', (socket) => {
@@ -358,22 +368,23 @@ io.on('connection', (socket) => {
     })
 });
 
-io.on('connection', (socket) => {
-    console.log("second socket connected")
-    socket.on('SEND_MESSAGE', function(data){
-        console.log(data)
-        messages.push(data)
-        io.emit('RECEIVE_MESSAGE', messages);
-    })
-});
+// io.on('connection', (socket) => {
+//     console.log("second socket connected")
+//     socket.on('SEND_MESSAGE', function(data){
+//         messages.push(data)
+//         io.emit('RECEIVE_MESSAGE', messages);
+//     })
+// });
 
-io.on('connection', (socket) => {
-    console.log("third socket connected")
-    socket.on('SEND_MESSAGE', function(data){
-        console.log(data)
-        messages.push(data)
-        io.emit('RECEIVE_MESSAGE', messages);
-    })
-});
+// io.on('connection', (socket) => {
+//     console.log("third socket connected")
+//     socket.on('SEND_MESSAGE', function(data){
+//         console.log(data)
+//         messages.push(data)
+//         io.emit('RECEIVE_MESSAGE', messages);
+//     })
+// });
+
+
 
 // io.on()

@@ -6,30 +6,38 @@ class Chat extends React.Component{
         super(props);
 
         this.state = {
-            // username: '',
-            // message: '',
-            messages: []
+            username: '',
+            message: '',
+            messages: [],
+            usersSignedIn: []
         };
 
         this.socket = io();
 
         this.socket.on('RECEIVE_MESSAGE', function(data){
-            console.log(data)
+            console.log('receive message', data)
             addMessage(data);
         });
 
+       this.socket.on('RECEIVE_USER', function(data){
+           console.log('RECEIVE User----', data)
+           usersSignedIn(data);
+           
+       });
+        
         const addMessage = data => {
-            
             let copy = []
             copy.push(...data)
-            // copy.push(data[0])
-            console.log('data--copy', copy)
-            // var hello = data.split("")
             this.setState({messages: copy});
-            console.log('hello messages state-------',this.state.messages)
-            // this.setState({messages: copy});
-            // console.log(hello, 'state-message', this.state.messages);
         };
+
+        const usersSignedIn = data => {
+            console.log('usersSignedin----------', data)
+            let copy = []
+            copy.push(...data)
+            console.log('usersignedin copy--', copy)
+            this.setState({usersSignedIn: copy})
+        }
 
         this.sendMessage = ev => {
             ev.preventDefault();
@@ -39,10 +47,17 @@ class Chat extends React.Component{
             })
             this.setState({message: ''});
         }
-    }
-    render(){
-        console.log('messages state---',this.state.messages)
 
+        this.sendUser = ev => {
+            ev.preventDefault();
+            this.socket.emit('SEND_USER', {
+                user: this.state.username,
+            })
+            // this.setState({usersSignedIn: ''});
+        }
+    }
+
+    render(){
         return (
             <div className="container">
                 <div className="row">
@@ -59,7 +74,6 @@ class Chat extends React.Component{
                                         )
                                     })} 
                                 </div>
-
                             </div>
                             <div className="card-footer">
                                 <input type="text" placeholder="Username" value={this.state.username} onChange={ev => this.setState({username: ev.target.value})} className="form-control"/>
@@ -68,6 +82,16 @@ class Chat extends React.Component{
                                 <br/>
                                 <button onClick={this.sendMessage} className="btn btn-primary form-control">Send</button>
                             </div>
+                            {/* <div>Users Signed In: {this.state.usersSignedIn}</div> */}
+                            <div>
+                                {this.state.usersSignedIn.map((users, i) => {
+                                    return (
+                                        <div>{users.user}</div>
+
+                                   )
+                                })}
+                            </div>
+                            <button onClick={this.sendUser}>Users Signed In</button>
                         </div>
                     </div>
                 </div>

@@ -5,7 +5,6 @@ import axios from 'axios';
 import { withRouter } from 'react-router-dom';
 import { updateUserData } from '../../ducks/reducer';
 
-
 const CLOUDINARY_UPLOAD_URL = 'https://api.cloudinary.com/v1_1/jinpark1/image/upload';
 
 class Setting extends Component {

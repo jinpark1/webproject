@@ -1,5 +1,5 @@
  .trollbox{
-     background-color: red;
+     background-color: blue;
      background-image: url("../../images/4kwall.jpg");
      /* Center and scale the image nicely */
      background-position: center;
@@ -31,16 +31,24 @@
 
 .trollbox-one-container {
     border: 1px solid red;
-    height: 200px;
+    min-height: 600px;
     display: flex;
     justify-content: center;
 }
 
 .trollbox-one-child {
     border: 1px solid red;
-    height: 200px;
-    background-color: blue;
+    min-height: 200px;
+    /* background-color: blue; */
     width: 90%;
+    display: flex;
+    justify-content: center;
+}
+
+.trollbox-chat-container {
+    border: 1px solid black;
+    background-color: blue;;
+    width: 50%;
 }
 
 .trollbox-two-container {
