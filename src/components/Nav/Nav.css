@@ -98,22 +98,60 @@ nav ul li a:hover {
 .nav-menu {
     border: 2px solid transparent;
     height: 100px;
+    width: 100px;
     margin: 0px;
     padding: 0px;
     margin-right: 100px;
+    background-color: transparent;
 }
 
 .nav-menu-button1 {
-    margin: -10px 0px;
-    font-size: .75em;
+    margin: -20px 0px;
+    font-size: 1em;
+    width: 100px;
+    border: 1px solid skyblue;
+}
+
+.nav-menu-button1:hover {
+    background-color: skyblue;
+    transition: 2s
 }
 
 .nav-menu-button2 {
-    margin: 10px 0px;
-    font-size: .75em;
+    margin: 15px 0px;
+    font-size: 1em;
+    width: 100px;
+    border: 1px solid skyblue;
+}
+
+.nav-menu-button2:hover {
+    background-color: skyblue;
+    transition: 2s
 }
 
 .nav-menu-button3 {
-    margin: 30px 0px;
-    font-size: .75em;
+    margin: 50px 0px;
+    font-size: 1em;
+    width: 100px;
+    border: 1px solid skyblue;
+}
+
+.nav-menu-button3:hover {
+    background-color: skyblue;
+    transition: 2s
+}
+
+.nav-menu-button4 {
+    margin: 90px 0px;
+    font-size: 1em;
+    width: 100px;
+    /* border: 1px solid skyblue; */
+    border-left: 1px solid skyblue;
+    border-right: 1px solid skyblue;
+    border-bottom: 1px solid skyblue
+}
+
+.nav-menu-button4:hover {
+    background-color: skyblue;
+    transition: 2s
 }

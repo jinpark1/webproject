@@ -81,7 +81,10 @@ class Thread extends Component {
             return (
                 <Link to={`/forums/${v.thread_id}`} className="thread-list" key={i}>
                     <div className="thread-list-leftID">
-                        <div className="thread-list-threadID">{v.thread_id}</div>
+                        <div className="thread-list-threadID">
+                            <div className="thread-list-threadID-child">{v.thread_id}</div>
+                        </div>
+                        <img className="thread-list-photo" src={v.profile_photo} />
                     </div> 
                     <div className="thread-list-left">
                         <div className="thread-list-subject">{v.subject}</div>

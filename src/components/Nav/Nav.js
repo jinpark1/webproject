@@ -109,7 +109,8 @@ class Nav extends Component {
                             {this.state.showing && <div className="nav-menu">
                                 <a href="/profile"><button className="nav-menu-button1">Profile</button></a>
                                 <a href="/settings"><button className="nav-menu-button2">Settings</button></a>
-                                <button className="nav-menu-button3" onClick={this.logoutUser}>Sign out</button>
+                                <a href="/contact"><button className="nav-menu-button3">Contact</button></a>
+                                <button className="nav-menu-button4" onClick={this.logoutUser}>Sign out</button>
                             </div>}
                         </nav>
                     </div>
