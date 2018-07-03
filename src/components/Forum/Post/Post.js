@@ -89,7 +89,7 @@ class Post extends Component {
                             <div className="post-thread-top">
                                 <div className="post-id">{post.thread_id}</div>
                                 <div className="post-created-category">
-                                    <div className="post-created">{post.created}</div>
+                                    <div className="post-created">{post.thread_created}</div>
                                     <div className="post-created">{post.category}</div>
                                 </div>
                             </div>

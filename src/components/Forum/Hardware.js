@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import './Forum.css';
+import './Hardware.css';
 import backGroundGrey from '../../images/hardware3.jpg';
 import Topic from './Topic/Topic';
 import HardwareThread from './Thread/HardwareThread';
@@ -38,12 +39,12 @@ class Hardware extends Component {
 
     render() {
         return (
-            <div className="forum">
-                <div className="forum-top">
+            <div className="hardware">
+                <div className="hardware-top">
                     <div>FORUMS Hardware</div>
                     <img src={backGroundGrey} alt="backGroundGrey" />
                 </div>
-                <div className="forum-main">
+                <div className="hardware-main">
                     <div className="forum-category">
                         <a href="/forum"><div>All Topics</div></a>
                         <a href="/forum/general"><div>General</div></a>
@@ -58,15 +59,15 @@ class Hardware extends Component {
                         <a href="/forum/feedback"><div>Feedback</div></a>
                         <a href="/forum/support"><div>Support</div></a>
                     </div>
-                    <div className="forum-post">
+                    <div className="hardware-post">
                         <div className="forum-post-top">
                             <div></div>
                             { !this.state.loggedIn ? <div></div> : <div><button onClick={ () => this.createTopic() }>Create Topic</button></div> }
                         </div>
-                        <div className="forum-post-topic">
+                        <div className="hardware-post-topic">
                             {this.state.showing && <Topic toggle={this.createTopic}/>}
                         </div>
-                        <div className="forum-post-thread"> 
+                        <div className="hardware-post-thread"> 
                             <HardwareThread />
                         </div>
                     </div>

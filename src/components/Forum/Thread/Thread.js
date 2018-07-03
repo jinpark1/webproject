@@ -18,6 +18,7 @@ class Thread extends Component {
         // Gets 20 items at a time 
         const id = this.state.offset * 20
        axios.get(`/api/threads/${id}`).then( res => {
+           console.log(res.data)
            this.setState({
                threads: res.data,
                offset: this.state.offset + 1
@@ -87,7 +88,7 @@ class Thread extends Component {
                         <div className="thread-list-id">{v.online_id}</div>
                     </div>
                     <div className="thread-list-right">
-                        <div className="thread-list-created">{v.created}</div>
+                        <div className="thread-list-created">{v.thread_created}</div>
                         <div className="thread-list-category">{v.category}</div>
                     </div>
                 </Link>

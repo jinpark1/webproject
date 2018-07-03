@@ -1,3 +1,17 @@
+.forum{
+    background-color: #14191e;
+    background-image: url("../../images/forums.jpg");
+    /* Center and scale the image nicely */
+    background-position: center;
+    background-repeat: no-repeat;
+    /* background-size: cover; */
+    image-rendering: auto;
+    image-rendering: crisp-edges;
+    /* image-rendering: pixelated; */
+  /* background-attachment:fixed - image doesn't move when additional stuff is rendered on screen */
+    background-attachment: fixed;
+}
+
 .forum-top img {
     position: relative;
     width: 100%;
@@ -79,7 +93,6 @@
     margin: 0 10px;
     margin-top: 10px;
     width: 73%;
-    /* height: 1000px; */
     margin-bottom: 50px;
     /* border: 1px solid orange; */
 }

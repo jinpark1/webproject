@@ -5,7 +5,7 @@ import Topic from './Topic/Topic';
 import Thread from './Thread/Thread';
 import { Link } from 'react-router-dom';
 import { connect } from 'react-redux';
-import glow from '../../images/blackimageglow.jpg';
+import glow from '../../images/forums.jpg';
 
 
 class Forum extends Component {

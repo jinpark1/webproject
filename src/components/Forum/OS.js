@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import './Forum.css';
+import './OS.css';
 import backGroundGrey from '../../images/backgroundgrey3.jpg';
 import osPhoto from '../../images/osphoto.jpg';
 import Topic from './Topic/Topic';
@@ -39,13 +40,13 @@ class OS extends Component {
 
     render() {
         return (
-            <div className="forum">
-                <div className="forum-top">
+            <div className="OS">
+                <div className="OS-top">
                     <div>FORUMS Operating Systems</div>
                     <img src={osPhoto} alt="backGroundGrey" />
                 </div>
-                <div className="forum-main">
-                    <div className="forum-category">
+                <div className="OS-main">
+                    <div className="OS-category">
                         <a href="/forum"><div>All Topics</div></a>
                         <a href="/forum/general"><div>General</div></a>
                         <a href="/forum/hardware"><div>Hardware</div></a>
@@ -59,15 +60,15 @@ class OS extends Component {
                         <a href="/forum/feedback"><div>Feedback</div></a>
                         <a href="/forum/support"><div>Support</div></a>
                     </div>
-                    <div className="forum-post">
-                        <div className="forum-post-top">
+                    <div className="OS-post">
+                        <div className="OS-post-top">
                             <div></div>
                             { !this.state.loggedIn ? <div></div> : <div><button onClick={ () => this.createTopic() }>Create Topic</button></div> }
                         </div>
-                        <div className="forum-post-topic">
+                        <div className="OS-post-topic">
                             {this.state.showing && <Topic toggle={this.createTopic}/>}
                         </div>
-                        <div className="forum-post-thread"> 
+                        <div className="OS-post-thread"> 
                             <OSThread />
                         </div>
                     </div>

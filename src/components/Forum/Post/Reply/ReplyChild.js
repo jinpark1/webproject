@@ -12,7 +12,7 @@ class ReplyChild extends Component {
             return (
                 <div key={i} className="reply-container">
                     <div className="reply-container-right">
-                        <div className="reply-created">{v.created}</div>
+                        <div className="reply-created">{v.post_created}</div>
                         <div className="reply-created">{v.category}</div>
                     </div>
                     <div className="reply-container-left">

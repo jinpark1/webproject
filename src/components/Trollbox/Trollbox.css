@@ -5,6 +5,9 @@
      background-position: center;
      background-repeat: no-repeat;
      background-size: cover;
+     image-rendering: auto;
+     image-rendering: crisp-edges;
+     image-rendering: pixelated;
  }
 
  .trollbox-container-flex {

@@ -107,12 +107,6 @@ app.delete(`/api/deleteuser/:id`, (req, res) => {
     })
 })
 
-// app.post('/api/logout', (req, res) => {
-//     req.session.destroy();
-//     res.status(200).send();
-// });
-
-
 // Get 20 thread posts 
 app.get('/api/threads/:id', (req, res) => {
     const db = req.app.get('db')

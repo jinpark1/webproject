@@ -3,3 +3,5 @@ join users on thread.users_id = users.id
 where category = ${category}
 order by thread_id desc
 limit 20 offset ${value};
+
+
