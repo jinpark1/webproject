@@ -349,7 +349,7 @@ const io = socket(server);
 
 //displaying users signed in to chat.
 io.on('connection', (socket) => {
-    console.log('Users List')
+console.log('Users List')
     socket.on('SEND_USER', function(data){
         console.log('Users-data', data)
         usersSignedIn.push(data)

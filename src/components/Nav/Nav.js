@@ -96,20 +96,24 @@ class Nav extends Component {
         console.log(this.state.loggedIn)
 
         return (
-                <nav id="navbar">
-                    <ul>
-                        <img src={starImg} alt="star" />
-                        <li><a id="nava" href="/">HOME</a></li>
-                        <li><a id="nava" href="/forum">FORUMS</a></li>
-                        <li><a id="nava" href="/trollbox">TROLLBOX</a></li>
-                    </ul>
-                    { !this.state.loggedIn ? <a href="/auth"><button>SIGN IN!</button></a> : <button onClick={ () => this.showMenu() }>Welcome {this.props.userData.online_id}</button>} 
-                    {this.state.showing && <div className="nav-menu">
-                        <a href="/profile"><button className="nav-menu-button1">Profile</button></a>
-                        <a href="/settings"><button className="nav-menu-button2">Settings</button></a>
-                        <button className="nav-menu-button3" onClick={this.logoutUser}>Sign out</button>
-                    </div>}
-                </nav>
+                <div className="navbar-container-flex">
+                    <div className="navbar-flex-child">
+                        <nav id="navbar">
+                            <ul>
+                                <img src={starImg} alt="star" />
+                                <li><a id="nava" href="/">HOME</a></li>
+                                <li><a id="nava" href="/forum">FORUMS</a></li>
+                                <li><a id="nava" href="/trollbox">TROLLBOX</a></li>
+                            </ul>
+                            { !this.state.loggedIn ? <a href="/auth"><button>SIGN IN!</button></a> : <button onClick={ () => this.showMenu() }>Welcome {this.props.userData.online_id}</button>} 
+                            {this.state.showing && <div className="nav-menu">
+                                <a href="/profile"><button className="nav-menu-button1">Profile</button></a>
+                                <a href="/settings"><button className="nav-menu-button2">Settings</button></a>
+                                <button className="nav-menu-button3" onClick={this.logoutUser}>Sign out</button>
+                            </div>}
+                        </nav>
+                    </div>
+                </div>
         )
     }
 }

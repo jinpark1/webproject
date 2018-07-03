@@ -1,23 +1,38 @@
 @import url('https://fonts.googleapis.com/css?family=Roboto:700');
 
+.navbar-container-flex {
+    /* display: flex;
+    border: 1px solid blue;
+    justify-content: center; */
+}
+
+.navbar-flex-child {
+    /* width: 90%; */
+    /* background-color: purple; */
+    /* display: flex;
+    justify-content: center; */
+}
+
 nav {
     z-index: 3;
-    position: fixed;
+    position: sticky;
     top: 0;
+    position: fixed;
     left: 0;
     height: 3em;
     width: 100%;
     background-color: transparent;
-    box-sizing: border-box;
+    /* box-sizing: border-box; */
     padding: 12px 18px;
     box-shadow: 0px 4px 7px #777;
     transition: background-color 0.5s ease-out;
+    /* border: 1px solid black; */
 }
 
 nav img {
-      width: 25px;
-      height: 25px;
-      margin: -3px;
+      width: 2.5em;
+      height: 2.5em;
+      margin: -2px;
 }
   
 nav button {
@@ -25,12 +40,12 @@ nav button {
     top: 0;
     transform: translateY(50%);
     right: 0;
-    min-height: 1.5em;
+    min-height: 2.5em;
     min-width: 80px;
     background-color: white;
     border: 0px;
     border-radius: 2px;
-    margin-right: 55px;
+    margin-right: 100px;
 }
 
 nav div {
@@ -58,7 +73,9 @@ nav ul {
 
 nav ul li {
     list-style: none;
-    margin: 0px 20px;
+    font-size: 1.5em;
+    margin: 0px 30px;
+    margin-top: 5px;
 }
 
 #nava {
@@ -80,10 +97,10 @@ nav ul li a:hover {
 
 .nav-menu {
     border: 2px solid transparent;
-    height: 60px;
+    height: 100px;
     margin: 0px;
     padding: 0px;
-    margin-right: 55px;
+    margin-right: 100px;
 }
 
 .nav-menu-button1 {
