@@ -4,14 +4,14 @@ Built using...
 * React
 * Redux
 * React-Quill
-- Node
-- Express
-- Socket
+* Node
+* Express
+* Socket
 * PostgresSQL
--Heroku
--bcrypt
--Nodemailer
--Cloudinary
+* Heroku
+* bcrypt
+* Nodemailer
+* Cloudinary
 
 This project was bootstrapped with [Create React App](https://github.com/facebookincubator/create-react-app).
 
