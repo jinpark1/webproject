@@ -3,7 +3,6 @@
 Built using...
 * React
 * Redux
-* React-Quill
 * Node
 * Express
 * Socket
