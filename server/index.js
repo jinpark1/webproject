@@ -324,10 +324,10 @@ app.get('/api/cloud', cloudinary_controller.upload);
 
 
 // for hosting zeit
-// const path = require('path')
-// app.get('*', (req, res)=>{
-//   res.sendFile(path.join(__dirname, '../build/index.html'));
-// })
+const path = require('path')
+app.get('*', (req, res)=>{
+  res.sendFile(path.join(__dirname, '../build/index.html'));
+})
 
 const port = 4001;
 const server = app.listen(port, () => { console.log(`Server listening on Port ${port}`)} );

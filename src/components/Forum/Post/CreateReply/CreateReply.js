@@ -2,7 +2,8 @@ import React, { Component } from 'react';
 import './CreateReply.css';
 import axios from 'axios';
 import { connect } from 'react-redux';
-import { withRouter } from 'react-router-dom'
+import { withRouter } from 'react-router-dom';
+import ReactQuill from 'react-quill';
 
 class CreateReply extends Component {
   constructor(){
@@ -38,7 +39,7 @@ class CreateReply extends Component {
     return (
       <div className="createReply">
         <div className="createReply-body-text-container">
-            <input className="createReply-body-text" placeholder="Enter text" onChange={ e => this.contentUpdate(e.target.value) }></input>
+            <ReactQuill className="createReply-body-text-quill" theme="snow" value={this.state.content} onChange={this.contentUpdate}  />
         </div>
         <div className="createReply-button">
             <button className="createReply-button-post" onClick={ () => {this.createTopic(); this.props.toggle()} }>Post</button>

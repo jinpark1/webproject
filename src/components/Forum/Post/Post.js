@@ -12,9 +12,9 @@ class Post extends Component {
 
         this.state = {
             posts: [],
-            showing: false, 
+            showing: false, //default to false;
             replys: [],
-            loggedIn: false, 
+            loggedIn: false, //default to false 
         }
     }
 

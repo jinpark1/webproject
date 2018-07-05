@@ -14,7 +14,7 @@ class Forum extends Component {
 
         this.state = {
             showing: false,
-            loggedIn: false,
+            loggedIn: false, 
         }   
     }
 

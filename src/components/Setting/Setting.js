@@ -148,7 +148,7 @@ class Setting extends Component {
                         <button onClick={this.editUser}>Save</button>
                     </div>
                     <div className="setting-bottom-right">
-                        <div className="setting-bottom-right-title">Select Icon</div>
+                        <div className="setting-bottom-right-title">Select Profile Photo</div>
                         <div className="setting-bottom-right-display">
                             <img src="https://robohash.org/23d23d/?set=set4" />
                             <img src="https://robohash.org/f23f2/?set=set4" />
@@ -201,9 +201,15 @@ class Setting extends Component {
                             <img src="https://robohash.org/f3/?set=set1" />    
                             <img src="https://robohash.org/1as/?set=set1" />    
                         </div>
-                        <button onClick={this.editUser} >Save</button>
-                        <input type="file" className="setting-bottom-right-upload" onChange={(e) => this.handleImageUpload(e.target.files)} />
-                        <img src={this.state.image} />
+                        <div className="setting-bottom-right-save" >
+                            <div className="setting-bottom-right-left" >
+                                <img src={this.state.image} width="100px" />
+                                <input type="file" className="setting-bottom-right-upload" onChange={(e) => this.handleImageUpload(e.target.files)} />
+                            </div>
+                            <div className="setting-bottom-right-right">
+                                <button onClick={this.editUser} >Save</button>
+                            </div>
+                        </div>
                     </div>
                 </div>
                 <div className="setting-bottom-delete-container">

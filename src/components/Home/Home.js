@@ -14,12 +14,12 @@ class Home extends Component {
         return (
             <div className="home">
                 <div className="home-top">
-                    <div>HOME</div>
+                    {/* <div>HOME</div> */}
                     <img src={glow} alt="backGroundGrey" />
                 </div>
 
                 <div className="home-description">
-                    <div className="home-description-text">Welcome to the tech forum, feel free to discuss anything.</div>
+                    {/* <div className="home-description-text">Welcome to the tech forum, feel free to discuss anything.</div> */}
                 </div>
                 <div className="home-skill-title">Built with...</div>
                 <div className="home-skill-container">

@@ -17,7 +17,7 @@ class ReplyChild extends Component {
                     </div>
                     <div className="reply-container-left">
                         <div className="reply-onlineID">{v.online_id}</div>
-                        <div className="reply-content">{v.post_content}</div>
+                        <div className="reply-content" dangerouslySetInnerHTML={{__html: v.post_content}}></div>
                     </div>
                 </div>
             )

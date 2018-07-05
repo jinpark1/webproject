@@ -6,6 +6,8 @@ import { withRouter } from 'react-router-dom'
 import ReactQuill from 'react-quill';
 import 'react-quill/dist/quill.snow.css'; 
 
+
+
 class Topic extends Component {
   constructor(){
     super();
@@ -54,12 +56,16 @@ class Topic extends Component {
     })
   }
 
+  
   render() {
     return (
       <div className="topic">
-        <div><input className="topic-input-title" placeholder=" Title" onChange={ e => this.titleUpdate(e.target.value) }></input></div>
-        <ReactQuill className="topic-body-text-quill" theme="snow" value={this.state.content} onChange={this.contentUpdate} />
-        <div><select className="topic-category" defaultValue="forumCategory" onChange={ e => this.handleChange(e.target.value) } >
+        <div>
+            <input className="topic-input-title" placeholder=" Title" onChange={ e => this.titleUpdate(e.target.value) } />
+        </div>
+        <ReactQuill className="topic-body-text-quill" theme="snow" value={this.state.content} onChange={this.contentUpdate}  />
+        <div>
+            <select className="topic-category" defaultValue="forumCategory" onChange={ e => this.handleChange(e.target.value) } >
                   <option value="forumCategory" disabled>Forum Category</option>
                   <option value="General">General</option>
                   <option value="Hardware">Hardware</option>
@@ -72,7 +78,7 @@ class Topic extends Component {
                   <option value="Software">Software</option>
                   <option value="Feedback">Feedback</option>
                   <option value="Support">Support</option>
-              </select>
+            </select>
               {/* <select defaultValue="lucy" style={{ width: 120 }} onChange={ e => this.handleChange(e.target.value) }>
                 <option value="categories" disabled>categories</option>
                 <option value="hello">hello</option>
