@@ -1,13 +1,13 @@
 ## Tech Forums
 
 Built using...
--React
--Redux
--React-Quill
--Node
--Express
--Socket
--PostgresSQL
+* React
+* Redux
+* React-Quill
+- Node
+- Express
+- Socket
+* PostgresSQL
 -Heroku
 -bcrypt
 -Nodemailer
