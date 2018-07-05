@@ -3,6 +3,8 @@ import { connect } from 'react-redux';
 import axios from 'axios';
 import { withRouter } from 'react-router-dom';
 import { updateUserData } from '../../ducks/reducer';
+import './Contact.css';
+import ReactQuill from 'react-quill';
 
 class Contact extends Component {
     constructor(){
@@ -78,14 +80,14 @@ class Contact extends Component {
         let displayID = this.state.updatedOnlineID ? this.state.updatedOnlineID : this.props.userData.online_id
         console.log('state', this.state.updatedOnlineID)
         return (
-            <div className="setting">
-                <div className="setting-top">
+            <div className="contact">
+                <div className="contact-top">
                     <div className="display-settings">Contact Admin</div>
                     <div className="display-id">{displayID}</div>
                     <img className="display-profile-img" src="https://robohash.org/23d23d/?set=set4" />
                 </div>
-                <div className="setting-bottom">
-                    <div className="setting-bottom-left">
+                <div className="contact-bottom">
+                    <div className="contact-bottom-left">
                         <div>Online ID</div>
                         <input placeholder={this.props.userData.online_id} onChange={this.handleChange} name="onlineID" disabled></input>
                         <div>First Name</div>
@@ -95,6 +97,15 @@ class Contact extends Component {
                         <div>Send Message</div>
                         <input placeholder="Enter Message" onChange={this.handleChange} name="email"></input>
                         <button onClick={this.handleSubmit}>Send</button>
+                    </div>
+                    <div className="contact-bottom-right">
+                        <div>Send Message</div>
+                        {/* <ReactQuill className="topic-body-text-quill" theme="snow" value={this.state.content} onChange={this.contentUpdate}  />                                     */}
+                        <ReactQuill className="topic-body-text-quill" theme="snow" />                                    
+                    </div>
+                </div>
+                <div className="contact-bottom-delete-container">
+                    <div className="contact-bottom-delete">
                     </div>
                 </div>
             </div>

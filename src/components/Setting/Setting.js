@@ -215,7 +215,7 @@ class Setting extends Component {
                 <div className="setting-bottom-delete-container">
                     <div className="setting-bottom-delete">
                         <div>Delete user and all threads and replys made by the user.</div>
-                        <button onClick={this.deleteUser}>Click</button>
+                        <button onClick={this.deleteUser}>Delete</button>
                     </div>
                 </div> 
             </div>
