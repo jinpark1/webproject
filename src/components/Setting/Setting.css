@@ -45,8 +45,8 @@
 
 .display-profile-img {
     background-color: black;
-    width: 75px;
-    height: 75px
+    width: 100px;
+    height: 100px
 }
 
 .setting-bottom {
@@ -61,7 +61,7 @@
 
 .setting-bottom-left {
     width: 49%;
-    height: 400px;
+    height: 450px;
     /* height: 600px; */
     /* height: 60%; */
     background-color: #181d25;
@@ -90,6 +90,7 @@
     background-color: #232936;
     border: 1px solid black;
     color: white;
+    font-size: 20px;
 }
 
 .setting-bottom-left button {
@@ -152,18 +153,46 @@
     margin-bottom: 30px;
 }
 
-.setting-bottom-right-bottom {
-    display: flex;
-    flex-direction: row;
+.setting-bottom-right-save {
+    display: grid;
+    grid-template-columns: 40% 20%;
+    /* flex-direction: row; */
+    width: 90%;
     /* justify-content: center; */
-    /* align-items: center; */
-    margin: 25px;
-    border: 1px solid purple;
+    align-items: center;
+    margin-top: 50px;
+    margin-bottom: 50px;
+    /* border: 1px solid purple; */
+}
+
+.setting-bottom-right-left {
+    display: flex;
+    flex-direction: column;
+    /* border: 1px solid darkgoldenrod; */
+
+}
+
+.setting-bottom-right-right {
+    /* border: 1px solid brown; */
+    display: flex;
+    justify-content: center;
+}
+
+.setting-bottom-right-upload {
+    /* background-color: #232936; */
+    /* border: 1px solid blue; */
+    color: white;
+}
+
+.setting-bottom-right-upload-img {
+    border: border 1px solid #232936;
+    /* background-color: yellow; */
 }
 
 .setting-bottom-right button {
-    /* min-width: 10%; */
-    /* min-height: 35px; */
+    min-width: 65%;
+    min-width: 80px;
+    min-height: 50px;
     /* margin-top: 25px; */
     background-color: #232936;
     border: 1px solid black;
@@ -178,6 +207,7 @@
     width: 95%;
     display: flex;
     justify-content: center;
+    /* border: 1px solid red; */
 }
 
 .setting-bottom-delete {

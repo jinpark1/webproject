@@ -203,8 +203,8 @@ class Setting extends Component {
                         </div>
                         <div className="setting-bottom-right-save" >
                             <div className="setting-bottom-right-left" >
-                                <img src={this.state.image} width="100px" />
                                 <input type="file" className="setting-bottom-right-upload" onChange={(e) => this.handleImageUpload(e.target.files)} />
+                                <img className="setting-bottom-right-upload-img" src={this.state.image} width="100px" height="100px" alt={''}/>
                             </div>
                             <div className="setting-bottom-right-right">
                                 <button onClick={this.editUser} >Save</button>
