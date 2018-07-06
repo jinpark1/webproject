@@ -138,14 +138,14 @@ class Setting extends Component {
                 <div className="setting-bottom">
                     <div className="setting-bottom-left">
                         <div>Online ID</div>
-                        <input placeholder={this.props.userData.online_id} onChange={this.handleChange} name="onlineID"></input>
+                        <input className="setting-bottom-left-onlineID" placeholder={this.props.userData.online_id} onChange={this.handleChange} name="onlineID"></input>
                         <div>First Name</div>
                         <input placeholder={this.props.userData.first_name} onChange={this.handleChange} name="firstName"></input>
                         <div>Last Name</div>
                         <input placeholder={this.props.userData.last_name} onChange={this.handleChange} name="lastName"></input>
                         <div>Email</div>
                         <input placeholder={this.props.userData.email} onChange={this.handleChange} name="email"></input>
-                        <button onClick={this.editUser}>Save</button>
+                        <button className="setting-bottom-left-button" onClick={this.editUser}>Save</button>
                     </div>
                     <div className="setting-bottom-right">
                         <div className="setting-bottom-right-title">Select Profile Photo</div>
