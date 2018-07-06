@@ -10,7 +10,8 @@ create table if not exists users (
   first_name text,
   last_name text,
   created timestamp,
-  admin BOOLEAN
+  admin BOOLEAN,
+  profile_photo text
 );
 
 
