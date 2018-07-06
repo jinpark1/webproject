@@ -2,7 +2,6 @@ const express = require('express');
 const bodyParser = require('body-parser');
 const massive = require('massive');
 const session = require('express-session');
-// const axios = require('axios');
 const bcrypt = require('bcrypt');
 const app = express();
 const saltRounds = 12;
