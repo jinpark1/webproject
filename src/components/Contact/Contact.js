@@ -99,9 +99,14 @@ class Contact extends Component {
                         <button onClick={this.handleSubmit}>Send</button>
                     </div>
                     <div className="contact-bottom-right">
-                        <div>Send Message</div>
+                        {/* <div>Send Message</div> */}
                         {/* <ReactQuill className="topic-body-text-quill" theme="snow" value={this.state.content} onChange={this.contentUpdate}  />                                     */}
-                        <ReactQuill className="topic-body-text-quill" theme="snow" />                                    
+                        <div className="contact-body-quill-container">
+                            <ReactQuill className="contact-body-quill" theme="snow" />                                    
+                        </div>
+                        <div className="contact-body-button-container">
+
+                        </div>
                     </div>
                 </div>
                 <div className="contact-bottom-delete-container">
