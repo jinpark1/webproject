@@ -7,17 +7,8 @@ describe('My First Test', function () {
 describe('My Second Test', function () {
     it('Goes to settings page and inputs data and clicks a button', function() {
         cy.visit('http://localhost:3000/settings')
-
         cy.get('input.setting-bottom-left-onlineID').type('Online ID')
-
         cy.get('button.setting-bottom-left-button').click()
-        // cy.visit('http://localhost:3000/settings')
-
-        // cy.get('div.display-id').should('have.value', 'Online ID')
-
-        // cy.url().should('include', '/commands/actions')
-
-        // cy.get('.action-email').type('fake@email.com').should('have.value', 'fake@email.com')
     })
 
     describe('My Third Test', () => {
@@ -37,4 +28,16 @@ describe('My Second Test', function () {
         })
     })
 
+    describe('My Fourth Test', () => {
+        it('Logs user in', () => {
+            cy.visit('http://localhost:3000/auth');
+            cy.get(':nth-child(2) > input').type('jin@gmail.com');
+            cy.get(':nth-child(3) > input').type('Abcd1234');
+            cy.get(':nth-child(4) > button').click()
+            cy.url().should('include', 'http://localhost:3000/forum')
+            cy.visit('http://localhost:3000/settings');
+            cy.get('.setting-bottom-left-onlineID').type('Hello Hello');
+            cy.get('.setting-bottom-left-button').click();
+        })
+    })
 })
