@@ -5,8 +5,9 @@ Built using...
 * Redux
 * Node
 * Express
-* Socket
+* Massive
 * PostgresSQL
+* Socket
 * Heroku
 * bcrypt
 * Nodemailer
