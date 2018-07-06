@@ -37,12 +37,8 @@ class Setting extends Component {
             email: this.state.email || this.props.userData.email,
             profilePhoto: this.state.image || this.props.userData.profile_photo
         }
-        console.log('edituser---', editUser)
 
         axios.put(`/api/user/${this.props.userData.id}`, editUser).then( res => {
-            console.log('axios put', res)
-            console.log('axios put', res.data.user.online_id)
-            console.log('axios put photo', res.data.user.profile_photo)
             this.setState({
                 updatedOnlineID: res.data.user.online_id,
                 updatedImg: res.data.user.profile_photo
