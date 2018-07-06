@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
 import './Reply.css';
-import axios from 'axios';
+// import axios from 'axios';
 import ReplyChild from './ReplyChild';
-import MyComponentThatFetchesData from  './MyComponentThatFetchesData';
+// import MyComponentThatFetchesData from  './MyComponentThatFetchesData';
 import { withData } from './MyComponentThatFetchesData';
 
 class Reply extends Component {

@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import './Register.css';
 import starImg from '../../../images/star.png';
-import { Link } from 'react-router-dom';
+// import { Link } from 'react-router-dom';
 
 class Register4 extends Component {
     render() {

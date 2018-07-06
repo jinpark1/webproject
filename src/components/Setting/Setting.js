@@ -133,7 +133,7 @@ class Setting extends Component {
                 <div className="setting-top">
                     <div className="display-settings">SETTINGS</div>
                     <div className="display-id">{displayID}</div>
-                    <img className="display-profile-img" src={displayImg} />
+                    <img className="display-profile-img" src={displayImg} alt="profile" />
                 </div>
                 <div className="setting-bottom">
                     <div className="setting-bottom-left">
@@ -150,56 +150,56 @@ class Setting extends Component {
                     <div className="setting-bottom-right">
                         <div className="setting-bottom-right-title">Select Profile Photo</div>
                         <div className="setting-bottom-right-display">
-                            <img src="https://robohash.org/23d23d/?set=set4" />
-                            <img src="https://robohash.org/f23f2/?set=set4" />
-                            <img src="https://robohash.org/23f2f2asf/?set=set4" />
-                            <img src="https://robohash.org/bfds/?set=set4" />
-                            <img src="https://robohash.org/asdfawe/?set=set4" />
-                            <img src="https://robohash.org/wefwe/?set=set4" />
-                            <img src="https://robohash.org/2f32/?set=set4" />
-                            <img src="https://robohash.org/wef/?set=set4" />
-                            <img src="https://robohash.org/23f/?set=set4" />
-                            <img src="https://robohash.org/bsdb/?set=set4" />
-                            <img src="https://robohash.org/erhr/?set=set4" />
-                            <img src="https://robohash.org/hrtheh/?set=set4" />
-                            <img src="https://robohash.org/dfsg/?set=set4" />
-                            <img src="https://robohash.org/bdf/?set=set4" />
-                            <img src="https://robohash.org/rhh/?set=set4" />
-                            <img src="https://robohash.org/h6rth/?set=set4" />
-                            <img src="https://robohash.org/loi/?set=set4" />
-                            <img src="https://robohash.org/yuj/?set=set4" />
-                            <img src="https://robohash.org/yj/?set=set4" />
-                            <img src="https://robohash.org/saf/?set=set4" />
-                            <img src="https://robohash.org/kjgh/?set=set3" />
-                            <img src="https://robohash.org/32dsas/?set=set3" />
-                            <img src="https://robohash.org/h76/?set=set3" />
-                            <img src="https://robohash.org/kgy/?set=set3" />
-                            <img src="https://robohash.org/kiu/?set=set3" />
-                            <img src="https://robohash.org/32dsas/?set=set3" />
-                            <img src="https://robohash.org/asdf/?set=set3" />
-                            <img src="https://robohash.org/sadf/?set=set3" />
-                            <img src="https://robohash.org/khg/?set=set3" />
-                            <img src="https://robohash.org/vda/?set=set3" />
-                            <img src="https://robohash.org/awfeawf/?set=set2" />
-                            <img src="https://robohash.org/wefewaef/?set=set2" />
-                            <img src="https://robohash.org/sdafwef/?set=set2" />
-                            <img src="https://robohash.org/bsdb/?set=set2" />
-                            <img src="https://robohash.org/dbsfsb/?set=set2" />
-                            <img src="https://robohash.org/bfdssb/?set=set2" />
-                            <img src="https://robohash.org/sdfbsfbs/?set=set2" />
-                            <img src="https://robohash.org/asdv/?set=set2" />
-                            <img src="https://robohash.org/wfe32/?set=set2" />
-                            <img src="https://robohash.org/23f/?set=set2" />
-                            <img src="https://robohash.org/sav/?set=set1" />
-                            <img src="https://robohash.org/vdsa/?set=set1" />
-                            <img src="https://robohash.org/va/?set=set1" />
-                            <img src="https://robohash.org/f23/?set=set1" />
-                            <img src="https://robohash.org/f32/?set=set1" />
-                            <img src="https://robohash.org/f23/?set=set1" />
-                            <img src="https://robohash.org/23/?set=set1" />
-                            <img src="https://robohash.org/2f/?set=set1" />
-                            <img src="https://robohash.org/f3/?set=set1" />    
-                            <img src="https://robohash.org/1as/?set=set1" />    
+                            <img src="https://robohash.org/23d23d/?set=set4" alt="robo" />
+                            <img src="https://robohash.org/f23f2/?set=set4" alt="robo" />
+                            <img src="https://robohash.org/23f2f2asf/?set=set4" alt="robo" />
+                            <img src="https://robohash.org/bfds/?set=set4" alt="robo" />
+                            <img src="https://robohash.org/asdfawe/?set=set4" alt="robo" />
+                            <img src="https://robohash.org/wefwe/?set=set4" alt="robo" />
+                            <img src="https://robohash.org/2f32/?set=set4" alt="robo" />
+                            <img src="https://robohash.org/wef/?set=set4" alt="robo" />
+                            <img src="https://robohash.org/23f/?set=set4" alt="robo"/>
+                            <img src="https://robohash.org/bsdb/?set=set4" alt="robo" />
+                            <img src="https://robohash.org/erhr/?set=set4" alt="robo" />
+                            <img src="https://robohash.org/hrtheh/?set=set4" alt="robo" />
+                            <img src="https://robohash.org/dfsg/?set=set4" alt="robo" />
+                            <img src="https://robohash.org/bdf/?set=set4" alt="robo" />
+                            <img src="https://robohash.org/rhh/?set=set4" alt="robo"/>
+                            <img src="https://robohash.org/h6rth/?set=set4" alt="robo" />
+                            <img src="https://robohash.org/loi/?set=set4" alt="robo" />
+                            <img src="https://robohash.org/yuj/?set=set4" alt="robo" />
+                            <img src="https://robohash.org/yj/?set=set4" alt="robo" />
+                            <img src="https://robohash.org/saf/?set=set4" alt="robo" />
+                            <img src="https://robohash.org/kjgh/?set=set3" alt="robo" />
+                            <img src="https://robohash.org/32dsas/?set=set3" alt="robo" />
+                            <img src="https://robohash.org/h76/?set=set3" alt="robo" />
+                            <img src="https://robohash.org/kgy/?set=set3" alt="robo" />
+                            <img src="https://robohash.org/kiu/?set=set3" alt="robo"/>
+                            <img src="https://robohash.org/32dsas/?set=set3" alt="robo" />
+                            <img src="https://robohash.org/asdf/?set=set3" alt="robo"/>
+                            <img src="https://robohash.org/sadf/?set=set3" alt="robo"/>
+                            <img src="https://robohash.org/khg/?set=set3" alt="robo"/>
+                            <img src="https://robohash.org/vda/?set=set3" alt="robo"/>
+                            <img src="https://robohash.org/awfeawf/?set=set2" alt="robo"/>
+                            <img src="https://robohash.org/wefewaef/?set=set2" alt="robo"/>
+                            <img src="https://robohash.org/sdafwef/?set=set2" alt="robo"/>
+                            <img src="https://robohash.org/bsdb/?set=set2" alt="robo"/>
+                            <img src="https://robohash.org/dbsfsb/?set=set2" alt="robo"/>
+                            <img src="https://robohash.org/bfdssb/?set=set2" alt="robo"/>
+                            <img src="https://robohash.org/sdfbsfbs/?set=set2" alt="robo"/>
+                            <img src="https://robohash.org/asdv/?set=set2" alt="robo"/>
+                            <img src="https://robohash.org/wfe32/?set=set2" alt="robo"/>
+                            <img src="https://robohash.org/23f/?set=set2" alt="robo"/>
+                            <img src="https://robohash.org/sav/?set=set1" alt="robo"/>
+                            <img src="https://robohash.org/vdsa/?set=set1" alt="robo"/>
+                            <img src="https://robohash.org/va/?set=set1" alt="robo"/>
+                            <img src="https://robohash.org/f23/?set=set1" alt="robo"/>
+                            <img src="https://robohash.org/f32/?set=set1" alt="robo"/>
+                            <img src="https://robohash.org/f23/?set=set1" alt="robo"/>
+                            <img src="https://robohash.org/23/?set=set1" alt="robo"/>
+                            <img src="https://robohash.org/2f/?set=set1" alt="robo"/>
+                            <img src="https://robohash.org/f3/?set=set1" alt="robo"/>    
+                            <img src="https://robohash.org/1as/?set=set1" alt="robo"/>    
                         </div>
                         <div className="setting-bottom-right-save" >
                             <div className="setting-bottom-right-left" >

@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import './Trollbox.css';
-import backGroundGrey from '../../images/4kwall.jpg';
+// import backGroundGrey from '../../images/4kwall.jpg';
 import TrollboxChat from './TrollboxChat';
 
 const API_KEY = process.env.REACT_APP_WEATHER_API_KEY;

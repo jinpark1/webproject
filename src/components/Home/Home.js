@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import './Home.css';
-import backgroundImg from '../../images/starimg1.jpg';
-import backGroundGrey from '../../images/backgroundgrey.jpg';
+// import backgroundImg from '../../images/starimg1.jpg';
+// import backGroundGrey from '../../images/backgroundgrey.jpg';
 import nodeLogo from '../../images/nodejs5.png';
 import postgresLogo from '../../images/postgresql.png';
 import reactLogo from '../../images/reactlogo.png';

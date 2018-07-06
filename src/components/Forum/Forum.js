@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import './Forum.css';
-import backGroundGrey from '../../images/backgroundgrey3.jpg';
+// import backGroundGrey from '../../images/backgroundgrey3.jpg';
 import Topic from './Topic/Topic';
 import Thread from './Thread/Thread';
 import { Link } from 'react-router-dom';
