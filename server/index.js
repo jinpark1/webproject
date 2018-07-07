@@ -198,8 +198,6 @@ app.post('/api/logout', (req, res) => {
     res.status(200).send();
 });
 
-
-
 // NodeMailer
 const nodeMailer_controller = require( './controllers/nodeMailer_controller');
 app.post('/api/sendmail', nodeMailer_controller.sendMail);
@@ -207,7 +205,6 @@ app.post('/api/sendmail', nodeMailer_controller.sendMail);
 // Cloudinary image upload
 const cloudinary_controller = require('./controllers/cloudinary_controller');
 app.get('/api/cloud', cloudinary_controller.upload);
-
 
 // Hosting zeit
 const path = require('path')
@@ -224,7 +221,6 @@ var messages = [];
 var usersSignedIn = [];
 
 const io = socket(server);
-
 
 //displaying users signed in to chat.
 io.on('connection', (socket) => {
