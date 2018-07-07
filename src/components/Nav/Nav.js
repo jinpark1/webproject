@@ -19,32 +19,18 @@ class Nav extends Component {
      
 
     }
-    
-    // componentwillmount(){
-    //     console.log('mountWill-------')
-    //     if(this.props.userData.email){
-    //         this.setState({
-    //             loggedIn: true,
-    //         })
-    //     }
-    // }
 
     componentDidMount() {
-        console.log('hit')
         window.addEventListener('scroll', this.handleScroll);
 
         if(this.props.userData.email){
             this.setState({
                 loggedIn: true,
             })
-        }
-
-        console.log('componentdidmount', this.props.userData.email)
-     
+        }  
     }
 
     componentWillReceiveProps(nextProps){
-        console.log('hi-----------', nextProps)
         if(nextProps.userData.email){
             this.setState({
                 loggedIn: true,
@@ -53,8 +39,6 @@ class Nav extends Component {
     }
 
     handleScroll = () => {
-        console.log('hi')
-        console.log('window.scrollY', window.scrollY)
         const nav = document.querySelector('#navbar');
         const nava = document.querySelectorAll('#nava');
         if(window.scrollY <= 10){
