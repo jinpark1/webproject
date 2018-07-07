@@ -3,7 +3,7 @@ import './Forum.css';
 import backGroundGrey from '../../images/mobile.jpg';
 import Topic from './Topic/Topic';
 import MobileThread from './Thread/MobileThread';
-import { Link } from 'react-router-dom';
+// import { Link } from 'react-router-dom';
 import { connect } from 'react-redux';
 
 class Mobile extends Component {

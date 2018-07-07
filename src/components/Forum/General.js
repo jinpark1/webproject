@@ -3,7 +3,7 @@ import './Forum.css';
 import backGroundGrey from '../../images/general2.jpg';
 import Topic from './Topic/Topic';
 import GeneralThread from './Thread/GeneralThread';
-import { Link } from 'react-router-dom';
+// import { Link } from 'react-router-dom';
 import { connect } from 'react-redux';
 
 class General extends Component {

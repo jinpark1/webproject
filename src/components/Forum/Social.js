@@ -3,7 +3,7 @@ import './Forum.css';
 import backGroundGrey from '../../images/social3.jpg';
 import Topic from './Topic/Topic';
 import SocialThread from './Thread/SocialThread';
-import { Link } from 'react-router-dom';
+// import { Link } from 'react-router-dom';
 import { connect } from 'react-redux';
 
 class Social extends Component {

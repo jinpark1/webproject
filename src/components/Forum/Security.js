@@ -3,7 +3,7 @@ import './Forum.css';
 import backGroundGrey from '../../images/security.jpg';
 import Topic from './Topic/Topic';
 import SecurityThread from './Thread/SecurityThread';
-import { Link } from 'react-router-dom';
+// import { Link } from 'react-router-dom';
 import { connect } from 'react-redux';
 
 class Security extends Component {

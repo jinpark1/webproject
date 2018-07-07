@@ -4,7 +4,7 @@ import './Hardware.css';
 import backGroundGrey from '../../images/hardware3.jpg';
 import Topic from './Topic/Topic';
 import HardwareThread from './Thread/HardwareThread';
-import { Link } from 'react-router-dom';
+// import { Link } from 'react-router-dom';
 import { connect } from 'react-redux';
 
 class Hardware extends Component {

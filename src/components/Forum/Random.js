@@ -3,7 +3,7 @@ import './Forum.css';
 import backGroundGrey from '../../images/random.jpg';
 import Topic from './Topic/Topic';
 import RandomThread from './Thread/RandomThread';
-import { Link } from 'react-router-dom';
+// import { Link } from 'react-router-dom';
 import { connect } from 'react-redux';
 
 class Random extends Component {

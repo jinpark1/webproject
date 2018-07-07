@@ -3,7 +3,7 @@ import './Forum.css';
 import backGroundGrey from '../../images/software3.jpg';
 import Topic from './Topic/Topic';
 import SoftwareThread from './Thread/SoftwareThread';
-import { Link } from 'react-router-dom';
+// import { Link } from 'react-router-dom';
 import { connect } from 'react-redux';
 
 class Software extends Component {

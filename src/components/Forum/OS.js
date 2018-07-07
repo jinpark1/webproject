@@ -5,7 +5,7 @@ import './OS.css';
 import osPhoto from '../../images/osphoto.jpg';
 import Topic from './Topic/Topic';
 import OSThread from './Thread/OSThread';
-import { Link } from 'react-router-dom';
+// import { Link } from 'react-router-dom';
 import { connect } from 'react-redux';
 
 class OS extends Component {

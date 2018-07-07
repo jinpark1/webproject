@@ -28,7 +28,6 @@ class Thread extends Component {
 
     updateLatest = () => {
         const id = (this.state.pageNum - 1) * 20
-        console.log(this.state.offset,this.state.pageNum, id)
         axios.get(`/api/threads/${id}`).then( res => {
             this.setState({
                 pageNum: this.state.pageNum - 1,
@@ -54,20 +53,14 @@ class Thread extends Component {
     updateCategory = () => {
         const id = 0
         axios.get(`/api/threads/${id}`).then(res => {
-            console.log('threadsss---',res)
             
             let arrayStuff = []
             
-            res.data.map( (v, i) => {
-                // console.log('hellothreaddd3', v.category)
+            res.data.map( (v) => {
                 if(v.category === 'support'){
                     arrayStuff.push(v)
-                    // console.log('this.state.threads----', this.state.threads)
-                    // console.log(v)
                 }
             })
-            console.log('this.state.threads----', arrayStuff)
-
             this.setState({
                 threads: arrayStuff
             })
@@ -98,11 +91,6 @@ class Thread extends Component {
             )
         }) : null; 
 
-        // console.log('------Thread',this.state.threads.length)
-        console.log('------thread', this.state.threads)
-        console.log('------thread', this.state.threads)
-        console.log('-----offset', this.state.offset)
-        console.log('-----pageNum', this.state.pageNum)
         return (
             <div className="thread">    
                 <div className="thread-show">
