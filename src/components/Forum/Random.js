@@ -2,7 +2,8 @@ import React, { Component } from 'react';
 import './Forum.css';
 import backGroundGrey from '../../images/random.jpg';
 import Topic from './Topic/Topic';
-import RandomThread from './Thread/RandomThread';
+// import RandomThread from './Thread/RandomThread';
+import Thread from './Thread/Thread';
 // import { Link } from 'react-router-dom';
 import { connect } from 'react-redux';
 
@@ -67,7 +68,7 @@ class Random extends Component {
                             {this.state.showing && <Topic toggle={this.createTopic}/>}
                         </div>
                         <div className="forum-post-thread"> 
-                            <RandomThread />
+                            <Thread category="Random" />
                         </div>
                     </div>
                 </div>    

@@ -3,7 +3,8 @@ import './Forum.css';
 import './Feedback.css';
 import backGroundGrey from '../../images/feedback.jpg';
 import Topic from './Topic/Topic';
-import FeedbackThread from './Thread/FeedbackThread';
+// import FeedbackThread from './Thread/FeedbackThread';
+import Thread from './Thread/Thread';
 import { Link } from 'react-router-dom';
 import { connect } from 'react-redux';
 
@@ -68,7 +69,7 @@ class Feedback extends Component {
                             {this.state.showing && <Topic toggle={this.createTopic}/>}
                         </div>
                         <div className="feedback-post-thread"> 
-                            <FeedbackThread />
+                            <Thread category="Feedback" />
                         </div>
                     </div>
                 </div>    

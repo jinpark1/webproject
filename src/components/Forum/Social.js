@@ -2,7 +2,8 @@ import React, { Component } from 'react';
 import './Forum.css';
 import backGroundGrey from '../../images/social3.jpg';
 import Topic from './Topic/Topic';
-import SocialThread from './Thread/SocialThread';
+// import SocialThread from './Thread/SocialThread';
+import Thread from './Thread/Thread';
 // import { Link } from 'react-router-dom';
 import { connect } from 'react-redux';
 
@@ -67,7 +68,7 @@ class Social extends Component {
                             {this.state.showing && <Topic toggle={this.createTopic}/>}
                         </div>
                         <div className="forum-post-thread"> 
-                            <SocialThread />
+                            <Thread category="Social" />
                         </div>
                     </div>
                 </div>    

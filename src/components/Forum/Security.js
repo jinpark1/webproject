@@ -2,7 +2,8 @@ import React, { Component } from 'react';
 import './Forum.css';
 import backGroundGrey from '../../images/security.jpg';
 import Topic from './Topic/Topic';
-import SecurityThread from './Thread/SecurityThread';
+// import SecurityThread from './Thread/SecurityThread';
+import Thread from './Thread/Thread';
 // import { Link } from 'react-router-dom';
 import { connect } from 'react-redux';
 
@@ -67,7 +68,7 @@ class Security extends Component {
                             {this.state.showing && <Topic toggle={this.createTopic}/>}
                         </div>
                         <div className="forum-post-thread"> 
-                            <SecurityThread />
+                            <Thread category="Security" />
                         </div>
                     </div>
                 </div>    

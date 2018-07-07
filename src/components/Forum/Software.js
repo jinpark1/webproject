@@ -2,7 +2,8 @@ import React, { Component } from 'react';
 import './Forum.css';
 import backGroundGrey from '../../images/software3.jpg';
 import Topic from './Topic/Topic';
-import SoftwareThread from './Thread/SoftwareThread';
+// import SoftwareThread from './Thread/SoftwareThread';
+import Thread from './Thread/Thread';
 // import { Link } from 'react-router-dom';
 import { connect } from 'react-redux';
 
@@ -67,7 +68,7 @@ class Software extends Component {
                             {this.state.showing && <Topic toggle={this.createTopic}/>}
                         </div>
                         <div className="forum-post-thread"> 
-                            <SoftwareThread />
+                            <Thread category="Software" />
                         </div>
                     </div>
                 </div>    

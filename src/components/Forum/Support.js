@@ -3,7 +3,8 @@ import React, { Component } from 'react';
 import './Support.css';
 import backGroundGrey from '../../images/support.jpg';
 import Topic from './Topic/Topic';
-import SupportThread from './Thread/SupportThread';
+// import SupportThread from './Thread/SupportThread';
+import Thread from './Thread/Thread';
 import { Link } from 'react-router-dom';
 import { connect } from 'react-redux';
 
@@ -68,7 +69,7 @@ class Support extends Component {
                             {this.state.showing && <Topic toggle={this.createTopic}/>}
                         </div>
                         <div className="support-post-thread"> 
-                            <SupportThread />
+                            <Thread category="Support" />
                         </div>
                     </div>
                 </div>   

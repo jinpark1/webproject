@@ -3,7 +3,9 @@ import './Forum.css';
 import './Hardware.css';
 import backGroundGrey from '../../images/hardware3.jpg';
 import Topic from './Topic/Topic';
-import HardwareThread from './Thread/HardwareThread';
+// import HardwareThread from './Thread/HardwareThread';
+// import Thread from './Thread/Thread';
+import Thread from './Thread/Thread';
 // import { Link } from 'react-router-dom';
 import { connect } from 'react-redux';
 
@@ -68,7 +70,7 @@ class Hardware extends Component {
                             {this.state.showing && <Topic toggle={this.createTopic}/>}
                         </div>
                         <div className="hardware-post-thread"> 
-                            <HardwareThread />
+                            <Thread category="Hardware"/>
                         </div>
                     </div>
                 </div>    

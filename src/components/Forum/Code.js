@@ -3,7 +3,8 @@ import './Forum.css';
 // import backGroundGrey from '../../images/backgroundgrey3.jpg';
 import codeImg from '../../images/code.jpg';
 import Topic from './Topic/Topic';
-import CodeThread  from './Thread/CodeThread';
+// import CodeThread  from './Thread/CodeThread';
+import Thread  from './Thread/Thread';
 import { Link } from 'react-router-dom';
 import { connect } from 'react-redux';
 
@@ -68,7 +69,7 @@ class Code extends Component {
                             {this.state.showing && <Topic toggle={this.createTopic}/>}
                         </div>
                         <div className="forum-post-thread"> 
-                            <CodeThread />
+                            <Thread category="Code" />
                         </div>
                     </div>
                 </div>    

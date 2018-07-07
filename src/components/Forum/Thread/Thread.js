@@ -15,14 +15,12 @@ class Thread extends Component {
     }
 
     componentDidMount() {
-
-        
         console.log('thread-----', this.props.category)
-        let category = this.props.category
+        const category = this.props.category
         // Gets 20 items at a time 
         const id = this.state.offset * 20
 
-        if(category == 'All'){
+        if(category === 'All'){
             axios.get(`/api/threads/${id}`).then( res => {
                 console.log(res.data)
                 this.setState({
@@ -59,45 +57,71 @@ class Thread extends Component {
 
 
     updateLatest = () => {
+        const category = this.props.category;
         const id = (this.state.pageNum - 1) * 20
-        axios.get(`/api/threads/${id}`).then( res => {
-            this.setState({
-                pageNum: this.state.pageNum - 1,
-                offset: this.state.offset - 1,
-                threads: res.data,
-            })
-        }) 
-        window.scrollTo(0, 0)
+        
+        if(category === 'All'){
+            axios.get(`/api/threads/${id}`).then( res => {
+                this.setState({
+                    pageNum: this.state.pageNum - 1,
+                    offset: this.state.offset - 1,
+                    threads: res.data,
+                })
+            }) 
+            window.scrollTo(0, 0)
+        } else {
+            axios.get(`/api/threads/${id}/${category}`).then( res => {
+                this.setState({
+                    pageNum: this.state.pageNum - 1,
+                    offset: this.state.offset - 1,
+                    threads: res.data,
+                })
+            }) 
+            window.scrollTo(0, 0)
+        }
     }
 
     updatePrevious = () => {
+        const category = this.props.category;
         const id = this.state.offset * 20
-        axios.get(`/api/threads/${id}`).then( res => {
-            this.setState({
-                pageNum: this.state.pageNum + 1,
-                offset: this.state.offset + 1,
-                threads: res.data,
+
+        if(category === 'All'){
+            axios.get(`/api/threads/${id}`).then( res => {
+                this.setState({
+                    pageNum: this.state.pageNum + 1,
+                    offset: this.state.offset + 1,
+                    threads: res.data,
+                })
             })
-        })
-        window.scrollTo(0, 0)
+            window.scrollTo(0, 0)
+        } else {
+            axios.get(`/api/threads/${id}/${category}`).then( res => {
+                this.setState({
+                    pageNum: this.state.pageNum + 1,
+                    offset: this.state.offset + 1,
+                    threads: res.data,
+                })
+            })
+            window.scrollTo(0, 0)
+        }
     }
 
-    updateCategory = () => {
-        const id = 0
-        axios.get(`/api/threads/${id}`).then(res => {
+    // updateCategory = () => {
+    //     const id = 0
+    //     axios.get(`/api/threads/${id}`).then(res => {
             
-            let arrayStuff = []
+    //         let arrayStuff = []
             
-            res.data.map( (v) => {
-                if(v.category === 'support'){
-                    arrayStuff.push(v)
-                }
-            })
-            this.setState({
-                threads: arrayStuff
-            })
-        })
-    }
+    //         res.data.map( (v) => {
+    //             if(v.category === 'support'){
+    //                 arrayStuff.push(v)
+    //             }
+    //         })
+    //         this.setState({
+    //             threads: arrayStuff
+    //         })
+    //     })
+    // }
 
 
 

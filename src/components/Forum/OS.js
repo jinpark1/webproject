@@ -4,7 +4,8 @@ import './OS.css';
 // import backGroundGrey from '../../images/backgroundgrey3.jpg';
 import osPhoto from '../../images/osphoto.jpg';
 import Topic from './Topic/Topic';
-import OSThread from './Thread/OSThread';
+// import OSThread from './Thread/OSThread';
+import Thread from './Thread/Thread';
 // import { Link } from 'react-router-dom';
 import { connect } from 'react-redux';
 
@@ -69,7 +70,7 @@ class OS extends Component {
                             {this.state.showing && <Topic toggle={this.createTopic}/>}
                         </div>
                         <div className="OS-post-thread"> 
-                            <OSThread />
+                            <Thread category="OS" />
                         </div>
                     </div>
                 </div>    

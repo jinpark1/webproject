@@ -2,7 +2,8 @@ import React, { Component } from 'react';
 import './Forum.css';
 import backGroundGrey from '../../images/mobile.jpg';
 import Topic from './Topic/Topic';
-import MobileThread from './Thread/MobileThread';
+// import MobileThread from './Thread/MobileThread';
+import Thread from './Thread/Thread';
 // import { Link } from 'react-router-dom';
 import { connect } from 'react-redux';
 
@@ -67,7 +68,7 @@ class Mobile extends Component {
                             {this.state.showing && <Topic toggle={this.createTopic}/>}
                         </div>
                         <div className="forum-post-thread"> 
-                            <MobileThread />
+                            <Thread category="Mobile" />
                         </div>
                     </div>
                 </div>    

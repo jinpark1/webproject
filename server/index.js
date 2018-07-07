@@ -21,7 +21,7 @@ app.use(session({
     }
 }));
 
-app.use(express.static(`${__dirname}/../build`));
+// app.use(express.static(`${__dirname}/../build`));
 
 
 // Registering a user
