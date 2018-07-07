@@ -15,16 +15,48 @@ class Thread extends Component {
     }
 
     componentDidMount() {
+
+        
+        console.log('thread-----', this.props.category)
+        let category = this.props.category
         // Gets 20 items at a time 
         const id = this.state.offset * 20
-       axios.get(`/api/threads/${id}`).then( res => {
-           console.log(res.data)
-           this.setState({
-               threads: res.data,
-               offset: this.state.offset + 1
-           })
-       }) 
+
+        if(category == 'All'){
+            axios.get(`/api/threads/${id}`).then( res => {
+                console.log(res.data)
+                this.setState({
+                    threads: res.data,
+                    offset: this.state.offset + 1
+                })
+            })
+        } else {
+            console.log('category---', category)
+            axios.get(`/api/threads/${id}/${category}`).then( res => {
+                console.log(res.data)
+                this.setState({
+                    threads: res.data,
+                    offset: this.state.offset + 1
+                })
+            })
+        }
+
+        // axios.get(`/api/threads/${id}`).then( res => {
+        //     console.log(res.data)
+        //     this.setState({
+        //         threads: res.data,
+        //         offset: this.state.offset + 1
+        //     })
+        // })
+    //    axios.get(`/api/threads/${id}/${category}`).then( res => {
+    //        console.log(res.data)
+    //        this.setState({
+    //            threads: res.data,
+    //            offset: this.state.offset + 1
+    //        })
+    //    })
     }
+
 
     updateLatest = () => {
         const id = (this.state.pageNum - 1) * 20
@@ -70,6 +102,7 @@ class Thread extends Component {
 
 
     render() {
+        console.log('thread------', this.props.category)
         const threads = this.state.threads ? this.state.threads.map( (v, i) => {
             return (
                 <Link to={`/forums/${v.thread_id}`} className="thread-list" key={i}>

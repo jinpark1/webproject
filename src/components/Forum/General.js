@@ -3,6 +3,7 @@ import './Forum.css';
 import backGroundGrey from '../../images/general2.jpg';
 import Topic from './Topic/Topic';
 import GeneralThread from './Thread/GeneralThread';
+import Thread from './Thread/Thread';
 // import { Link } from 'react-router-dom';
 import { connect } from 'react-redux';
 
@@ -67,7 +68,7 @@ class General extends Component {
                             {this.state.showing && <Topic toggle={this.createTopic}/>}
                         </div>
                         <div className="forum-post-thread"> 
-                            <GeneralThread />
+                            <Thread category="General"/>
                         </div>
                     </div>
                 </div>    

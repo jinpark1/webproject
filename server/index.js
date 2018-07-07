@@ -21,11 +21,12 @@ app.use(session({
     }
 }));
 
-// app.use(express.static(`${__dirname}/../build`));
+app.use(express.static(`${__dirname}/../build`));
 
 
 // Registering a user
 app.post('/api/register', (req, res) => {
+    console.log('---register',req.body)
     const db = app.get('db');
     const { email, onlineID, password, firstName, lastName, created, admin } = req.body;
     bcrypt.hash(password, saltRounds).then(hashedPassword => {
@@ -106,12 +107,30 @@ app.delete(`/api/deleteuser/:id`, (req, res) => {
     })
 })
 
-// Get 20 thread posts 
+// Get 20 thread posts all
 app.get('/api/threads/:id', (req, res) => {
+    // console.log('test----------5-',res.body)
+    console.log('test-----7-', req.params.category)
+    // console.log('req')
     const db = req.app.get('db')
     const { id } = req.params;
     db.read_threads20({
-        value: id
+        value: id,
+    })
+    .then( threads => res.status(200).send(threads) )
+    .catch( () => res.status(500).send() );
+})
+
+// Get 20 thread posts depending on categories
+app.get('/api/threads/:id/:category', (req, res) => {
+    // console.log('test----------5-',res.body)
+    console.log('test-----7-', req.params.category)
+    // console.log('req')
+    const db = req.app.get('db')
+    const { id, category } = req.params;
+    db.read_thread20({
+        value: id,
+        category: category
     })
     .then( threads => res.status(200).send(threads) )
     .catch( () => res.status(500).send() );

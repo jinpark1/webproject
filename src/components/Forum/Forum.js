@@ -69,7 +69,7 @@ class Forum extends Component {
                             {this.state.showing && <Topic toggle={this.createTopic}/>}
                         </div>
                         <div className="forum-post-thread"> 
-                            <Thread />
+                            <Thread category="All" />
                         </div>
                     </div>
                 </div>    
