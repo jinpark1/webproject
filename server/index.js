@@ -1,13 +1,13 @@
+require('dotenv').config();
 const express = require('express');
-const bodyParser = require('body-parser');
 const massive = require('massive');
+const bodyParser = require('body-parser');
 const session = require('express-session');
 const bcrypt = require('bcrypt');
-const app = express();
 const saltRounds = 12;
+const app = express();
 
 app.use(bodyParser.json());
-require('dotenv').config();
 
 massive(process.env.CONNECTION_STRING).then(database => { app.set('db', database); });
 
@@ -22,7 +22,6 @@ app.use(session({
 }));
 
 // app.use(express.static(`${__dirname}/../build`));
-
 
 // Registering a user
 app.post('/api/register', (req, res) => {
@@ -59,7 +58,6 @@ app.post('/api/login', (req, res) => {
                 if (doPasswordsMatch) {
                     req.session.user =  users[0];
                     res.json({ user: req.session.user });
-                    // console.log("I'm IN")
                 } else {
                     res.status(403).json({ message: 'Wrong Password' });
                 }
@@ -202,16 +200,16 @@ app.post('/api/logout', (req, res) => {
 
 
 
-//for nodeMailer
+// NodeMailer
 const nodeMailer_controller = require( './controllers/nodeMailer_controller');
 app.post('/api/sendmail', nodeMailer_controller.sendMail);
 
-//for Cloudinary image upload
+// Cloudinary image upload
 const cloudinary_controller = require('./controllers/cloudinary_controller');
 app.get('/api/cloud', cloudinary_controller.upload);
 
 
-// for hosting zeit
+// Hosting zeit
 const path = require('path')
 app.get('*', (req, res)=>{
   res.sendFile(path.join(__dirname, '../build/index.html'));
@@ -220,8 +218,7 @@ app.get('*', (req, res)=>{
 const port = 4001;
 const server = app.listen(port, () => { console.log(`Server listening on Port ${port}`)} );
 
-// socket io
-
+// Socket
 var socket = require('socket.io');
 var messages = [];
 var usersSignedIn = [];

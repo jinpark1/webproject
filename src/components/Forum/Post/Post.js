@@ -2,8 +2,8 @@ import React, { Component } from 'react';
 import './Post.css';
 import axios from 'axios';
 import backGroundGrey from '../../../images/backgroundgrey3.jpg';
-import Reply from './Reply/Reply';
-import CreateReply from './CreateReply/CreateReply';
+import Reply from '../Reply/Reply';
+import CreateReply from '../CreateReply/CreateReply';
 import { connect } from 'react-redux';
 
 class Post extends Component {
