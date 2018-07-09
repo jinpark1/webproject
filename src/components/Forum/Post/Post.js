@@ -13,22 +13,29 @@ class Post extends Component {
 
         this.state = {
             posts: [],
-            showing: false, //default to false;
-            showingEdit: false, //default to false;
+            showing: false, //default to false
+            showingEdit: false, //default to false
             replys: [],
             loggedIn: false, //default to false 
+            loggedInEdit: false, //default to false
         }
     }
 
     componentDidMount() {
-        // let id = this.props.match.params.id
         axios.get(`/api/post/${ this.props.match.params.id }`).then( res => {
             console.log('---post---Res', res)
             this.setState({
                 posts: res.data
-            })          
+            })
+            
+            // Show Edit button if user ID matches.
+            if(res.data[0].online_id === this.props.userData.online_id){
+                this.setState({
+                    loggedInEdit: true,
+                })
+            }
         })
-        console.log('Post--------compdidmount')
+
         if(this.props.userData.email){
             this.setState({
                 loggedIn: true,
@@ -39,6 +46,7 @@ class Post extends Component {
                 loggedIn: false,
             })
         }
+     
     }
 
     createReply = () => {
@@ -64,6 +72,8 @@ class Post extends Component {
         console.log('Post-----props', this.props)
         const post = this.state.posts[0] ? this.state.posts[0] : 'loading..'
         console.log('replys from post comp', this.state.replys)
+        console.log('hello-----------', this.state.post)
+        console.log('hello-----------', post.id)
 
         return (
             <div className="post">
@@ -88,9 +98,6 @@ class Post extends Component {
                         <a href="/forum/support"><div>Support</div></a>
                     </div>
                     <div className="post-container">
-                        {/* <div className="forum-post-top">
-                            <div>{post.category}</div>
-                        </div> */}
                         <div className="forum-post-topic">
                         </div>
                         <div className="post-thread"> 
@@ -106,7 +113,7 @@ class Post extends Component {
                             <div className="post-content"><div dangerouslySetInnerHTML={{__html: post.content}}></div></div>
                             <div>
                                 { this.state.loggedIn ? <button className="post-thread-button-reply" onClick={ () => this.createReply() }>Comment</button> : null }
-                                { this.state.loggedIn ? <button className="post-thread-button-edit" onClick={this.editPost}>Edit</button> : null}
+                                { this.state.loggedInEdit ? <button className="post-thread-button-edit" onClick={this.editPost}>Edit</button> : null}
                             </div>
                         </div>
                         <div >
