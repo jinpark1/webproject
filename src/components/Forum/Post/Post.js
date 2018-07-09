@@ -97,7 +97,8 @@ class Post extends Component {
                             <div className="post-subject">{post.subject}</div>
                             <div className="post-content"><div dangerouslySetInnerHTML={{__html: post.content}}></div></div>
                             <div>
-                                { this.state.loggedIn ? <button onClick={ () => this.createReply() }>Reply</button> : null }
+                                { this.state.loggedIn ? <button className="post-thread-button-reply" onClick={ () => this.createReply() }>Comment</button> : null }
+                                { this.state.loggedIn ? <button className="post-thread-button-edit" onClick={this.editPost}>Edit</button> : null}
                             </div>
                         </div>
                         <div >
