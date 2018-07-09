@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import './Topic.css';
+import './EditPost.css';
 import axios from 'axios';
 import { connect } from 'react-redux';
 import { withRouter } from 'react-router-dom'
@@ -8,7 +8,7 @@ import 'react-quill/dist/quill.snow.css';
 
 
 
-class Topic extends Component {
+class EditPost extends Component {
   constructor(){
     super();
 
@@ -95,4 +95,4 @@ const mapStateToProps = state => {
   }
 }
 
-export default withRouter(connect(mapStateToProps)(Topic));
+export default withRouter(connect(mapStateToProps)(EditPost));

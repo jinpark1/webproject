@@ -5,6 +5,7 @@ import backGroundGrey from '../../../images/backgroundgrey3.jpg';
 import Reply from '../Reply/Reply';
 import CreateReply from '../CreateReply/CreateReply';
 import { connect } from 'react-redux';
+import EditPost from '../EditPost/EditPost';
 
 class Post extends Component {
     constructor(){
@@ -13,6 +14,7 @@ class Post extends Component {
         this.state = {
             posts: [],
             showing: false, //default to false;
+            showingEdit: false, //default to false;
             replys: [],
             loggedIn: false, //default to false 
         }
@@ -42,6 +44,12 @@ class Post extends Component {
     createReply = () => {
         this.setState({
             showing: !this.state.showing
+        })
+    }
+
+    editPost = () => {
+        this.setState({
+            showingEdit: !this.state.showingEdit
         })
     }
 
@@ -103,6 +111,7 @@ class Post extends Component {
                         </div>
                         <div >
                             {this.state.showing && <CreateReply getReply={ this.updateReplyPosts } id={ this.props.match.params.id} toggle={ this.createReply } />}
+                            {this.state.showingEdit && <EditPost getReply={ this.updateReplyPosts } id={ this.props.match.params.id} toggle={ this.editPost } />}
                         </div>
                         <div className="post-reply">
                             <Reply newReply={ this.state.replys } id={ this.props.match.params.id } />
