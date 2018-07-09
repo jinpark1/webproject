@@ -37,7 +37,7 @@
 }
 
 .post-subject {
-    border: 1px solid red;
+    /* border: 1px solid red; */
     /* border-bottom: 2px solid black; */
     color: white;
     margin: 0px 100px 15px 30px;
@@ -50,7 +50,7 @@
 
 .post-content {
     color: white;
-    border: 1px solid orange;
+    /* border: 1px solid orange; */
     /* border-bottom: 1px solid orange; */
     margin: 0px 100px 15px 30px;
     font-size: 15px;
