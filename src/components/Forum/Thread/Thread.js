@@ -123,7 +123,9 @@ class Thread extends Component {
     //     })
     // }
 
-
+    test = (a, b) => {
+        return a + b;
+    }
 
     render() {
         console.log('thread------', this.props.category)
