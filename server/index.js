@@ -165,7 +165,7 @@ app.get('/api/post/:id', (req, res) => {
 // Get a thread REPLY depending on ID.
 app.get('/api/reply/:id', (req, res) => {
     const { id } = req.params;
-    const db = app.get('db');
+    const db = req.app.get('db');
     db.read_reply({
         thread_id: id
     })
