@@ -13,8 +13,8 @@ class Register extends Component {
                     <div><img src={starImg} alt="star" /></div>
                     <div className="or">Create Account</div>
                     <div><input placeholder="Email" onChange={ e => this.props.updateEmail(e.target.value) } /></div>
-                    <div><input placeholder="Password" onChange={ e => this.props.updatePassword(e.target.value) } /></div>
-                    <div><input placeholder="Re-enter Password" onChange={ e => this.props.updatePasswordRe(e.target.value) } /></div>
+                    <div><input placeholder="Password" onChange={ e => this.props.updatePassword(e.target.value) } type="password" /></div>
+                    <div><input placeholder="Re-enter Password" onChange={ e => this.props.updatePasswordRe(e.target.value) } type="password"/></div>
                     <div>
                         <div><Link className="link-button" to='/auth'>Back</Link></div>
                         <div><Link className="link-button" to='/register2'>Next</Link></div>

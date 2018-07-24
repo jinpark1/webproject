@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css?family=Muli');
+
 .post-thread {
     background-color: #232936;
     background-color: #181c25;
@@ -5,6 +7,7 @@
     background-color: #232936;
     /* background-color: #181c25; */
     /* border: 1px solid purple; */
+    font-family: 'Muli', sans-serif;
 }
 
 .post-thread-top {
@@ -17,7 +20,8 @@
     /* border: 1px solid orange; */
     color: white;
     padding: .5em 1em;
-    font-size: .75em;
+    font-size: 1rem;
+    /* color: rgba(255,206,31,0.8);     */
 }
 
 .post-created {
@@ -29,11 +33,26 @@
     text-align: right;
 }
 
+.post-online-id-container {
+    display: flex;
+    text-align: center;
+    vertical-align: middle;
+    line-height: 75px;
+}
+
+.post-online-id-container img {
+    border-radius: 50%;
+    margin-left: 25px;
+    margin-right: -10px;
+}
+
 .post-online-id {
     /* border: 1px solid purple; */
     color: white;
-    font-size: 1.5em;
+    font-size: 2rem;
     margin: 0px 30px 15px 30px;
+    color: rgba(255,206,31,0.8);    
+    font-family: 'Muli', sans-serif;
 }
 
 .post-subject {

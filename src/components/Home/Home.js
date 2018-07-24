@@ -15,13 +15,14 @@ class Home extends Component {
             <div className="home">
                 <div className="home-top">
                     {/* <div>HOME</div> */}
-                    <img src={glow} alt="backGroundGrey" />
+                    {/* <img src={glow} alt="backGroundGrey" /> */}
                 </div>
 
                 <div className="home-description">
+                    <div class="home-description-centered">THE TECH FORUM</div>
                     {/* <div className="home-description-text">Welcome to the tech forum, feel free to discuss anything.</div> */}
                 </div>
-                <div className="home-skill-title">Built with...</div>
+                {/* <div className="home-skill-title">"Tech Forum," is a web application that allow users to discuss freely on different technologies.</div>
                 <div className="home-skill-container">
                     <div className="home-skill">
                         <img src={reactLogo} alt="starimg1"/>
@@ -30,7 +31,7 @@ class Home extends Component {
                         <img src={heroku} alt="starimg1"/>
                         <img src={postgresLogo} alt="starimg1"/>
                     </div>
-                </div>             
+                </div>              */}
             </div>
         );
     }

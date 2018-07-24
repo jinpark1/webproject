@@ -9,6 +9,7 @@
      image-rendering: auto;
      image-rendering: crisp-edges;
      image-rendering: pixelated;
+     height: 100vh;
  }
 
  .trollbox-container-flex {
@@ -21,7 +22,7 @@
 
  .trollbox-top-container {
     border: 1px solid red;
-    height: 300px;
+    height: 200px;
     display: flex;
     justify-content: center;
 }

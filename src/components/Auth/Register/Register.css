@@ -15,8 +15,8 @@
 .register {
     border: 0px solid black;
     box-shadow: 1px 0px 5px silver;
-    height: 250px;
-    width: 250px;
+    height: 500px;
+    width: 500px;
     background-color: white;
     margin: 0 auto;
 }
@@ -27,15 +27,22 @@
     margin: 10px;
 }
 
+.register div input {
+    font-size: 20px;
+    width: 200px;
+    height: 35px;
+    margin-top: 10px;
+}
+
 
 .register img {
-    width: 25px;
-    height: 25px;
+    width: 50px;
+    height: 50px;
     /* margin-bottom: 10px; */
 }
 
 .or {
-    font-size: 10px;
+    font-size: 20px;
 }
 
 .link-button {
@@ -43,13 +50,17 @@
     text-decoration: none;
     color: white;
     text-align: center;
-    width: 100px;
+    width: 200px;
+    height: 50px;
     background-color: #252525;
     border: none;
     color: white;
     margin-top: 50px;
     margin-bottom: 20px;
-    font-size: 15px;
+    font-size: 25px;
+    text-align: center;
+    vertical-align: middle;
+    line-height: 50px;     
 }
 
 .account-create-button {
@@ -79,4 +90,27 @@
     margin-bottom: 20px;
     font-size: 15px;
     margin-left: 75px;
+}
+
+.link-button-go {
+    font-family: 'Times New Roman', Times, serif;
+    text-decoration: none;
+    color: white;
+    text-align: center;
+    width: 200px;
+    height: 50px;
+    background-color: #252525;
+    border: none;
+    color: white;
+    margin-top: 50px;
+    margin-bottom: 20px;
+    font-size: 25px;
+    text-align: center;
+    vertical-align: middle;
+    line-height: 50px; 
+}
+
+.link-button-go-container {
+    display: flex;
+    justify-content: center;
 }

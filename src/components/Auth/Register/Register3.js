@@ -49,7 +49,7 @@ class Register3 extends Component {
                 <div className="register">
                     <div><img src={starImg} alt="star" /></div>
                     <div className="or">Create Account</div>
-                        <div><button onClick={ this.registerUser } className="account-create-button">Create Account</button></div>
+                        <div><button onClick={ this.registerUser } className="link-button">Create Account</button></div>
                         {/* <div><Link onClick={ this.registerUser } className="link-button" to='/register4'>Create Account</Link></div> */}
                         <div><Link className="link-button" to='/register2'>Back</Link></div>
                 </div>

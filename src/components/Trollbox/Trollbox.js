@@ -72,9 +72,9 @@ class Trollbox extends Component {
                     <div className="trollbox-six-container">six
                         <div className="trollbox-six-child">six-child</div>
                     </div> */}
-                    <div className="trollbox-bottom-container">
+                    {/* <div className="trollbox-bottom-container">
                         <div className="trollbox-bottom-child"></div>
-                    </div>
+                    </div> */}
                 </div>
             </div>
         );
