@@ -191,6 +191,20 @@ app.post('/api/reply', (req, res) => {
     })
 })
 
+app.delete('/api/deletePost/:id', (req, res) => {
+    console.log('delete--', req.params)
+    const id = req.params.id;
+    const db = req.app.get('db');
+    console.log('delete---',id)
+    db.delete_post({
+        id: id
+    }).then( post => {
+        res.status(200).send( post );
+    }).catch( error => {
+        res.status(500).send();
+    })
+})
+
 //Checks session then stores user data to redux state.
 app.get('/api/checkSession', (req, res) => {
     console.log(req.session)
