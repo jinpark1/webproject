@@ -2,6 +2,8 @@ import React, { Component } from 'react';
 import './Thread.css';
 import axios from 'axios';
 import { Link } from 'react-router-dom';
+import * as FontAwesome from 'react-icons/lib/fa'
+
 
 class Thread extends Component {
     constructor(){
@@ -134,7 +136,7 @@ class Thread extends Component {
                 <Link to={`/forums/${v.thread_id}`} className="thread-list" key={i}>
                     <div className="thread-list-leftID">
                         <div className="thread-list-threadID">
-                            <div className="thread-list-threadID-child">{v.thread_id}</div>
+                            <div className="thread-list-threadID-child"># {v.thread_id}</div>
                         </div>
                         <img className="thread-list-photo" src={v.profile_photo} />
                     </div> 
@@ -156,8 +158,8 @@ class Thread extends Component {
                     {threads}
                 </div>
                 <div className="thread-pagination">
-                    { this.state.pageNum > 0 ? <button onClick={this.updateLatest} >Left Arrow</button> : <button disabled>Left Arrow</button> }
-                    { this.state.threads.length === 20 ? <button className="thread-button-right" onClick={this.updatePrevious} >Right Arrow</button> : <button disabled>Right Arrow</button> }
+                    { this.state.pageNum > 0 ? <FontAwesome.FaArrowCircleOLeft className="thread-button-left" onClick={this.updateLatest} /> : <FontAwesome.FaArrowCircleOLeft className="thread-button-left" /> }
+                    { this.state.threads.length === 20 ? <FontAwesome.FaArrowCircleORight className="thread-button-right" onClick={this.updatePrevious} /> : <FontAwesome.FaArrowCircleORight disabled className="thread-button-right" /> }
                 </div>
             </div>
         );

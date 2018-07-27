@@ -21,6 +21,7 @@
     color: white;
     padding: .5em 1em;
     font-size: 1rem;
+    color: rgb(242, 193, 97);
     /* color: rgba(255,206,31,0.8);     */
 }
 
@@ -31,6 +32,7 @@
     margin: .5em 1em;
     font-size: .75em;
     text-align: right;
+    color: rgb(242, 193, 97);
 }
 
 .post-online-id-container {
@@ -38,10 +40,11 @@
     text-align: center;
     vertical-align: middle;
     line-height: 75px;
+    
 }
 
 .post-online-id-container img {
-    border-radius: 50%;
+    /* border-radius: 50%; */
     margin-left: 25px;
     margin-right: -10px;
 }
@@ -51,7 +54,8 @@
     color: white;
     font-size: 2rem;
     margin: 0px 30px 15px 30px;
-    color: rgba(255,206,31,0.8);    
+    /* color: rgba(255,206,31,0.8);     */
+    /* color: rgb(242, 193, 97); */
     font-family: 'Muli', sans-serif;
 }
 
@@ -60,7 +64,7 @@
     /* border-bottom: 2px solid black; */
     color: white;
     margin: 0px 100px 15px 30px;
-    font-size: 2em;
+    font-size: 2.2rem;
     /* white-space: nowrap; */
     text-overflow: ellipsis;
     overflow: hidden;
@@ -72,7 +76,8 @@
     /* border: 1px solid orange; */
     /* border-bottom: 1px solid orange; */
     margin: 0px 100px 15px 30px;
-    font-size: 15px;
+    /* font-size: 15px; */
+    font-size: 1.5rem;
     padding-bottom: 15px;
     word-wrap: break-word;
 }

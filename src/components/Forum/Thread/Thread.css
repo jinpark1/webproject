@@ -24,6 +24,7 @@
 
 .thread-list-id {
     color: white;
+    /* color: #EAECEF; */
 }
 
 .thread-list-threadID {
@@ -37,6 +38,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    color: rgba(255,206,31,0.8);   
 }
 
 .thread-list-photo {
@@ -58,6 +60,7 @@
     white-space: nowrap;
     text-overflow: ellipsis;
     overflow: hidden;
+    color: rgba(255,206,31,0.8);
 }
 
 .thread-list-leftID {
@@ -87,7 +90,7 @@
     white-space: nowrap;
     text-overflow: ellipsis;
     overflow: hidden;
-    
+    color: rgba(255,206,31,0.8);
 }
 
 .thread-pagination {
@@ -99,5 +102,29 @@
 }
 
 .thread-pagination button {
-    margin: 5px;
+    margin: 15px;
+}
+
+.thread-button-right {
+    width: 40px;
+    height: 40px;
+    color: grey;
+}
+
+.thread-button-right:hover {
+    color: white;
+    transition: 2s;
+}
+
+.thread-button-left {
+    width: 40px;
+    height: 40px;
+    color: black;
+    color: grey;
+    
+}
+
+.thread-button-left:hover {
+    color: white;
+    transition: 1s;
 }
