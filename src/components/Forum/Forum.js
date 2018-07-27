@@ -43,7 +43,7 @@ class Forum extends Component {
             <div className="forum">
                 <div className="forum-top">
                     <div>FORUMS</div>
-                    <img src={glow} alt="backGroundGrey" />
+                    <img src="https://res.cloudinary.com/jinpark1/image/upload/v1530772055/projectForum/feedback3.jpg" alt="backGroundGrey" />
                 </div>
                 <div className="forum-main">
                     <div className="forum-category">
