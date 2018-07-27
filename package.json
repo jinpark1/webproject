@@ -44,7 +44,5 @@
     "alias": "hello-forums"
   },
   "proxy": "http://localhost:4001",
-  "devDependencies": {
-    "cypress": "^3.0.2"
-  }
+  "devDependencies": {}
 }

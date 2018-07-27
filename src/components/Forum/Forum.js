@@ -5,7 +5,7 @@ import Topic from './Topic/Topic';
 import Thread from './Thread/Thread';
 // import SocialThread from './Thread/SocialThread';
 import { connect } from 'react-redux';
-import glow from '../../images/forums.jpg';
+// import glow from '../../images/forums.jpg';
 
 
 class Forum extends Component {

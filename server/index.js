@@ -21,7 +21,8 @@ app.use(session({
     }
 }));
 
-// app.use(express.static(`${__dirname}/../build`));
+//hosting
+app.use(express.static(`${__dirname}/../build`));
 
 // Registering a user
 // app.post('/api/register', (req, res) => {

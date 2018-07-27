@@ -104,7 +104,7 @@ class Topic extends Component {
         </div>
         <div className="topic-button">
             <button className="topic-button-post" onClick={this.createTopic}>Post</button>
-            <button className="topic-button-cancel" onClick={this.props.toggle}>Cancel</button>
+            <button className="topic-button-cancel" onClick={this.props.toggle}>Cancel</button> 
         </div>
       </div>
     );
