@@ -6,7 +6,6 @@
     height: 200px;
     z-index: -1;
     display: block;
-    /* border: 1px solid pink; */
     background-attachment: fixed;
     background: url("https://res.cloudinary.com/jinpark1/image/upload/v1530772055/projectForum/feedback3.jpg");
     background-size: cover;
@@ -22,28 +21,12 @@
     font-size: 30px;
     color: white;
     font-weight: 600;
-    /* border: 1px solid orangered; */
-}
-
-/* .home-top {
-    height: 200px;
-    background-color: pink;
-    background-color: white;
-    background-color: black;
-    background-color: #252525;
-} */
-
-.home {
-    /* border: 3px solid blue; */
 }
 
 .home-description {
     width: 100vw;
     height: 100vh;
-    /* background-color: black; */
     background: url("https://res.cloudinary.com/jinpark1/image/upload/v1530772055/projectForum/feedback3.jpg");
-    /* border: 1px solid orange; */
-    /* background-color: #252525; */
     background-size: cover;
     justify-content: center;
     color: white;
@@ -52,14 +35,10 @@
     display: flex;
     justify-content: center;
     font-family: 'Muli', sans-serif;
-    /* border-top: 1px solid white; */
 }
 
 .home-description-text {
     width: 90vw;
-    /* border: 1px solid orange; */
-    /* color: black; */
-    /* background-color: white; */
 }
 
 .home-description-centered {
@@ -71,17 +50,11 @@
     color: blue;
     font-weight: 700;
     font-size: 9rem;
-    /* text-shadow: 15px 15px black; */
     mix-blend-mode: screen;
-    /* border: 1px solid black; */
-    /* box-shadow: 0px 2px 10px 0px #777; */
-    /* width: 100vw; */
 }
 
 .home-skill-container {
-    /* background-color: darkcyan; */
     background-color: black;
-    /* background-color: #252525; */
     display: flex;
     justify-content: center;
 }
@@ -89,51 +62,22 @@
 .home-skill {
     width: 95%;
     display: grid;
-    /* grid-template-columns: 15em 15em 15em 15em; */
     grid-template-columns: 21% 21% 21% 21% 20%;
-    /* grid-template-rows: 21% 20% 20% 20% 20%; */
-    /* grid-auto-rows: 100px; */
-    /* grid-gap: 10px; */
     background-color: #fff;
-    /* background-color: darkblue; */
     background-color: black;
-    /* background-color: #252525; */
-    /* width: 95%; */
     color: #444;
-    /* justify-content: center; */
-    /* border: 3px solid purple; */
     margin-bottom: 100px;
-    /* display: flex; */
 }
 
-/* grid-template-columns: 12px 12px 12px;
-grid-template-rows: 12px 12px 12px;
-
-grid-column-start: 1;
-grid-column-end: 3;
-
-align-self: start; */
-
 .home-skill img {
-    /* border: 3px solid salmon; */
     height: 15rem;
-    /* width: 15rem; */
     width: 80%;
     object-fit: contain;
-    /* grid-column-start: 1; */
-    /* grid-column-end: 3; */
-    /* background-color: red; */
-    /* background-color: #444; */
-    /* color: #fff; */
-    /* border-radius: 5px; */
-    /* padding: 20px; */
-    /* font-size: 150%; */
 }
 
 .home-skill-title {
     color: red;
     font-size: 5em;
-    /* text-align: center; */
     padding-left: 50px;
     background-color: black;
     color: white;
