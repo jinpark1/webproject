@@ -91,7 +91,7 @@ class Nav extends Component {
                             </ul>
                             { !this.state.loggedIn ? <a href="/auth"><button>SIGN IN!</button></a> : <button onClick={ () => this.showMenu() }>Welcome {this.props.userData.online_id}</button>} 
                             {this.state.showing && <div className="nav-menu">
-                                <a href="/profile"><button className="nav-menu-button1">Profile</button></a>
+                                {/* <a href="/profile"><button className="nav-menu-button1">Profile</button></a> */}
                                 <a href="/settings"><button className="nav-menu-button2">Settings</button></a>
                                 <a href="/contact"><button className="nav-menu-button3">Contact</button></a>
                                 <button className="nav-menu-button4" onClick={this.logoutUser}>Sign out</button>

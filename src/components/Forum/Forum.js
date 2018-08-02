@@ -1,11 +1,9 @@
 import React, { Component } from 'react';
 import './Forum.css';
-// import backGroundGrey from '../../images/backgroundgrey3.jpg';
 import Topic from './Topic/Topic';
 import Thread from './Thread/Thread';
-// import SocialThread from './Thread/SocialThread';
 import { connect } from 'react-redux';
-// import glow from '../../images/forums.jpg';
+
 
 
 class Forum extends Component {

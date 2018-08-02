@@ -1,6 +1,5 @@
  .trollbox{
      background-color: #14191e;
-     /* background-image: url("../../images/4kwall.jpg"); */
      background-image: url("https://res.cloudinary.com/jinpark1/image/upload/v1530649505/projectForum/4k-wallpaper-background-beautiful-853199.jpg");
      /* Center and scale the image nicely */
      background-position: center;
@@ -13,38 +12,31 @@
  }
 
  .trollbox-container-flex {
-     background-color: red;
-     border: 1px solid orange;
      display: flex;
      flex-direction: column;
      background-color: transparent;
  }
 
  .trollbox-top-container {
-    border: 1px solid red;
     height: 200px;
     display: flex;
     justify-content: center;
 }
 
 .trollbox-top-child {
-    border: 1px solid red;
     height: 300px;
     background-color: transparent;
     width: 90%;
 }
 
 .trollbox-one-container {
-    border: 1px solid red;
     min-height: 600px;
     display: flex;
     justify-content: center;
 }
 
 .trollbox-one-child {
-    border: 1px solid red;
     min-height: 200px;
-    /* background-color: blue; */
     width: 90%;
     display: flex;
     justify-content: center;
@@ -64,7 +56,6 @@
 }
 
 .trollbox-two-child {
-    border: 1px solid red;
     height: 200px;
     background-color: blue;
     width: 90%;
@@ -78,7 +69,6 @@
 }
 
 .trollbox-three-child {
-    border: 1px solid red;
     height: 200px;
     background-color: blue;
     width: 90%;

@@ -84,19 +84,21 @@ nav ul li a:hover {
 
 .nav-menu {
     border: 2px solid transparent;
-    height: 100px;
+    height: 25px;
     width: 100px;
     margin: 0px;
     padding: 0px;
     margin-right: 100px;
     background-color: transparent;
+    /* background-color: blue; */
+    z-index: -5;
 }
 
 .nav-menu-button1 {
     margin: -20px 0px;
     font-size: 1em;
     width: 100px;
-    border: 1px solid skyblue;
+    /* border: 1px solid skyblue; */
 }
 
 .nav-menu-button1:hover {

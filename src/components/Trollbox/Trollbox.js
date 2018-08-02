@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import './Trollbox.css';
-// import backGroundGrey from '../../images/4kwall.jpg';
 import TrollboxChat from './TrollboxChat';
 
 const API_KEY = process.env.REACT_APP_WEATHER_API_KEY;
@@ -52,7 +51,7 @@ class Trollbox extends Component {
                     <div className="trollbox-one-container">
                         <div className="trollbox-one-child">
                             <div className="trollbox-chat-container">
-                                <TrollboxChat />
+                             
                             
                             </div>
                         </div>
