@@ -30,6 +30,7 @@ class Chat extends React.Component{
             let copy = []
             copy.push(...data)
             this.setState({messages: copy});
+            this.messages.scrollTop = 0
         };
 
         const usersSignedIn = data => {
@@ -41,7 +42,7 @@ class Chat extends React.Component{
         }
 
         this.sendMessage = ev => {
-            ev.preventDefault();
+            // ev.preventDefault();
             this.socket.emit('SEND_MESSAGE', {
                 author: this.state.username,
                 message: this.state.message
@@ -58,10 +59,17 @@ class Chat extends React.Component{
         }
     }
 
+    onKeyPress = (e) => {
+        if(e.key === 'Enter') {
+            this.sendMessage()
+            console.log('hey')
+        }
+    }
+
     render(){
         let displayMessages = this.state.messages.map( (message, i) => {
             return (
-                <div key={i}>
+                <div className="display-message" key={i}>
                     <div>{message.author}: {message.message}</div>
                 </div>
             )
@@ -78,29 +86,25 @@ class Chat extends React.Component{
 
         return (
             <div className="container">
-                <div className="card-title">Global Chat</div>
-                    <div className="messages">
-                        {displayMessages}
+                <div className="card-title">TROLLBOX</div>
+                        <div className="messages-input">
+                            <input type="text" placeholder="Username" value={this.state.username} onChange={ev => this.setState({username: ev.target.value})} className="form-control"/>
+                            <input onKeyPress={this.onKeyPress} type="text" placeholder="Message" className="form-control" value={this.state.message} onChange={ev => this.setState({message: ev.target.value})}/>
+                            <button onClick={this.sendMessage} className="btn btn-primary form-control">Send</button>
+                        </div>
+                    <div className="message-container">
+                        <div id="messages" ref={(ref) => this.messages = ref}>
+                            {displayMessages}
+                        </div>
+                        
                     </div>
-                    <div className="users">
+                        
+                {/* <button onClick={this.sendUser}>Users Signed In</button>    
+                <div className="users">
                         {displayUsers}
-                    </div>
-                    
-                    
-                    <button onClick={this.sendUser}>Users Signed In</button>
-                         
-                    
-                
-             
-                <div className="card-footer">
-                    <input type="text" placeholder="Username" value={this.state.username} onChange={ev => this.setState({username: ev.target.value})} className="form-control"/>
-                    <br/>
-                    <input type="text" placeholder="Message" className="form-control" value={this.state.message} onChange={ev => this.setState({message: ev.target.value})}/>
-                    <br/>
-                    <button onClick={this.sendMessage} className="btn btn-primary form-control">Send</button>
                 </div>
+                     */}
             </div>
-
         );
     }
 }

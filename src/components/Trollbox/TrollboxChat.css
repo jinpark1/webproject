@@ -1,3 +1,42 @@
 .card-footer {
     color: blue;
+    /* height: 500px; */
+    /* background-color: yellow; */
+}
+
+.message-container {
+    display: flex;
+    justify-content: space-between;
+}
+
+#messages {
+    display: flex;
+    flex-direction: column-reverse;
+    background-color: yellow;
+    height: 500px;
+    overflow: auto;
+    width: 100vw;
+
+    background-image: url("https://res.cloudinary.com/jinpark1/image/upload/v1530128235/samples/animals/kitten-playing.gif");
+    /* background-image: url("https://media.giphy.com/media/l6Td5sKDNmDGU/giphy.gif"); */
+    /* Center and scale the image nicely */
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    image-rendering: auto;
+    image-rendering: crisp-edges;
+    image-rendering: pixelated;
+}
+
+.messages-input {
+    display: flex;
+    flex-direction: column;
+    background-color: darkcyan;
+}
+
+.display-message {
+    height: 100px;
+    background-color: purple;
+    background-color: #14191e;
+    color: white;
 }
