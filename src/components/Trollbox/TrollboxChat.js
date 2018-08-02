@@ -1,5 +1,6 @@
 import React from "react";
 import io from "socket.io-client";
+import './TrollboxChat.css';
 
 class Chat extends React.Component{
     constructor(props){
@@ -58,44 +59,48 @@ class Chat extends React.Component{
     }
 
     render(){
+        let displayMessages = this.state.messages.map( (message, i) => {
+            return (
+                <div key={i}>
+                    <div>{message.author}: {message.message}</div>
+                </div>
+            )
+        })
+
+        let displayUsers = this.state.usersSignedIn.map( (users, i) => {
+            return (
+                <div key={i}>
+                    <div>{users.user}</div>
+                </div>
+            )
+        })
+
+
         return (
             <div className="container">
-                <div className="row">
-                    <div className="col-4">
-                        <div className="card">
-                            <div className="card-body">
-                                <div className="card-title">Global Chat</div>
-                                <hr/>
-                                <div className="messages">
-                                    {this.state.messages.map((message, i) => {
-                                        console.log('messages----------', message)
-                                        return (
-                                            <div key={i}>{message.author}: {message.message}</div>
-                                        )
-                                    })} 
-                                </div>
-                            </div>
-                            <div className="card-footer">
-                                <input type="text" placeholder="Username" value={this.state.username} onChange={ev => this.setState({username: ev.target.value})} className="form-control"/>
-                                <br/>
-                                <input type="text" placeholder="Message" className="form-control" value={this.state.message} onChange={ev => this.setState({message: ev.target.value})}/>
-                                <br/>
-                                <button onClick={this.sendMessage} className="btn btn-primary form-control">Send</button>
-                            </div>
-                            {/* <div>Users Signed In: {this.state.usersSignedIn}</div> */}
-                            <div>
-                                {this.state.usersSignedIn.map((users, i) => {
-                                    return (
-                                        <div>{users.user}</div>
-
-                                   )
-                                })}
-                            </div>
-                            <button onClick={this.sendUser}>Users Signed In</button>
-                        </div>
+                <div className="card-title">Global Chat</div>
+                    <div className="messages">
+                        {displayMessages}
                     </div>
+                    <div className="users">
+                        {displayUsers}
+                    </div>
+                    
+                    
+                    <button onClick={this.sendUser}>Users Signed In</button>
+                         
+                    
+                
+             
+                <div className="card-footer">
+                    <input type="text" placeholder="Username" value={this.state.username} onChange={ev => this.setState({username: ev.target.value})} className="form-control"/>
+                    <br/>
+                    <input type="text" placeholder="Message" className="form-control" value={this.state.message} onChange={ev => this.setState({message: ev.target.value})}/>
+                    <br/>
+                    <button onClick={this.sendMessage} className="btn btn-primary form-control">Send</button>
                 </div>
             </div>
+
         );
     }
 }
