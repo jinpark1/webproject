@@ -80,3 +80,11 @@
     color: black;
     margin: 0 auto;
 }
+
+.for-test {
+    color: white;
+    background-color: blue;
+    position: fixed;
+    top: 50%;
+    left: 25%;
+}

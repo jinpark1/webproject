@@ -50,6 +50,11 @@ class Auth extends Component {
                     <div><button><Link className="auth-register-button" to='/register'>Create New Account</Link></button></div>
                 </div>
             </div>
+            <div className="for-test">
+                <span>TEST USER</span><br/>
+                <span>ID: 1</span><br/>
+                <span>Password: 1</span>
+            </div>
             </div>
         );
     }
