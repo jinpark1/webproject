@@ -1,5 +1,7 @@
 @import url('https://fonts.googleapis.com/css?family=Muli');
 
+
+
 .home-main-photo {
     width: 100vw;
     height: 70vh;
@@ -7,25 +9,44 @@
     background-size: cover;
     justify-content: center;
     color: white;
-    font-size: 100px;
-    overflow: hidden;
-    display: flex;
-    justify-content: center;
     font-family: 'Muli', sans-serif;
+    max-width:100%;
 }
 
-.home-description-centered {
+.home-description {
     position: absolute;
     top: 50%;
-    /* left: 50px; */
-    padding-left: 100px;
-    /* transform: translate(-15%, -115%); */
+    text-indent: 100px;
+    letter-spacing: 5px;
     font-family: 'Muli', sans-serif;
-    /* color: blue; */
     font-weight: 700;
     font-size: 8rem;
-    /* mix-blend-mode: screen; */
-    background-color: blue;
     background-color: rgba(30, 31, 31, 0.671);
     width: 100vw;
+}
+
+.home-communities {
+    background-color: #14191e;
+}
+
+.home-communities-container {
+    display: flex;
+    justify-content: center;
+    width: 100vw;
+    height: 100vh;
+    background-color: #14191e;
+    max-width:100%
+}
+
+.home-communities-top {
+    display: flex;
+    width: 90vw;
+    background-color: yellow;
+    justify-content: space-between;
+
+}
+
+.home-communities-top img {
+    width: 42vw;
+    height: 42vh;
 }
