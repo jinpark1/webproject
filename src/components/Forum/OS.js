@@ -19,6 +19,10 @@ class OS extends Component {
         }
     }
 
+    componentDidMount() {
+        window.scrollTo(0, 0)
+    }
+
     createTopic = () => {
         this.setState({
             showing: !this.state.showing

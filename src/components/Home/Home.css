@@ -1,14 +1,12 @@
 @import url('https://fonts.googleapis.com/css?family=Muli');
 
-
-
 .home-main-photo {
     width: 100vw;
     height: 70vh;
     background: url("https://res.cloudinary.com/jinpark1/image/upload/v1530649439/projectForum/thumb-1920-810997.jpg");
     background-size: cover;
     justify-content: center;
-    color: white;
+    color: rgba(255, 255, 255, 0.733);
     font-family: 'Muli', sans-serif;
     max-width:100%;
 }
@@ -23,30 +21,472 @@
     font-size: 8rem;
     background-color: rgba(30, 31, 31, 0.671);
     width: 100vw;
+    max-width: 100%;
+}
+
+@media (max-width: 1370px) {
+    .home-description {
+        font-size: 4rem;
+    }
+}
+
+@media (max-width: 1300px) {
+    .home-description {
+        font-size: 5rem;
+    }
+}
+
+@media (max-width: 870px) {
+    .home-description {
+        font-size: 3rem;
+    }
+}
+
+@media (max-width: 600px) {
+    .home-description {
+        font-size: 2rem;
+    }
+}
+
+@media (max-width: 450px) {
+    .home-description {
+        position: absolute;
+        top: 50%;
+        text-indent: 20px;
+        letter-spacing: 5px;
+        font-family: 'Muli', sans-serif;
+        font-weight: 700;
+        font-size: 1.75rem;
+    }
+}
+
+@media (max-width: 400px) {
+    .home-description {
+        font-size: 1.5rem;
+    }
+}
+
+@media (max-width: 370px) {
+    .home-description {
+        font-size: 1rem;
+    }
 }
 
 .home-communities {
     background-color: #14191e;
+    padding-top: 100px;
+    padding-bottom: 50px;
 }
 
 .home-communities-container {
     display: flex;
     justify-content: center;
     width: 100vw;
-    height: 100vh;
+    height: 50vh;
     background-color: #14191e;
-    max-width:100%
+    max-width: 100%;
 }
 
-.home-communities-top {
+.home-communities-img {
     display: flex;
     width: 90vw;
-    background-color: yellow;
     justify-content: space-between;
-
+    position: relative
 }
 
-.home-communities-top img {
+.home-communities-click {
+    box-shadow: 0px 2px 10px 0px #777;
+}
+
+.home-communities-text {
+    position: absolute;
+    top: 24vh;
+    left: 3vw;
+    font-size: 5rem;
+    font-family: 'Muli', sans-serif;
+    text-transform: uppercase;
+    font-weight: 600;
+    color: rgba(255, 255, 255, 0.733);
+} 
+
+.home-communities-text-details {
+    position: absolute;
+    top: 34vh;
+    left: 3vw;
+    font-size: 3rem;
+    font-family: 'Muli', sans-serif;
+    font-weight: 600;
+    color: rgba(255, 255, 255, 0.733);
+} 
+
+.home-communities-text2 {
+    position: absolute;
+    top: 24vh;
+    left: 51vw;
+    font-size: 5rem;
+    font-family: 'Muli', sans-serif;
+    text-transform: uppercase;
+    font-weight: 600;
+    color: rgba(255, 255, 255, 0.733);
+} 
+
+.home-communities-text2-details {
+    position: absolute;
+    top: 34vh;
+    left: 51vw;
+    font-size: 3rem;
+    font-family: 'Muli', sans-serif;
+    font-weight: 600;
+    color: rgba(255, 255, 255, 0.733);
+} 
+
+.home-communities-text3 {
+    position: absolute;
+    top: 24vh;
+    left: 3vw;
+    font-size: 5rem;
+    font-family: 'Muli', sans-serif;
+    text-transform: uppercase;
+    font-weight: 600;
+    color: rgba(255, 255, 255, 0.733);
+} 
+
+.home-communities-text3-details {
+    position: absolute;
+    top: 34vh;
+    left: 3vw;
+    font-size: 3rem;
+    font-family: 'Muli', sans-serif;
+    font-weight: 600;
+    color: rgba(255, 255, 255, 0.733);
+} 
+
+.home-communities-text4 {
+    position: absolute;
+    top: 24vh;
+    left: 51vw;
+    font-size: 5rem;
+    font-family: 'Muli', sans-serif;
+    text-transform: uppercase;
+    font-weight: 600;
+    color: rgba(255, 255, 255, 0.733);
+} 
+
+.home-communities-text4-details {
+    position: absolute;
+    top: 34vh;
+    left: 51vw;
+    font-size: 3rem;
+    font-family: 'Muli', sans-serif;
+    font-weight: 600;
+    color: rgba(255, 255, 255, 0.733);
+} 
+
+.home-communities-img img {
     width: 42vw;
     height: 42vh;
 }
+
+@media (max-width: 1300px) {
+    .home-communities-text {
+        font-size: 4rem;
+    } 
+    
+    .home-communities-text-details {
+        font-size: 2rem;
+    } 
+    
+    .home-communities-text2 {
+        font-size: 4rem;
+    } 
+    
+    .home-communities-text2-details {
+        font-size: 2rem;
+    } 
+    
+    .home-communities-text3 {
+        font-size: 4rem;
+    } 
+    
+    .home-communities-text3-details {
+        font-size: 2rem;
+    } 
+
+    .home-communities-text4 {
+        font-size: 4rem;
+    } 
+    
+    .home-communities-text4-details {
+        font-size: 2rem;
+    } 
+}
+
+@media (max-width: 1015px) {
+    .home-communities-text {
+        font-size: 3.5rem;
+    } 
+    
+    .home-communities-text-details {
+        font-size: 1.5rem;
+    } 
+    
+    .home-communities-text2 {
+        font-size: 3.5rem;
+    } 
+    
+    .home-communities-text2-details {
+        font-size: 1.5rem;
+    } 
+    
+    .home-communities-text3 {
+        font-size: 3.5rem;
+    } 
+    
+    .home-communities-text3-details {
+        font-size: 1.5rem;
+    } 
+
+    .home-communities-text4 {
+        font-size: 3.5rem;
+    } 
+    
+    .home-communities-text4-details {
+        font-size: 1.5rem;
+    } 
+}
+
+@media (max-width: 870px) {
+    .home-communities-text {
+        font-size: 3.0rem;
+    } 
+    
+    .home-communities-text-details {
+        font-size: 1.25rem;
+    } 
+    
+    .home-communities-text2 {
+        font-size: 3.0rem;
+    } 
+    
+    .home-communities-text2-details {
+        font-size: 1.25rem;
+    } 
+    
+    .home-communities-text3 {
+        font-size: 3rem;
+    } 
+    
+    .home-communities-text3-details {
+        font-size: 1.25rem;
+    } 
+
+    .home-communities-text4 {
+        font-size: 3rem;
+    } 
+    
+    .home-communities-text4-details {
+        font-size: 1.25rem;
+    } 
+}
+
+@media (max-width: 750px) {
+    .home-communities-text {
+        font-size: 2.5rem;
+    } 
+    
+    .home-communities-text-details {
+        font-size: 1.25rem;
+    } 
+    
+    .home-communities-text2 {
+        font-size: 2.5rem;
+    } 
+    
+    .home-communities-text2-details {
+        font-size: 1.25rem;
+    } 
+    
+    .home-communities-text3 {
+        font-size: 2.5rem;
+    } 
+    
+    .home-communities-text3-details {
+        font-size: 1.25rem;
+    } 
+
+    .home-communities-text4 {
+        font-size: 2.5rem;
+    } 
+    
+    .home-communities-text4-details {
+        font-size: 1.25rem;
+    } 
+}
+
+@media (max-width: 625px) {
+    .home-communities-text {
+        font-size: 2.25rem;
+    } 
+    
+    .home-communities-text-details {
+        font-size: 1.25rem;
+    } 
+    
+    .home-communities-text2 {
+        font-size: 2.25rem;
+    } 
+    
+    .home-communities-text2-details {
+        font-size: 1.25rem;
+    } 
+    
+    .home-communities-text3 {
+        font-size: 2.25rem;
+    } 
+    
+    .home-communities-text3-details {
+        font-size: 1.25rem;
+    } 
+
+    .home-communities-text4 {
+        font-size: 2.25rem;
+    } 
+    
+    .home-communities-text4-details {
+        font-size: 1.25rem;
+    } 
+}
+
+@media (max-width: 570px) {
+    .home-communities-text {
+        font-size: 2rem;
+    } 
+    
+    .home-communities-text-details {
+        font-size: 1rem;
+    } 
+    
+    .home-communities-text2 {
+        font-size: 2rem;
+    } 
+    
+    .home-communities-text2-details {
+        font-size: 1rem;
+    } 
+    
+    .home-communities-text3 {
+        font-size: 2rem;
+    } 
+    
+    .home-communities-text3-details {
+        font-size: 1rem;
+    } 
+
+    .home-communities-text4 {
+        font-size: 2rem;
+    } 
+    
+    .home-communities-text4-details {
+        font-size: 1rem;
+    } 
+}
+
+@media (max-width: 500px) {
+    .home-communities-text {
+        font-size: 1.5rem;
+    } 
+    
+    .home-communities-text-details {
+        font-size: 1rem;
+    } 
+    
+    .home-communities-text2 {
+        font-size: 1.5rem;
+    } 
+    
+    .home-communities-text2-details {
+        font-size: 1rem;
+    } 
+    
+    .home-communities-text3 {
+        font-size: 1.5rem;
+    } 
+    
+    .home-communities-text3-details {
+        font-size: 1rem;
+    } 
+
+    .home-communities-text4 {
+        font-size: 1.5rem;
+    } 
+    
+    .home-communities-text4-details {
+        font-size: 1rem;
+    } 
+}
+
+@media (max-width: 430px) {
+    .home-communities-text {
+        font-size: 1.25rem;
+        top: 27vh;
+        left: 3vw;
+    } 
+    
+    .home-communities-text-details {
+        font-size: .75rem;
+        top: 32vh;
+        left: 3vw;
+    } 
+    
+    .home-communities-text2 {
+        font-size: 1.25rem;
+        top: 27vh;
+        left: 51vw;
+    } 
+    
+    .home-communities-text2-details {
+        font-size: .75rem;
+        top: 32vh;
+        left: 51vw;
+    } 
+    
+    .home-communities-text3 {
+        font-size: 1.25rem;
+        top: 27vh;
+        left: 3vw;
+    } 
+    
+    .home-communities-text3-details {
+        font-size: .75rem;
+        top: 32vh;
+        left: 3vw;;
+    } 
+
+    .home-communities-text4 {
+        font-size: 1.25rem;
+        top: 27vh;
+        left: 51vw;
+    } 
+    
+    .home-communities-text4-details {
+        font-size: .75rem;
+        top: 32vh;
+        left: 51vw;
+    }
+    
+    .home-communities-img img {
+        width: 42vw;
+        height: 30vh;
+        margin-top: 50px;
+    }
+
+    .home-communities {
+        padding-top: 25px;
+        padding-bottom: 100px;
+    }
+
+    .home-communities-container {
+        height: 35vh;
+    }
+}
+
