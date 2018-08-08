@@ -22,12 +22,13 @@ class Home extends Component {
                                     <div className="home-communities-text-details">Everything about Tech</div>
                                 </Link>
                             </div>
+                            <div className="home-communities-img-one">
                                 <Link to="/forum/os">
                                     <img className="home-communities-click" src="https://res.cloudinary.com/jinpark1/image/upload/v1533692316/projectForum/os2.jpg" alt="images"/>
                                     <div className="home-communities-text2">OS</div>
                                     <div className="home-communities-text2-details">Discuss Everything OS</div>
                                 </Link>
-                        
+                            </div>
                         </div>
                     </div>
                     <div className="home-communities-container">
