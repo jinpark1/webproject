@@ -32,32 +32,35 @@ class EditPost extends Component {
   }
 
   handleChange = (value) => {
-    console.log(`selected ${value}`);
     this.setState({
       category: value
     })
   }
 
   createTopic = () => {
-    let newTopic = {
+    let editTopic = {
       subject: this.state.title,
       content: this.state.content,
       category: this.state.category,
-      created: 'NOW()',
-      usersID: this.props.userData.id
     };
     
-    axios.post('/api/threads', newTopic).then( res => {
-      console.log('Topic-----res', res)
-      console.log('Topic---props', this.props)
-      console.log('this-props-number-topic', res.data[0].id)
-      //requires withRouter to be wrapped on export default.
-      this.props.history.push(`/forums/${res.data[0].id}`)
+    // axios.post('/api/threads', newTopic).then( res => {
+    //   console.log('this-props-number-topic', res.data[0].id)
+    //   //requires withRouter to be wrapped on export default.
+    //   this.props.history.push(`/forums/${res.data[0].id}`)
+    // })
+
+    axios.put(`/api/threads/${this.props.id}`, editTopic).then( res => {
+      console.log(res.data)
+    }).catch( res => {
+      console.log(res.data)
     })
+    
   }
 
   
   render() {
+    console.log('editPost', this.props.id)
     return (
       <div className="topic">
         <div>
