@@ -51,7 +51,9 @@ class EditPost extends Component {
     // })
 
     axios.put(`/api/threads/${this.props.id}`, editTopic).then( res => {
-      console.log(res.data)
+      console.log(res.data[0])
+      this.props.toggle()
+      this.props.updateEditPost(res.data)
     }).catch( res => {
       console.log(res.data)
     })

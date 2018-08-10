@@ -76,7 +76,16 @@ class Post extends Component {
         })
     }
 
+    updateEditPost = (e) => {
+        console.log('updateEditPost')
+        console.log('updateEditPost2', e)
+        this.setState({
+            posts: e
+        })
+    }
+
     render() {
+        console.log('updateEditPost3', this.state.posts)
         const post = this.state.posts[0] ? this.state.posts[0] : 'loading..'
      
         return (
@@ -126,7 +135,7 @@ class Post extends Component {
                         </div>
                         <div >
                             {this.state.showing && <CreateReply getReply={ this.updateReplyPosts } id={ this.props.match.params.id} toggle={ this.createReply } />}
-                            {this.state.showingEdit && <EditPost getReply={ this.updateReplyPosts } id={ this.props.match.params.id} toggle={ this.editPost } />}
+                            {this.state.showingEdit && <EditPost updateEditPost={ (e) => this.updateEditPost(e) } getReply={ this.updateReplyPosts } id={ this.props.match.params.id} toggle={ this.editPost } />}
                         </div>
                         <div className="post-reply">
                             <Reply newReply={ this.state.replys } id={ this.props.match.params.id } />
