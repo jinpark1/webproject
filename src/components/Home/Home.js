@@ -103,7 +103,16 @@ class Home extends Component {
         if (this.state.active4) {
             imageFloat4 += ' home-communities-active';
         }
-        
+
+        let textFloat4 = 'home-communities-text4'
+        if (this.state.active4) {
+            textFloat4 += ' text-float';
+        }
+
+        let detailsFloat4 = 'home-communities-text4-details'
+        if (this.state.active4) {
+            detailsFloat4 += ' text-float'
+        }
 
         return (
             <div className="home">
@@ -167,7 +176,7 @@ class Home extends Component {
                                     <div onMouseEnter={this.changeStyle3} 
                                         onMouseLeave={this.originalStyle3} 
                                         className={textFloat3}
-                                        className="home-communities-text3">
+                                    >
                                         <span>SUPPORT</span>
                                     </div>
                                     <div onMouseEnter={this.changeStyle3} 
@@ -179,9 +188,25 @@ class Home extends Component {
                             </div>
                             <div className="home-communities-img-one">
                                 <Link to="/forum/hardware">
-                                    <img className="home-communities-click" src="https://res.cloudinary.com/jinpark1/image/upload/v1530680083/projectForum/hardware4.jpg" alt="images"/>
-                                    <div className="home-communities-text4">HARDWARE</div>
-                                    <div className="home-communities-text4-details">Start the Discussion!</div>
+                                    <img onMouseEnter={this.changeStyle4} 
+                                        onMouseLeave={this.originalStyle4} 
+                                        className={imageFloat4}   
+                                        src="https://res.cloudinary.com/jinpark1/image/upload/v1530680083/projectForum/hardware4.jpg" 
+                                        alt="images"
+                                    />
+                                    <div 
+                                        onMouseEnter={this.changeStyle4} 
+                                        onMouseLeave={this.originalStyle4} 
+                                        className={textFloat4} 
+                                        >
+                                        <span>HARDWARE</span>
+                                    </div>
+                                    <div 
+                                        onMouseEnter={this.changeStyle4} 
+                                        onMouseLeave={this.originalStyle4} 
+                                        className={detailsFloat4}>
+                                        <span>Start the Discussion!</span>
+                                    </div>
                                 </Link>
                             </div>
                         </div>
