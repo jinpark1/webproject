@@ -1,5 +1,7 @@
 ## Tech Forums
 
+Hosted: https://hello-forums.now.sh/
+
 Built using...
 * React
 * Redux
