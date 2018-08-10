@@ -152,6 +152,20 @@ app.post('/api/threads', (req,res) => {
     }).then( (post) => res.status(200).send( post ) ).catch( () => res.status(500).send() );
 })
 
+app.put('/api/threads/:id', (req, res) => {
+    console.log('hey', req.body)
+    const db = req.app.get('db')
+    const data = req.body;
+    console.log(req.params.id)
+    db.edit_thread({
+        subject: data.subject,
+        content: data.content,
+        category: data.category,
+        id: req.params.id
+    }).then( () => res.status(200).send() )
+    .catch( () => res.status(500).send() );
+})
+
 // Get a thread POST depending on ID.
 app.get('/api/post/:id', (req, res) => {
     const { id } = req.params;
