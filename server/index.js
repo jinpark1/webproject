@@ -162,7 +162,7 @@ app.put('/api/threads/:id', (req, res) => {
         content: data.content,
         category: data.category,
         id: req.params.id
-    }).then( () => res.status(200).send() )
+    }).then( (post) => res.status(200).send( post ) )
     .catch( () => res.status(500).send() );
 })
 
