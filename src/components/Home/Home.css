@@ -147,10 +147,6 @@
     margin-top: -5px;
 }
 
-/* .home-communities-text:hover img {
-    opacity: 1;
-} */
-
 .home-communities-text {
     position: absolute;
     top: 24vh;
@@ -543,4 +539,3 @@
         height: 35vh;
     }
 }
-
