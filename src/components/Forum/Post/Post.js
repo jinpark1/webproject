@@ -77,13 +77,8 @@ class Post extends Component {
     }
 
     render() {
-        console.log('Post-----props', this.props)
         const post = this.state.posts[0] ? this.state.posts[0] : 'loading..'
-        console.log('replys from post comp', this.state.replys)
-        console.log('hello-----------', this.state.post)
-        console.log('hello-----------', post.id)
-        console.log('hey', post ? post : null)
-
+     
         return (
             <div className="post">
                 <div className="forum">
