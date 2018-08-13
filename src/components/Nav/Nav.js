@@ -14,10 +14,6 @@ class Nav extends Component {
             showing: false,
             loggedIn: false,
         }
-
-        console.log("mount")
-     
-
     }
 
     componentDidMount() {
@@ -71,14 +67,6 @@ class Nav extends Component {
     }
 
     render() {
-        // console.log('Nav', this.props.userData)
-        
-        console.log('1', this.props.userData.online_id)
-        const hello = this.props.userData.email ? this.props.userData.email : 'waiting...';
-        console.log('2',this.props.userData.email)
-
-        console.log(this.state.loggedIn)
-
         return (
                 <div className="navbar-container-flex">
                     <div className="navbar-flex-child">
@@ -91,12 +79,27 @@ class Nav extends Component {
                             </ul>
                             { !this.state.loggedIn ? <a href="/auth"><button>SIGN IN!</button></a> : <button onClick={ () => this.showMenu() }>Welcome {this.props.userData.online_id}</button>} 
                             {this.state.showing && <div className="nav-menu">
-                                {/* <a href="/profile"><button className="nav-menu-button1">Profile</button></a> */}
                                 <a href="/settings"><button className="nav-menu-button2">Settings</button></a>
                                 <a href="/contact"><button className="nav-menu-button3">Contact</button></a>
                                 <button className="nav-menu-button4" onClick={this.logoutUser}>Sign out</button>
                             </div>}
                         </nav>
+                    </div>
+                    <div className="navbar-mobile">
+                        {/* <nav id="navbar">
+                            <ul>
+                                <img src={starImg} alt="star" />
+                                <li><a id="nava" href="/">HOME</a></li>
+                                <li><a id="nava" href="/forum">FORUMS</a></li>
+                                <li><a id="nava" href="/trollbox">TROLLBOX</a></li>
+                            </ul>
+                            { !this.state.loggedIn ? <a href="/auth"><button>SIGN IN!</button></a> : <button onClick={ () => this.showMenu() }>Welcome {this.props.userData.online_id}</button>} 
+                            {this.state.showing && <div className="nav-menu">
+                                <a href="/settings"><button className="nav-menu-button2">Settings</button></a>
+                                <a href="/contact"><button className="nav-menu-button3">Contact</button></a>
+                                <button className="nav-menu-button4" onClick={this.logoutUser}>Sign out</button>
+                            </div>}
+                        </nav> */}
                     </div>
                 </div>
         )
