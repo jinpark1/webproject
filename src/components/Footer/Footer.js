@@ -7,9 +7,15 @@ class Footer extends Component {
         return (
             <div className="footer">
                <div className="footer-content">
-                    <div><img src={starImg} alt="star" /></div>
-                    <div><img src={starImg} alt="star" /></div>
-                    <div><img src={starImg} alt="star" /></div>
+                    <div>
+                        <img src={starImg} alt="star" />
+                    </div>
+                    <div>
+                        <img src={starImg} alt="star" />
+                    </div>
+                    <div>
+                        <img src={starImg} alt="star" />
+                    </div>
                </div>
             </div>
         );

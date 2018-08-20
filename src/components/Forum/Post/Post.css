@@ -5,28 +5,22 @@
     background-color: #181c25;
     background-color: purple;
     background-color: #232936;
-    /* background-color: #181c25; */
-    /* border: 1px solid purple; */
     font-family: 'Muli', sans-serif;
 }
 
 .post-thread-top {
     display: flex;
     justify-content: space-between;
-    /* border: 1px solid darkblue; */
 }
 
 .post-id {
-    /* border: 1px solid orange; */
     color: white;
     padding: .5em 1em;
     font-size: 1rem;
     color: rgb(242, 193, 97);
-    /* color: rgba(255,206,31,0.8);     */
 }
 
 .post-created {
-    /* border: 1px solid blue; */
     color: white;
     font-size: 1em;
     margin: .5em 1em;
@@ -44,28 +38,21 @@
 }
 
 .post-online-id-container img {
-    /* border-radius: 50%; */
     margin-left: 25px;
     margin-right: -10px;
 }
 
 .post-online-id {
-    /* border: 1px solid purple; */
     color: white;
     font-size: 2rem;
     margin: 0px 30px 15px 30px;
-    /* color: rgba(255,206,31,0.8);     */
-    /* color: rgb(242, 193, 97); */
     font-family: 'Muli', sans-serif;
 }
 
 .post-subject {
-    /* border: 1px solid red; */
-    /* border-bottom: 2px solid black; */
     color: white;
     margin: 0px 100px 15px 30px;
     font-size: 2.2rem;
-    /* white-space: nowrap; */
     text-overflow: ellipsis;
     overflow: hidden;
     word-wrap: break-word;
@@ -73,10 +60,7 @@
 
 .post-content {
     color: white;
-    /* border: 1px solid orange; */
-    /* border-bottom: 1px solid orange; */
     margin: 0px 100px 15px 30px;
-    /* font-size: 15px; */
     font-size: 1.5rem;
     padding-bottom: 15px;
     word-wrap: break-word;
@@ -114,5 +98,4 @@
     margin-top: 10px;
     width: 73%;
     margin-bottom: 50px;
-    /* border: 1px solid orange; */
 }

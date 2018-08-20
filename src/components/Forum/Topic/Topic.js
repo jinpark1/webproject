@@ -6,8 +6,6 @@ import { withRouter } from 'react-router-dom'
 import ReactQuill from 'react-quill';
 import 'react-quill/dist/quill.snow.css'; 
 
-
-
 class Topic extends Component {
   constructor(){
     super();
@@ -32,7 +30,6 @@ class Topic extends Component {
   }
 
   handleChange = (value) => {
-    console.log(`selected ${value}`);
     this.setState({
       category: value
     })
@@ -48,9 +45,6 @@ class Topic extends Component {
     };
     
     axios.post('/api/threads', newTopic).then( res => {
-      console.log('Topic-----res', res)
-      console.log('Topic---props', this.props)
-      console.log('this-props-number-topic', res.data[0].id)
       //requires withRouter to be wrapped on export default.
       this.props.history.push(`/forums/${res.data[0].id}`)
     })
@@ -59,7 +53,6 @@ class Topic extends Component {
   time = () => {
     var date = new Date();
     var time;
-  
     var month = date.getMonth() + 1;
     month = month < 10 ? `0${month}` : month; // Two digit months: 01, 02, etc...
     var day = date.getDate();

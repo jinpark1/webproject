@@ -3,7 +3,6 @@ import './Forum.css';
 import './Feedback.css';
 import backGroundGrey from '../../images/feedback.jpg';
 import Topic from './Topic/Topic';
-// import FeedbackThread from './Thread/FeedbackThread';
 import Thread from './Thread/Thread';
 import { Link } from 'react-router-dom';
 import { connect } from 'react-redux';

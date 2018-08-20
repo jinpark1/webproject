@@ -16,12 +16,10 @@ class Chat extends React.Component{
         this.socket = io();
 
         this.socket.on('RECEIVE_MESSAGE', function(data){
-            console.log('receive message', data)
             addMessage(data);
         });
 
        this.socket.on('RECEIVE_USER', function(data){
-           console.log('RECEIVE User----', data)
            usersSignedIn(data);
            
        });
@@ -34,15 +32,12 @@ class Chat extends React.Component{
         };
 
         const usersSignedIn = data => {
-            console.log('usersSignedin----------', data)
             let copy = []
             copy.push(...data)
-            console.log('usersignedin copy--', copy)
             this.setState({usersSignedIn: copy})
         }
 
         this.sendMessage = ev => {
-            // ev.preventDefault();
             this.socket.emit('SEND_MESSAGE', {
                 author: this.state.username,
                 message: this.state.message
@@ -55,14 +50,12 @@ class Chat extends React.Component{
             this.socket.emit('SEND_USER', {
                 user: this.state.username,
             })
-            // this.setState({usersSignedIn: ''});
         }
     }
 
     onKeyPress = (e) => {
         if(e.key === 'Enter') {
             this.sendMessage()
-            console.log('hey')
         }
     }
 
@@ -96,14 +89,7 @@ class Chat extends React.Component{
                         <div id="messages" ref={(ref) => this.messages = ref}>
                             {displayMessages}
                         </div>
-                        
                     </div>
-                        
-                {/* <button onClick={this.sendUser}>Users Signed In</button>    
-                <div className="users">
-                        {displayUsers}
-                </div>
-                     */}
             </div>
         );
     }

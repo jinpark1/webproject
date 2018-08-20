@@ -6,8 +6,6 @@ import { withRouter } from 'react-router-dom'
 import ReactQuill from 'react-quill';
 import 'react-quill/dist/quill.snow.css'; 
 
-
-
 class EditPost extends Component {
   constructor(){
     super();
@@ -43,15 +41,8 @@ class EditPost extends Component {
       content: this.state.content,
       category: this.state.category,
     };
-    
-    // axios.post('/api/threads', newTopic).then( res => {
-    //   console.log('this-props-number-topic', res.data[0].id)
-    //   //requires withRouter to be wrapped on export default.
-    //   this.props.history.push(`/forums/${res.data[0].id}`)
-    // })
 
     axios.put(`/api/threads/${this.props.id}`, editTopic).then( res => {
-      console.log(res.data[0])
       this.props.toggle()
       this.props.updateEditPost(res.data)
     }).catch( res => {
@@ -62,7 +53,6 @@ class EditPost extends Component {
 
   
   render() {
-    console.log('editPost', this.props.id)
     return (
       <div className="topic">
         <div>

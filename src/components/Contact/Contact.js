@@ -27,11 +27,8 @@ class Contact extends Component {
             lastName: this.state.lastName || this.props.userData.last_name,
             email: this.state.email || this.props.userData.email,
         }
-        console.log('edituser---', editUser)
 
         axios.put(`/api/user/${this.props.userData.id}`, editUser).then( res => {
-            console.log('axios put', res)
-            console.log('axios put', res.data.user.online_id)
             this.setState({
                 updatedOnlineID: res.data.user.online_id
             })            
@@ -76,9 +73,7 @@ class Contact extends Component {
     }
 
     render() {
-        console.log('redux props', this.props.userData)
         let displayID = this.state.updatedOnlineID ? this.state.updatedOnlineID : this.props.userData.online_id
-        console.log('state', this.state.updatedOnlineID)
         return (
             <div className="contact">
                 <div className="contact-top">
@@ -99,19 +94,14 @@ class Contact extends Component {
                         <button onClick={this.handleSubmit}>Send</button>
                     </div>
                     <div className="contact-bottom-right">
-                        {/* <div>Send Message</div> */}
-                        {/* <ReactQuill className="topic-body-text-quill" theme="snow" value={this.state.content} onChange={this.contentUpdate}  />                                     */}
                         <div className="contact-body-quill-container">
                             <ReactQuill className="contact-body-quill" theme="snow" />                                    
                         </div>
-                        <div className="contact-body-button-container">
-
-                        </div>
+                        <div className="contact-body-button-container"></div>
                     </div>
                 </div>
                 <div className="contact-bottom-delete-container">
-                    <div className="contact-bottom-delete">
-                    </div>
+                    <div className="contact-bottom-delete"></div>
                 </div>
             </div>
         )

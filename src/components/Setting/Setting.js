@@ -73,7 +73,6 @@ class Setting extends Component {
 
     deleteUser = () => {
         axios.delete(`/api/deleteuser/${this.props.userData.id}`).then( res => {
-            console.log('deletedUser')
             this.props.updateUserData({})
             this.props.history.push('/')
         }).catch((error) => {
@@ -84,14 +83,8 @@ class Setting extends Component {
 
     handleImageUpload(files){
         //axios call to server to request hashed signature
-        console.log('file', files)
-        // console.log('files', files[0])
         axios.get('/api/cloud').then(response => {
-            console.log('axiosget-----', response)
-            console.log('axiosget-----signature', response.data.signature)
-        
         //form data for signed uploads
-
         let formData = new FormData();
         formData.append("signature", response.data.signature)
         formData.append("api_key", "588865653542695");
@@ -100,7 +93,6 @@ class Setting extends Component {
 
         // axios call to cloudinary using the URL set at top 
             axios.post(CLOUDINARY_UPLOAD_URL, formData).then(response => {
-                console.log('axiospost-------', response.data);
                 // Setting state with the secure_url
                 this.setState({
                     image: response.data.secure_url
@@ -115,15 +107,9 @@ class Setting extends Component {
         this.setState({ [e.target.name]: e.target.value });
       }
 
-    
-    
       render() {
-        console.log('secure url', this.state.image)
-        console.log('settings-------------------',this.props.userData.profile_photo)
-        console.log('redux props', this.props.userData)
         let displayID = this.state.updatedOnlineID ? this.state.updatedOnlineID : this.props.userData.online_id;
         let displayImg = this.state.updatedImg ? this.state.updatedImg : this.props.userData.profile_photo;
-        console.log('state', this.state.updatedOnlineID)
         return (
             <div className="setting">
                 <div className="setting-top">

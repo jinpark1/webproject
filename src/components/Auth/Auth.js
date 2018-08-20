@@ -6,7 +6,6 @@ import axios from 'axios';
 import { connect } from 'react-redux';
 import { updateUserData } from '../../ducks/reducer';
 
-
 class Auth extends Component {
     constructor(){
         super()
@@ -28,7 +27,6 @@ class Auth extends Component {
             password: this.refs.password.value
         };
         axios.post('/api/login', loginUser).then(response => {
-            console.log(response)
             this.props.history.push('/forum')
             this.props.updateUserData(response.data.user)
         }).catch((error) => {
@@ -42,17 +40,31 @@ class Auth extends Component {
                 <div className="message">{this.state.message}</div>
             <div className="auth-container">
                 <div className="auth-signin">
-                    <div><img src={starImg} alt="star" /></div>
-                    <div><input placeholder="Email" ref="email" /></div>
-                    <div><input type="password" placeholder="Password" ref="password" /></div>
-                    <div><button onClick={ this.login }>Log in</button></div>
+                    <div>
+                        <img src={starImg} alt="star" />
+                    </div>
+                    <div>
+                        <input placeholder="Email" ref="email" />
+                    </div>
+                    <div>
+                        <input type="password" placeholder="Password" ref="password" />
+                    </div>
+                    <div>
+                        <button onClick={ this.login }>Log in</button>
+                    </div>
                     <div className="or">OR</div>
-                    <div><button><Link className="auth-register-button" to='/register'>Create New Account</Link></button></div>
+                    <div>
+                        <button>
+                            <Link className="auth-register-button" to='/register'>Create New Account</Link>
+                        </button>
+                    </div>
                 </div>
             </div>
             <div className="for-test">
-                <span>TEST USER</span><br/>
-                <span>ID: 1</span><br/>
+                <span>TEST USER</span>
+                <br/>
+                <span>ID: 1</span>
+                <br/>
                 <span>Password: 1</span>
             </div>
             </div>

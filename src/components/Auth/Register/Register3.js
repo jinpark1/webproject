@@ -32,8 +32,6 @@ class Register3 extends Component {
             admin: false
         };
         axios.post('/api/register', newUser).then(response => {
-            // console.log(response)
-            console.log('register3-----', this.props)
             this.props.updateUserData(response.data.user)
             this.props.history.push('/register4')
         }).catch((error) => {
@@ -47,11 +45,16 @@ class Register3 extends Component {
                 <div className="message">{this.state.message}</div>
             <div className="register-container">
                 <div className="register">
-                    <div><img src={starImg} alt="star" /></div>
+                    <div>
+                        <img src={starImg} alt="star" />
+                    </div>
                     <div className="or">Create Account</div>
-                        <div><button onClick={ this.registerUser } className="link-button">Create Account</button></div>
-                        {/* <div><Link onClick={ this.registerUser } className="link-button" to='/register4'>Create Account</Link></div> */}
-                        <div><Link className="link-button" to='/register2'>Back</Link></div>
+                    <div>
+                        <button onClick={ this.registerUser } className="link-button">Create Account</button>
+                    </div>
+                    <div>
+                        <Link className="link-button" to='/register2'>Back</Link>
+                    </div>
                 </div>
             </div>
             </div>

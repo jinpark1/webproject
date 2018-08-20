@@ -3,7 +3,6 @@ const saltRounds = 12;
 
 module.exports = {
     register: (req, res) => {
-        console.log('---register',req.body)
         const db = req.app.get('db');
         const { email, onlineID, password, firstName, lastName, created, admin } = req.body;
         bcrypt.hash(password, saltRounds).then(hashedPassword => {
@@ -16,7 +15,6 @@ module.exports = {
                 created: created,
                 admin: admin
             }).then((users) => {
-                console.log('index.js---register---', users)
                 req.session.user = users[0];
                 res.json({ user: req.session.user })
             }).catch(error => {

@@ -17,44 +17,25 @@ class Thread extends Component {
     }
 
     componentDidMount() {
-        console.log('thread-----', this.props.category)
         const category = this.props.category
         // Gets 20 items at a time 
         const id = this.state.offset * 20
 
         if(category === 'All'){
             axios.get(`/api/threads/${id}`).then( res => {
-                console.log(res.data)
                 this.setState({
                     threads: res.data,
                     offset: this.state.offset + 1
                 })
             })
         } else {
-            console.log('category---', category)
             axios.get(`/api/threads/${id}/${category}`).then( res => {
-                console.log(res.data)
                 this.setState({
                     threads: res.data,
                     offset: this.state.offset + 1
                 })
             })
         }
-
-        // axios.get(`/api/threads/${id}`).then( res => {
-        //     console.log(res.data)
-        //     this.setState({
-        //         threads: res.data,
-        //         offset: this.state.offset + 1
-        //     })
-        // })
-    //    axios.get(`/api/threads/${id}/${category}`).then( res => {
-    //        console.log(res.data)
-    //        this.setState({
-    //            threads: res.data,
-    //            offset: this.state.offset + 1
-    //        })
-    //    })
     }
 
 
@@ -108,29 +89,11 @@ class Thread extends Component {
         }
     }
 
-    // updateCategory = () => {
-    //     const id = 0
-    //     axios.get(`/api/threads/${id}`).then(res => {
-            
-    //         let arrayStuff = []
-            
-    //         res.data.map( (v) => {
-    //             if(v.category === 'support'){
-    //                 arrayStuff.push(v)
-    //             }
-    //         })
-    //         this.setState({
-    //             threads: arrayStuff
-    //         })
-    //     })
-    // }
-
     test = (a, b) => {
         return a + b;
     }
 
     render() {
-        console.log('thread------', this.props.category)
         const threads = this.state.threads ? this.state.threads.map( (v, i) => {
             return (
                 <Link to={`/forums/${v.thread_id}`} className="thread-list" key={i}>
