@@ -4,9 +4,6 @@ import { withData } from './MyComponentThatFetchesData';
 
 class ReplyChild extends Component {
     render() {
-        console.log('replychild---------',this.props.reply)
-        console.log('replychild---------props',this.props)
-        console.log('replychild---------props',this.props.idpass)
         const reply = this.props.reply
         const replys = reply.map( (v, i) => {
             return (
@@ -30,5 +27,4 @@ class ReplyChild extends Component {
     }
 }
 
-// export default withData(`/api/reply/${this.props.idpass}`)(ReplyChild)
 export default withData(`/api/reply/`)(ReplyChild)

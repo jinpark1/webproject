@@ -11,14 +11,26 @@ class Register2 extends Component {
         return (
             <div className="register-container">
                 <div className="register">
-                    <div><img src={starImg} alt="star" /></div>
-                    <div className="or">Create Account</div>
-                    <div><input placeholder="Online ID" onChange={ e => updateOnlineID(e.target.value) } /></div>
-                    <div><input placeholder="First Name" onChange={ e => updateFirstName(e.target.value) }/></div>
-                    <div><input placeholder="Last Name" onChange={ e => updateLastName(e.target.value) }/></div>
                     <div>
-                        <div><Link className="link-button" to='/register'>Back</Link></div>
-                        <div><Link className="link-button" to='/register3'>Next</Link></div>
+                        <img src={starImg} alt="star" />
+                    </div>
+                    <div className="or">Create Account</div>
+                    <div>
+                        <input placeholder="Online ID" onChange={ e => updateOnlineID(e.target.value) } />
+                    </div>
+                    <div>
+                        <input placeholder="First Name" onChange={ e => updateFirstName(e.target.value) }/>
+                    </div>
+                    <div>
+                        <input placeholder="Last Name" onChange={ e => updateLastName(e.target.value) }/>
+                    </div>
+                    <div>
+                        <div>
+                            <Link className="link-button" to='/register'>Back</Link>
+                        </div>
+                        <div>
+                            <Link className="link-button" to='/register3'>Next</Link>
+                        </div>
                     </div>
                 </div>
             </div>
