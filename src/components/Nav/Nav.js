@@ -6,14 +6,39 @@ import axios from 'axios';
 import { updateUserData } from '../../ducks/reducer';
 import { withRouter } from 'react-router-dom';
 
+import { withStyles } from '@material-ui/core/styles';
+import AppBar from '@material-ui/core/AppBar';
+import Toolbar from '@material-ui/core/Toolbar';
+import Typography from '@material-ui/core/Typography';
+import Button from '@material-ui/core/Button';
+import IconButton from '@material-ui/core/IconButton';
+import MenuIcon from '@material-ui/icons/Menu';
+
+import MediaQuery from 'react-responsive';
+
+const styles = {
+    root: {
+      flexGrow: 1,
+    },
+    flex: {
+      flexGrow: 1,
+    },
+    menuButton: {
+      marginLeft: -12,
+      marginRight: 20,
+    },
+  };
+
 class Nav extends Component {
-    constructor(){
+    constructor(props){
         super();
 
         this.state = {
             showing: false,
-            loggedIn: false,
+            loggedIn: false
         }
+
+        
     }
 
     componentDidMount() {
@@ -67,6 +92,8 @@ class Nav extends Component {
     }
 
     render() {
+        console.log('nav------', this.props)
+        const { classes } = this.props;
         return (
                 <div className="navbar-container-flex">
                     <div className="navbar-flex-child">
@@ -85,6 +112,34 @@ class Nav extends Component {
                             </div>}
                         </nav>
                     </div>
+                    <MediaQuery query="(max-device-width: 1224px)">
+                    <div className={classes.root}>
+                        <AppBar position="fixed" style={{ backgroundColor: '#14191e' }}>
+                            <Toolbar>
+                                <IconButton className={classes.menuButton} color="inherit" aria-label="Menu">
+                                    <MenuIcon />
+                                </IconButton>
+                                <Typography variant="title" color="inherit" className={classes.flex}>
+                                    {/* The Tech Forums */}
+                                </Typography>
+                                <Button color="inherit" href="/auth">Login</Button>
+                            </Toolbar>
+                        </AppBar>
+                    </div>
+                    </MediaQuery>
+                   {/* { this.state.media ? <div className={classes.root}>
+                        <AppBar position="static">
+                            <Toolbar>
+                                <IconButton className={classes.menuButton} color="inherit" aria-label="Menu">
+                                    <MenuIcon />
+                                </IconButton>
+                                <Typography variant="title" color="inherit" className={classes.flex}>
+                                News
+                                </Typography>
+                                <Button color="inherit">Login</Button>
+                            </Toolbar>
+                        </AppBar>
+                    </div> : null} */}
                     <div className="navbar-mobile">
                         {/* <nav id="navbar">
                             <ul>
@@ -116,6 +171,6 @@ const mapDispatchToProps = {
     updateUserData
 }
 
-export default withRouter(connect(mapStateToProps, mapDispatchToProps)(Nav));
+export default withStyles(styles)(withRouter(connect(mapStateToProps, mapDispatchToProps)(Nav)));
 
 

@@ -142,12 +142,9 @@ nav ul li a:hover {
     transition: 2s
 }
 
-.navbar-flex-child {
-    /* display: none; */
-}
-
-@media(max-width: 700px) {
+@media(max-width: 1224px) {
     .navbar-flex-child {
         display: none;
     }
 }
+
