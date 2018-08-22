@@ -148,3 +148,8 @@ nav ul li a:hover {
     }
 }
 
+@media(min-width: 1224px) {
+    .navbar-media-query {
+        display: none;
+    }
+}

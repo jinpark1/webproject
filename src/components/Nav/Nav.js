@@ -14,8 +14,6 @@ import Button from '@material-ui/core/Button';
 import IconButton from '@material-ui/core/IconButton';
 import MenuIcon from '@material-ui/icons/Menu';
 
-import MediaQuery from 'react-responsive';
-
 const styles = {
     root: {
       flexGrow: 1,
@@ -112,7 +110,7 @@ class Nav extends Component {
                             </div>}
                         </nav>
                     </div>
-                    <MediaQuery query="(max-device-width: 1224px)">
+                    <div className="navbar-media-query">
                     <div className={classes.root}>
                         <AppBar position="fixed" style={{ backgroundColor: '#14191e' }}>
                             <Toolbar>
@@ -126,7 +124,7 @@ class Nav extends Component {
                             </Toolbar>
                         </AppBar>
                     </div>
-                    </MediaQuery>
+                    </div>
                    {/* { this.state.media ? <div className={classes.root}>
                         <AppBar position="static">
                             <Toolbar>
