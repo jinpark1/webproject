@@ -12,6 +12,6 @@
 
 
 Built using...
-Technologies: * React * Redux * Node * Express * Massive * PostgresSQL * Socket * Heroku * bcrypt * Nodemailer * Cloudinary * Zeit Hosting
+ * React * Redux * Node * Express * Massive * PostgresSQL * Socket * Heroku * bcrypt * Nodemailer * Cloudinary * Zeit Hosting
 
 This project was bootstrapped with [Create React App](https://github.com/facebookincubator/create-react-app).
