@@ -12,6 +12,6 @@ Hosted: https://hello-forums.now.sh/
 * Pagination added to view 20 threads at a time and buttons to navigate between previous and recent threads.
 
 ## Built using...
-React, Redux, Node, Express, Massive, PostgresSQL, Sockek, Heroku, bcrypt, Nodemailer, Cloudinary, and Zeit Hosting
+React, Redux, Node, Express, Massive, PostgresSQL, Socket, Heroku, bcrypt, Nodemailer, Cloudinary, and Zeit Hosting
 
 This project was bootstrapped with [Create React App](https://github.com/facebookincubator/create-react-app).
