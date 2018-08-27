@@ -1,4 +1,4 @@
-## Tech Forums
+## The Tech Forums
 
 Web application that allows users to discuss freely on different technologies.
 <br/>
