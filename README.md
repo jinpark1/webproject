@@ -1,7 +1,7 @@
 ## Tech Forums
 
 Web application that allows users to discuss freely on different technologies.
-</br>
+<br/>
 Hosted: https://hello-forums.now.sh/
 
 * Redux and Express Sessions were used to maintain user data throughout the user experience and conditionally rendered components depending on users logged in. 
