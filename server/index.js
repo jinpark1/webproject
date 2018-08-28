@@ -3,11 +3,12 @@ const express = require('express');
 const massive = require('massive');
 const bodyParser = require('body-parser');
 const session = require('express-session');
-// const bcrypt = require('bcrypt');
 const app = express();
 
-const userController = require('./controllers/user_controller')
-const forumController = require('./controllers/forum_controller')
+const userController = require('./controllers/user_controller');
+const forumController = require('./controllers/forum_controller');
+const nodeMailerController = require( './controllers/nodeMailer_controller');
+const cloudinaryController = require('./controllers/cloudinary_controller');
 
 app.use(bodyParser.json());
 
@@ -23,6 +24,9 @@ app.use(session({
     }
 }));
 
+const port = 4001;
+const server = app.listen(port, () => { console.log(`Server listening on Port ${port}`)} );
+
 //hosting
 app.use(express.static(`${__dirname}/../build`));
 
@@ -34,59 +38,27 @@ app.delete(`/api/deleteuser/:id`, userController.deleteUser)
 app.post('/api/logout', userController.logout)
 app.get('/api/checkSession', userController.checkSession)
 
-// Get 20 thread posts all
+// Forums endpoints.
 app.get('/api/threads/:id', forumController.getThreads)
-
-// Get a thread POST depending on ID.
 app.get('/api/post/:id', forumController.getThreadById)
-
-// Get 20 thread posts depending on categories
 app.get('/api/threads/:id/:category', forumController.threadsByCategory)
-
-// Posting a thread and getting back a response with newly made post data.
 app.post('/api/threads', forumController.postThread)
-
 app.put('/api/threads/:id', forumController.editThread)
-
-
-
-// Get a thread REPLY depending on ID.
+app.delete('/api/deletePost/:id', forumController.deleteThread)
 app.get('/api/reply/:id', forumController.getThreadReplies)
-
-// post reply depnding on thread id.
 app.post('/api/reply', forumController.postThreadReplies)
 
-
-app.delete('/api/deletePost/:id', (req, res) => {
-    const id = req.params.id;
-    const db = req.app.get('db');
-    db.delete_post({
-        id: id
-    }).then( post => {
-        res.status(200).send( post );
-    }).catch( error => {
-        res.status(500).send();
-    })
-})
-
-
-
 // NodeMailer
-const nodeMailer_controller = require( './controllers/nodeMailer_controller');
-app.post('/api/sendmail', nodeMailer_controller.sendMail);
+app.post('/api/sendmail', nodeMailerController.sendMail);
 
 // Cloudinary image upload
-const cloudinary_controller = require('./controllers/cloudinary_controller');
-app.get('/api/cloud', cloudinary_controller.upload);
+app.get('/api/cloud', cloudinaryController.upload);
 
 // Hosting zeit
 const path = require('path')
 app.get('*', (req, res)=>{
   res.sendFile(path.join(__dirname, '../build/index.html'));
 })
-
-const port = 4001;
-const server = app.listen(port, () => { console.log(`Server listening on Port ${port}`)} );
 
 // Socket
 var socket = require('socket.io');
@@ -97,9 +69,7 @@ const io = socket(server);
 
 //displaying users signed in to chat.
 io.on('connection', (socket) => {
-console.log('Users List')
     socket.on('SEND_USER', function(data){
-        console.log('Users-data', data)
         usersSignedIn.push(data)
         io.emit('RECEIVE_USER', usersSignedIn);
     })
@@ -107,32 +77,9 @@ console.log('Users List')
 
 //sending and receiving messages
 io.on('connection', (socket) => {
-    console.log(socket.id);
-    console.log("user connected")
     socket.on('SEND_MESSAGE', function(data){
-        console.log(data)
         messages.push(data)
         io.emit('RECEIVE_MESSAGE', messages);
     })
 });
 
-// io.on('connection', (socket) => {
-//     console.log("second socket connected")
-//     socket.on('SEND_MESSAGE', function(data){
-//         messages.push(data)
-//         io.emit('RECEIVE_MESSAGE', messages);
-//     })
-// });
-
-// io.on('connection', (socket) => {
-//     console.log("third socket connected")
-//     socket.on('SEND_MESSAGE', function(data){
-//         console.log(data)
-//         messages.push(data)
-//         io.emit('RECEIVE_MESSAGE', messages);
-//     })
-// });
-
-
-
-// io.on()

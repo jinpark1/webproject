@@ -2,6 +2,7 @@ const bcrypt = require('bcrypt');
 const saltRounds = 12;
 
 module.exports = {
+    
     register: (req, res) => {
         const db = req.app.get('db');
         const { email, onlineID, password, firstName, lastName, created, admin } = req.body;

@@ -2,7 +2,7 @@ require( "dotenv" ).config();
 const nodemailer = require( 'nodemailer' );
 
 
-module.exports ={
+module.exports = {
 
     sendMail: (req, res) => {
         const { name, email, text } = req.body;
