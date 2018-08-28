@@ -153,3 +153,7 @@ nav ul li a:hover {
         display: none;
     }
 }
+
+.MuiPaper-root-12 {
+    background-color: #914141;
+}
