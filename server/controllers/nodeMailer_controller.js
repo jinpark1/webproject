@@ -5,10 +5,13 @@ const nodemailer = require( 'nodemailer' );
 module.exports = {
 
     sendMail: (req, res) => {
-        const { online_id, first_name, email, message } = req.body;
+        const { online_id, first_name, last_name, email, message } = req.body;
         console.log(req.body)
         let transporter = nodemailer.createTransport({
             host: 'smtp.gmail.com',
+            tls:{
+                rejectUnauthorized: false
+            },
             port: 465,
             secure: true, // true for 465, false for other ports
             auth: {
@@ -26,6 +29,9 @@ module.exports = {
             subject: 'From Forums Website', // Subject line
             text: 'Message', //in text body
             html: `<div>
+                        Message from user ${online_id} has arrive.
+                        User's Name: ${first_name} ${last_name} 
+                        User's Email: ${email}
                         ${message}
                     </div>` // html body
         }

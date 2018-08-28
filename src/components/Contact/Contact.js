@@ -30,11 +30,11 @@ class Contact extends Component {
         e.preventDefault();
         console.log(this.state.message)
         const { message } = this.state;
-        const { online_id, first_name, last_Name, email } = this.props.userData;
+        const { online_id, first_name, last_name, email } = this.props.userData;
         axios.post('/api/sendmail', {
             online_id,
             first_name,
-            last_Name,
+            last_name,
             email,
             message,
         }).then( res => {
