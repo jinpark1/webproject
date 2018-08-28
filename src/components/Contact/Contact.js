@@ -20,53 +20,23 @@ class Contact extends Component {
         }
     }
 
-    editUser = () => {
-        let editUser = {
-            onlineID: this.state.onlineID || this.props.userData.online_id,
-            firstName: this.state.firstName || this.props.userData.first_name,
-            lastName: this.state.lastName || this.props.userData.last_name,
-            email: this.state.email || this.props.userData.email,
-        }
-
-        axios.put(`/api/user/${this.props.userData.id}`, editUser).then( res => {
-            this.setState({
-                updatedOnlineID: res.data.user.online_id
-            })            
-        }).catch((error) => {
-            this.setState({ message: this.getMessage(error) })
+    contentUpdate = (e) => {
+        this.setState({
+            message: e
         })
-    }
-
-    handleChange = (e) => {
-        if(e.target.name === "onlineID"){
-            this.setState({
-                onlineID: e.target.value
-            })
-        }
-        if(e.target.name === "firstName"){
-            this.setState({
-                firstName: e.target.value
-            })
-        }
-        if(e.target.name === "lastName"){
-            this.setState({
-                lastName: e.target.value
-            })
-        }
-        if(e.target.name === "email"){
-            this.setState({
-                email: e.target.value
-            })
-        }
     }
 
     handleSubmit = (e) => {
         e.preventDefault();
-        const { firstName, lastName, email, text } = this.state
+        console.log(this.state.message)
+        const { message } = this.state;
+        const { online_id, first_name, last_Name, email } = this.props.userData;
         axios.post('/api/sendmail', {
-            firstName,
+            online_id,
+            first_name,
+            last_Name,
             email,
-            text: lastName,
+            message,
         }).then( res => {
             console.log( 'mail', JSON.stringify( res.data ) )
         })
@@ -86,17 +56,18 @@ class Contact extends Component {
                         <div>Online ID</div>
                         <input placeholder={this.props.userData.online_id} onChange={this.handleChange} name="onlineID" disabled></input>
                         <div>First Name</div>
-                        <input placeholder={this.props.userData.first_name} onChange={this.handleChange} name="firstName"></input>
+                        <input placeholder={this.props.userData.first_name} onChange={this.handleChange} name="firstName" disabled></input>
                         <div>Last Name</div>
-                        <input placeholder={this.props.userData.last_name} onChange={this.handleChange} name="lastName"></input>
-                        <div>Send Message</div>
-                        <input placeholder="Enter Message" onChange={this.handleChange} name="email"></input>
-                        <button onClick={this.handleSubmit}>Send</button>
+                        <input placeholder={this.props.userData.last_name} onChange={this.handleChange} name="lastName" disabled></input>
+                        <div>Email</div>
+                        <input placeholder={this.props.userData.email} onChange={this.handleChange} name="email" disabled></input>
+                  
                     </div>
                     <div className="contact-bottom-right">
                         <div className="contact-body-quill-container">
-                            <ReactQuill className="contact-body-quill" theme="snow" />                                    
+                            <ReactQuill className="contact-body-quill" theme="snow" value={this.state.message} onChange={this.contentUpdate}/>                                  
                         </div>
+                        <button className="contact-button-send" onClick={this.handleSubmit}>Send</button>  
                         <div className="contact-body-button-container"></div>
                     </div>
                 </div>

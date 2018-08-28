@@ -5,7 +5,7 @@ const nodemailer = require( 'nodemailer' );
 module.exports = {
 
     sendMail: (req, res) => {
-        const { name, email, text } = req.body;
+        const { online_id, first_name, email, message } = req.body;
         console.log(req.body)
         let transporter = nodemailer.createTransport({
             host: 'smtp.gmail.com',
@@ -22,11 +22,11 @@ module.exports = {
         // setup email data with unicode symbols
         let mailOptions = {
             from: process.env.ADMIN_EMAIL, // sender address
-            to: process.env.ADMIN_EMAIL, // list of recei'vers
+            to: process.env.ADMIN_EMAIL, // list of receiver
             subject: 'From Forums Website', // Subject line
             text: 'Message', //in text body
             html: `<div>
-                        ${text}
+                        ${message}
                     </div>` // html body
         }
 
