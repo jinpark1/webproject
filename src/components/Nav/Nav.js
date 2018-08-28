@@ -12,7 +12,6 @@ import Toolbar from '@material-ui/core/Toolbar';
 import Typography from '@material-ui/core/Typography';
 import Button from '@material-ui/core/Button';
 import IconButton from '@material-ui/core/IconButton';
-import MenuIcon from '@material-ui/icons/Menu';
 
 import Drawer from './Drawer/Drawer';
 
@@ -105,11 +104,13 @@ class Nav extends Component {
                                 <li><a id="nava" href="/trollbox">TROLLBOX</a></li>
                             </ul>
                             { !this.state.loggedIn ? <a href="/auth"><button>SIGN IN!</button></a> : <button onClick={ () => this.showMenu() }>Welcome {this.props.userData.online_id}</button>} 
-                            { this.state.showing && <div className="nav-menu">
+                            { this.state.showing && 
+                                <div className="nav-menu">
                                 <a href="/settings"><button className="nav-menu-button2">Settings</button></a>
                                 <a href="/contact"><button className="nav-menu-button3">Contact</button></a>
                                 <button className="nav-menu-button4" onClick={this.logoutUser}>Sign out</button>
-                            </div> }
+                                </div>
+                            }
                         </nav>
                     </div>
                     <div className="navbar-media-query">
