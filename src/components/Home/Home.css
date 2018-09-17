@@ -9,11 +9,13 @@
     color: rgba(255, 255, 255, 0.733);
     font-family: 'Muli', sans-serif;
     max-width:100%;
+    min-height: 500px;
+    border: black;
 }
 
 .home-description {
-    position: absolute;
-    top: 45%;
+    position: relative;
+    top: 65%;
     text-indent: 100px;
     letter-spacing: 5px;
     font-family: 'Muli', sans-serif;
@@ -22,6 +24,7 @@
     background-color: rgba(30, 31, 31, 0.671);
     width: 100vw;
     max-width: 100%;
+    /* top: 375px; */
 }
 
 /* .home-main-photo:active {
@@ -108,13 +111,14 @@
     background-color: #14191e;
     padding-top: 100px;
     padding-bottom: 50px;
+    z-index: 5
 }
 
 .home-communities-container {
     display: flex;
     justify-content: center;
     width: 100vw;
-    height: 50vh;
+    height: 425px;
     background-color: #14191e;
     max-width: 100%;
 }
@@ -155,7 +159,8 @@
 
 .home-communities-text {
     position: absolute;
-    top: 24vh;
+    /* top: 24vh; */
+    top: 200px;
     left: 3vw;
     font-size: 5rem;
     font-family: 'Muli', sans-serif;
@@ -167,7 +172,8 @@
 .home-communities-text-details {
     white-space: nowrap;
     position: absolute;
-    top: 10vh;
+    /* top: 10vh; */
+    top: 75px;
     left: 0vw;
     text-transform: none;
     font-size: 3rem;
@@ -179,6 +185,7 @@
 .home-communities-text2 {
     position: absolute;
     top: 24vh;
+    top: 200px;
     left: 51vw;
     font-size: 5rem;
     font-family: 'Muli', sans-serif;
@@ -190,6 +197,7 @@
 .home-communities-text2-details {
     position: absolute;
     top: 34vh;
+    top: 275px;
     left: 51vw;
     font-size: 3rem;
     font-family: 'Muli', sans-serif;
@@ -200,6 +208,7 @@
 .home-communities-text3 {
     position: absolute;
     top: 24vh;
+    top: 200px;
     left: 3vw;
     font-size: 5rem;
     font-family: 'Muli', sans-serif;
@@ -211,6 +220,7 @@
 .home-communities-text3-details {
     position: absolute;
     top: 34vh;
+    top: 275px;
     left: 3vw;
     font-size: 3rem;
     font-family: 'Muli', sans-serif;
@@ -221,6 +231,7 @@
 .home-communities-text4 {
     position: absolute;
     top: 24vh;
+    top: 200px;
     left: 51vw;
     font-size: 5rem;
     font-family: 'Muli', sans-serif;
@@ -232,6 +243,7 @@
 .home-communities-text4-details {
     position: absolute;
     top: 34vh;
+    top: 275px;
     left: 51vw;
     font-size: 3rem;
     font-family: 'Muli', sans-serif;
@@ -241,7 +253,8 @@
 
 .home-communities-img img {
     width: 42vw;
-    height: 42vh;
+    /* height: 42vh; */
+    height: 350px;
 }
 
 @media (max-width: 1300px) {
