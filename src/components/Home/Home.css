@@ -24,7 +24,6 @@
     background-color: rgba(30, 31, 31, 0.671);
     width: 100vw;
     max-width: 100%;
-    /* top: 375px; */
 }
 
 /* .home-main-photo:active {
@@ -159,7 +158,6 @@
 
 .home-communities-text {
     position: absolute;
-    /* top: 24vh; */
     top: 200px;
     left: 3vw;
     font-size: 5rem;
@@ -172,7 +170,6 @@
 .home-communities-text-details {
     white-space: nowrap;
     position: absolute;
-    /* top: 10vh; */
     top: 75px;
     left: 0vw;
     text-transform: none;
