@@ -4,7 +4,6 @@ import axios from 'axios';
 import { Link } from 'react-router-dom';
 import * as FontAwesome from 'react-icons/lib/fa'
 
-
 class Thread extends Component {
     constructor(){
         super();
