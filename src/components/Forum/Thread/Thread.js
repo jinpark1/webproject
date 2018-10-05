@@ -92,6 +92,28 @@ class Thread extends Component {
         return a + b;
     }
 
+    displayDate = (index) => {
+        let date = this.state.threads.map((e, i) => {
+            if (index === i) {
+                return e.thread_created;
+            }
+        })
+        return date[index] ? date[index].split('').slice(0, 10).join('') : 'Failed to get Date'
+    }
+
+    displayTime = (index) => {
+        let time = this.state.threads.map((e, i) => {
+            if (index === i) {
+                return e.thread_created;
+            }
+        })
+        return time[index] ? time[index].split('').map((e, i) => {
+            if (e === '-') {
+                return time[index].split('').slice(i+1)
+            }
+        }) : 'Failed to get time'
+    }
+
     render() {
         const threads = this.state.threads ? this.state.threads.map( (v, i) => {
             return (
@@ -107,8 +129,9 @@ class Thread extends Component {
                         <div className="thread-list-id">{v.online_id}</div>
                     </div>
                     <div className="thread-list-right">
-                        <div className="thread-list-created">{v.thread_created}</div>
                         <div className="thread-list-category">{v.category}</div>
+                        <div className="thread-list-created">{this.displayDate(i)}</div>
+                        <div className="thread-list-created">{this.displayTime(i)}</div>
                     </div>
                 </Link>
             )
